@@ -16,6 +16,25 @@ npm run build
 npm run preview
 ```
 
+## Kontaktformular mit Resend
+
+Das Kontaktformular sendet über die serverseitige Route `/api/contact` eine Bestätigung an die Kundin und eine Anfrage-Mail an `lea.kirfel@web.de`.
+
+Benötigte Environment Variable:
+
+```bash
+RESEND_API=...
+```
+
+Optional kann für Produktion eine verifizierte Absenderadresse gesetzt werden:
+
+```bash
+RESEND_FROM_EMAIL="LiftLounge <kontakt@deine-domain.de>"
+CONTACT_TO_EMAIL="lea.kirfel@web.de"
+```
+
+Lokal funktioniert die API mit `npm run dev`, weil Vite die Route als Dev-Middleware bereitstellt. In Vercel müssen die Variablen zusätzlich im Projekt unter Environment Variables hinterlegt werden.
+
 ## Vercel Deployment
 
 Das Projekt ist Vercel-ready. In Vercel einfach das GitHub-Repository verbinden und als Framework `Vite` erkennen lassen. Der Build Command ist `npm run build`, das Output Directory ist `dist`.

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
+import { AlertCircle, ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { pricingPackages, site, trainingOffers } from '../data/siteData.js';
 
 const initialForm = {
@@ -29,7 +29,7 @@ function validate(form) {
 export default function ContactForm() {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+  const [submitState, setSubmitState] = useState({ status: 'idle', message: '' });
   const packageOptions = useMemo(
     () => [
       ...pricingPackages.map((plan) => plan.name),
@@ -42,21 +42,60 @@ export default function ContactForm() {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
     setErrors((current) => ({ ...current, [name]: undefined }));
+
+    if (submitState.status !== 'sending') {
+      setSubmitState({ status: 'idle', message: '' });
+    }
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const nextErrors = validate(form);
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
-      setSubmitted(false);
+      setSubmitState({ status: 'idle', message: '' });
       return;
     }
 
-    setSubmitted(true);
-    setForm(initialForm);
+    setSubmitState({ status: 'sending', message: 'Deine Anfrage wird gesendet...' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+      const payload = await response.json().catch(() => ({}));
+
+      if (!response.ok || !payload.ok) {
+        if (payload.errors) {
+          setErrors(payload.errors);
+        }
+
+        throw new Error(payload.message || 'Die Anfrage konnte gerade nicht gesendet werden.');
+      }
+
+      setSubmitState({
+        status: 'success',
+        message:
+          payload.message ||
+          'Danke, deine Anfrage wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.',
+      });
+      setForm(initialForm);
+    } catch (error) {
+      setSubmitState({
+        status: 'error',
+        message:
+          error.message ||
+          'Die Anfrage konnte gerade nicht gesendet werden. Bitte versuche es später erneut.',
+      });
+    }
   }
+
+  const isSending = submitState.status === 'sending';
 
   return (
     <section className="section contact-section" id="kontakt">
@@ -75,13 +114,17 @@ export default function ContactForm() {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit} noValidate>
-          {submitted && (
+          {submitState.status === 'success' && (
             <div className="success-message" role="status">
               <CheckCircle2 aria-hidden="true" size={21} />
-              <span>
-                Danke, deine Anfrage wurde vorgemerkt. Die Backend-Anbindung
-                kann später an Supabase, Resend oder eine eigene API erfolgen.
-              </span>
+              <span>{submitState.message}</span>
+            </div>
+          )}
+
+          {submitState.status === 'error' && (
+            <div className="error-message" role="alert">
+              <AlertCircle aria-hidden="true" size={21} />
+              <span>{submitState.message}</span>
             </div>
           )}
 
@@ -166,8 +209,8 @@ export default function ContactForm() {
             {errors.message && <small id="message-error">{errors.message}</small>}
           </label>
 
-          <button className="button button-primary submit-button" type="submit">
-            Anfrage senden
+          <button className="button button-primary submit-button" type="submit" disabled={isSending}>
+            {isSending ? 'Wird gesendet...' : 'Anfrage senden'}
             <ArrowRight aria-hidden="true" size={18} />
           </button>
         </form>

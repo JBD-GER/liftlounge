@@ -1054,13 +1054,30 @@ label small {
   line-height: 1.55;
 }
 
-.success-message svg {
+.error-message {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(166, 97, 99, 0.32);
+  border-radius: 8px;
+  background: rgba(214, 161, 157, 0.12);
+  color: #6e3839;
+  line-height: 1.55;
+}
+
+.success-message svg,
+.error-message svg {
   flex: 0 0 auto;
   margin-top: 2px;
 }
 
 .submit-button {
   min-height: 54px;
+}
+
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
 }
 
 .faq-list {
