@@ -7,8 +7,8 @@ export const guidePosts = [
       'Was ist Wimpernlifting, für wen eignet es sich und worauf solltest du vor deinem Termin in Hannover achten?',
     date: '2026-06-12',
     readingTime: '5 Min.',
-    image: '/images/ratgeber-wimpernlifting-hannover.svg',
-    imageAlt: 'Grafik mit Auge und gelifteten Wimpern für Wimpernlifting Hannover',
+    image: '/images/ratgeber-wimpernlifting-hannover.jpg',
+    imageAlt: 'Natürliches Wimpernlifting Ergebnis in einem hellen Beauty-Studio',
     intro:
       'Wimpernlifting ist eine beliebte Behandlung, wenn du deine eigenen Naturwimpern sichtbarer, geschwungener und gepflegter wirken lassen möchtest. Gerade für Kundinnen aus Hannover und der Region ist es eine schöne Alternative zu Wimpernextensions.',
     sections: [
@@ -43,8 +43,8 @@ export const guidePosts = [
       'Wie lange ein Wimpernlifting hält, was die Haltbarkeit beeinflusst und welche Pflege nach dem Termin wichtig ist.',
     date: '2026-06-12',
     readingTime: '4 Min.',
-    image: '/images/ratgeber-wimpernlifting-haltbarkeit.svg',
-    imageAlt: 'Grafik zu Haltbarkeit und Pflege nach einem Wimpernlifting',
+    image: '/images/ratgeber-wimpernlifting-haltbarkeit.jpg',
+    imageAlt: 'Frau pflegt ihre gelifteten Wimpern mit einem sauberen Wimpernbürstchen',
     intro:
       'Ein gutes Wimpernlifting soll nicht nur direkt nach dem Termin schön aussehen, sondern möglichst lange gepflegt bleiben. Die Haltbarkeit hängt von deinem Wimpernwachstum, der Behandlung und der Pflege danach ab.',
     sections: [
@@ -79,8 +79,8 @@ export const guidePosts = [
       'Wimpernlifting und Wimpernverlängerung im Vergleich: natürliche Wimpern, Pflegeaufwand und Ergebnis.',
     date: '2026-06-12',
     readingTime: '5 Min.',
-    image: '/images/ratgeber-wimpernlifting-vergleich.svg',
-    imageAlt: 'Grafik als Vergleich zwischen Wimpernlifting und Wimpernverlängerung',
+    image: '/images/ratgeber-wimpernlifting-vergleich.jpg',
+    imageAlt: 'Lash Lifting Behandlung mit natürlichem Wimpernergebnis in ruhiger Studioatmosphäre',
     intro:
       'Viele Kundinnen suchen nach einem frischeren Augenaufschlag und fragen sich, ob Wimpernlifting oder Wimpernverlängerung besser passt. Der wichtigste Unterschied: Beim Wimpernlifting werden deine eigenen Wimpern betont.',
     sections: [

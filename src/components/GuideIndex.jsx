@@ -17,7 +17,7 @@ export default function GuideIndex() {
         title="Ratgeber | Wimpernlifting Hannover"
         description="LiftLounge Ratgeber mit SEO-Beiträgen zu Wimpernlifting, Haltbarkeit, Pflege und Lash Lifting in Hannover."
         path="/ratgeber"
-        image="/images/ratgeber-wimpernlifting-hannover.svg"
+        image="/images/ratgeber-wimpernlifting-hannover.jpg"
         schema={guideSchema}
       />
       <main className="guide-main">
@@ -36,8 +36,8 @@ export default function GuideIndex() {
               </p>
             </div>
             <img
-              src="/images/ratgeber-wimpernlifting-hannover.svg"
-              alt="SVG-Grafik zum Wimpernlifting Ratgeber"
+              src="/images/ratgeber-wimpernlifting-hannover.jpg"
+              alt="Natürliches Wimpernlifting Ergebnis in einem hellen Beauty-Studio"
               width="1200"
               height="800"
               decoding="async"
