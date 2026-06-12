@@ -6,11 +6,15 @@ import CookieConsent from './components/CookieConsent.jsx';
 import FAQ from './components/FAQ.jsx';
 import Footer from './components/Footer.jsx';
 import Gallery from './components/Gallery.jsx';
+import GuideIndex from './components/GuideIndex.jsx';
+import GuidePost from './components/GuidePost.jsx';
+import GuideTeaser from './components/GuideTeaser.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import LegalPage from './components/LegalPage.jsx';
 import Location from './components/Location.jsx';
 import MobileCTA from './components/MobileCTA.jsx';
+import NotFound from './components/NotFound.jsx';
 import Pricing from './components/Pricing.jsx';
 import Process from './components/Process.jsx';
 import SEO from './components/SEO.jsx';
@@ -18,6 +22,7 @@ import Services from './components/Services.jsx';
 import TrainingIntro from './components/TrainingIntro.jsx';
 import TrainingSection from './components/TrainingSection.jsx';
 import WhyLiftLounge from './components/WhyLiftLounge.jsx';
+import { getGuidePost } from './data/guideData.js';
 import { faqs, localBusinessSchema, serviceSchema } from './data/siteData.js';
 
 const legalPaths = ['/impressum', '/datenschutz', '/agb'];
@@ -53,8 +58,8 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="LiftLounge | Lash Lifting & Brow Lifting Barsinghausen"
-        description="Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen bei Hannover. Natürlich, gepflegt und hochwertig."
+        title="LiftLounge | Lash Lifting Hannover"
+        description="Lash Lifting Hannover bei LiftLounge: natürliche Wimpern, Brow Lifting und Kombi-Behandlungen am Standort Barsinghausen."
         path="/"
         schema={[localBusinessSchema, serviceSchema, faqSchema()]}
       />
@@ -70,6 +75,7 @@ function HomePage() {
         <WhyLiftLounge />
         <TrainingSection />
         <Location />
+        <GuideTeaser />
         <ContactForm />
         <FAQ />
       </main>
@@ -82,11 +88,26 @@ export default function App() {
   const pathname = usePathname();
   const normalizedPath = pathname.replace(/\/$/, '') || '/';
   const isLegalPage = legalPaths.includes(normalizedPath);
+  const guideMatch = normalizedPath.match(/^\/ratgeber\/(.+)$/);
+  const guidePost = guideMatch ? getGuidePost(guideMatch[1]) : null;
+  const isHome = normalizedPath === '/';
+
+  let page = <NotFound />;
+
+  if (isHome) {
+    page = <HomePage />;
+  } else if (isLegalPage) {
+    page = <LegalPage path={normalizedPath} />;
+  } else if (normalizedPath === '/ratgeber') {
+    page = <GuideIndex />;
+  } else if (guidePost) {
+    page = <GuidePost post={guidePost} />;
+  }
 
   return (
     <>
-      <Header isHome={!isLegalPage} />
-      {isLegalPage ? <LegalPage path={normalizedPath} /> : <HomePage />}
+      <Header isHome={isHome} />
+      {page}
       <Footer />
       <CookieConsent />
     </>

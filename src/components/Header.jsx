@@ -5,7 +5,10 @@ import { navigation, site } from '../data/siteData.js';
 export default function Header({ isHome }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const getHref = (href) => (isHome ? href : `/${href}`);
+  const getHref = (href) => {
+    if (href.startsWith('/')) return href;
+    return isHome ? href : `/${href}`;
+  };
 
   return (
     <header className="site-header">

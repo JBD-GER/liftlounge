@@ -24,9 +24,8 @@ export default function TrainingIntro() {
           <div className="soft-callout">
             <Sparkles aria-hidden="true" size={20} />
             <span>
-              Ideal für alle, die Lash Lifting, Brow Lifting oder eine
-              kombinierte Beauty-Behandlung in Barsinghausen bei Hannover
-              suchen.
+              Ideal für alle, die Lash Lifting Hannover suchen und einen
+              ruhigen Beauty-Standort in Barsinghausen bevorzugen.
             </span>
           </div>
         </div>

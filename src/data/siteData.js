@@ -31,6 +31,7 @@ export const navigation = [
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'Ablauf', href: '#ablauf' },
   { label: 'Preise', href: '#preise' },
+  { label: 'Ratgeber', href: '/ratgeber' },
   { label: 'Schulungen', href: '#schulungen' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
@@ -59,7 +60,7 @@ export const benefits = [
   },
   {
     title: 'Studio in Barsinghausen',
-    text: 'Ruhiger Beauty-Standort in der Region Hannover, gut erreichbar aus der Umgebung.',
+    text: 'Ruhiger Standort bei Hannover: Am Schafanger 12 in 30890 Barsinghausen.',
     icon: MapPin,
   },
   {
@@ -109,7 +110,7 @@ export const audience = [
   'Du möchtest einen offenen Blick ohne Wimpernextensions',
   'Deine Naturwimpern sollen geschwungener und dunkler wirken',
   'Deine Augenbrauen sollen voller, geordneter und definierter aussehen',
-  'Du suchst Lash Lifting oder Brow Lifting in Barsinghausen bei Hannover',
+  'Du suchst Lash Lifting Hannover mit Standort in Barsinghausen',
   'Du möchtest eine ruhige Behandlung mit sauberem, natürlichem Ergebnis',
 ];
 
@@ -299,7 +300,7 @@ export const localBusinessSchema = {
   priceRange: '65-130 EUR',
   image: '/images/model-1.jpg',
   description:
-    'LiftLounge bietet Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen bei Hannover.',
+    'LiftLounge bietet Lash Lifting Hannover, Brow Lifting und Kombi-Behandlungen am Standort Barsinghausen.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Am Schafanger 12',
@@ -332,14 +333,14 @@ export const localBusinessSchema = {
 export const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Lash Lifting und Brow Lifting Barsinghausen',
+  name: 'Lash Lifting Hannover',
   description:
-    'Kosmetische Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen bei LiftLounge in Barsinghausen.',
+    'Kosmetische Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen bei LiftLounge am Standort Barsinghausen bei Hannover.',
   provider: {
     '@type': 'BeautySalon',
     name: 'LiftLounge',
     telephone: '+491756529911',
   },
-  areaServed: 'Barsinghausen, Hannover und Region Hannover',
+  areaServed: 'Hannover, Barsinghausen und Region Hannover',
   serviceType: ['Lash Lifting', 'Brow Lifting', 'Korean Lash Lifting'],
 };

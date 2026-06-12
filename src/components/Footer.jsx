@@ -14,8 +14,8 @@ export default function Footer() {
             </span>
           </a>
           <p>
-            Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen
-            bei Hannover.
+            Lash Lifting Hannover, Brow Lifting und Kombi-Behandlungen am
+            Standort Barsinghausen.
           </p>
         </div>
 
@@ -41,6 +41,7 @@ export default function Footer() {
           <a href="/impressum">Impressum</a>
           <a href="/datenschutz">Datenschutz</a>
           <a href="/agb">AGB</a>
+          <a href="/ratgeber">Ratgeber</a>
           <a href="/#kontakt">Kontakt</a>
         </nav>
       </div>

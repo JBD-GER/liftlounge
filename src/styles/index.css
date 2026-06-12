@@ -1257,6 +1257,208 @@ label small {
   display: none;
 }
 
+.guide-main,
+.article-main {
+  background: linear-gradient(180deg, var(--soft), #fff 36%);
+}
+
+.guide-hero,
+.article-hero {
+  padding-bottom: 42px;
+}
+
+.guide-hero-grid,
+.article-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.8fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.guide-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.96;
+}
+
+.article-hero h1 {
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 0.96;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.guide-hero p,
+.article-hero p {
+  max-width: 700px;
+  font-size: 1.08rem;
+}
+
+.guide-hero img,
+.article-hero img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+}
+
+.guide-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.guide-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.guide-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: var(--soft);
+}
+
+.guide-card-body {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.guide-card h2 {
+  margin-bottom: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  line-height: 1.08;
+}
+
+.guide-card p {
+  margin-bottom: 0;
+}
+
+.read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.article-content {
+  max-width: 860px;
+  padding-bottom: 96px;
+}
+
+.article-content section {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.article-content h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.article-content p {
+  font-size: 1.04rem;
+}
+
+.article-cta {
+  margin: 44px 0;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.article-cta h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.related-posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.related-post {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.related-post span {
+  color: var(--rose-strong);
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.related-post strong {
+  line-height: 1.35;
+}
+
+.guide-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.guide-teaser-card {
+  display: grid;
+  gap: 12px;
+  overflow: hidden;
+  padding-bottom: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.guide-teaser-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: var(--soft);
+}
+
+.guide-teaser-card span,
+.guide-teaser-card strong {
+  margin-inline: 22px;
+}
+
+.guide-teaser-card span {
+  color: var(--rose-strong);
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.guide-teaser-card strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.36rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.guide-teaser-button {
+  margin-top: 22px;
+}
+
 .legal-main {
   background: linear-gradient(180deg, var(--soft), #fff 42%);
 }
@@ -1367,7 +1569,9 @@ label small {
   .split-layout,
   .location-layout,
   .contact-layout,
-  .training-layout {
+  .training-layout,
+  .guide-hero-grid,
+  .article-hero-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1382,7 +1586,9 @@ label small {
   }
 
   .process-list,
-  .pricing-grid {
+  .pricing-grid,
+  .guide-card-grid,
+  .guide-teaser-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1484,6 +1690,9 @@ label small {
   .audience-grid,
   .process-list,
   .pricing-grid,
+  .guide-card-grid,
+  .guide-teaser-grid,
+  .related-posts,
   .gallery-grid,
   .form-grid,
   .footer-grid {
@@ -1503,8 +1712,29 @@ label small {
   .split-layout,
   .location-layout,
   .contact-layout,
-  .training-layout {
+  .training-layout,
+  .guide-hero-grid,
+  .article-hero-grid {
     gap: 32px;
+  }
+
+  .guide-hero,
+  .article-hero {
+    padding-bottom: 20px;
+  }
+
+  .guide-hero h1,
+  .article-hero h1 {
+    font-size: clamp(2.35rem, 11vw, 3.35rem);
+    line-height: 1;
+  }
+
+  .article-content {
+    padding-bottom: 68px;
+  }
+
+  .article-cta {
+    padding: 22px;
   }
 
   .section-heading,

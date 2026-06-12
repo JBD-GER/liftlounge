@@ -66,8 +66,8 @@ export default function ContactForm() {
           <h2>Termin anfragen</h2>
           <p>
             Sende deine Anfrage für Lash Lifting, Brow Lifting oder eine
-            Kombi-Behandlung in Barsinghausen. Du erhältst anschließend eine
-            persönliche Rückmeldung zu freien Terminen und nächsten Schritten.
+            Kombi-Behandlung. Der Standort ist in Barsinghausen, gut erreichbar
+            für Hannover und die Region Hannover.
           </p>
           <a className="direct-call" href={site.phoneHref}>
             <Phone aria-hidden="true" size={20} />

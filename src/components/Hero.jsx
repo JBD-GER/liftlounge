@@ -6,11 +6,11 @@ export default function Hero() {
     <section className="hero section-band" id="top">
       <div className="container hero-grid">
         <div className="hero-copy animate-in">
-          <p className="eyebrow">Lash Lifting & Brow Lifting Barsinghausen</p>
-          <h1>LiftLounge</h1>
+          <p className="eyebrow">LiftLounge by Lea Kirfel</p>
+          <h1>Lash Lifting Hannover</h1>
           <p className="hero-claim">
-            Lash Lifting, Korean Lash Lifting und Brow Lifting in Barsinghausen
-            bei Hannover. Natürlich, gepflegt und hochwertig.
+            Natürlich geliftete Wimpern und gepflegte Brows am Standort
+            Barsinghausen. Für Hannover, die Region Hannover und Umgebung.
           </p>
           <div className="hero-actions" aria-label="Kontaktoptionen">
             <a className="button button-primary" href="#kontakt">
