@@ -9,8 +9,8 @@ export default function Hero() {
           <p className="eyebrow">LiftLounge by Lea Kirfel</p>
           <h1>Lash Lifting Hannover</h1>
           <p className="hero-claim">
-            Natürlich geliftete Wimpern und gepflegte Brows am Standort
-            Barsinghausen. Für Hannover, die Region Hannover und Umgebung.
+            Natürlich geliftete Wimpern am Standort Barsinghausen. Für
+            Hannover, die Region Hannover und Umgebung.
           </p>
           <div className="hero-actions" aria-label="Kontaktoptionen">
             <a className="button button-primary" href="#kontakt">
@@ -35,19 +35,19 @@ export default function Hero() {
         <div className="hero-visual animate-in delay-1">
           <img
             src="/images/model-1.jpg"
-            alt="Lash und Brow Lifting Behandlung bei LiftLounge in einem hellen Beauty-Studio"
+            alt="Lash Lifting Behandlung bei LiftLounge in einem hellen Beauty-Studio"
             width="1400"
             height="933"
             decoding="async"
             fetchPriority="high"
           />
-          <div className="hero-note" aria-label="Lash und Brow Behandlung">
+          <div className="hero-note" aria-label="Lash Lifting Behandlung">
             <span className="note-icon">
               <Award aria-hidden="true" size={19} />
             </span>
             <span>
               <strong>Färben & Pflege inklusive</strong>
-              <small>für Lash & Brow Liftings</small>
+              <small>für gepflegte Naturwimpern</small>
             </span>
           </div>
           <div className="hero-badge">

@@ -7,11 +7,10 @@ export default function Pricing() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Preise & Pakete</p>
-          <h2>Preise für Lash Lifting und Brow Lifting</h2>
+          <h2>Preis für Lash Lifting</h2>
           <p>
-            Wähle deine Behandlung einzeln oder als Kombi. Färben und die
-            pflegende Keratin-Komponente sind in den aufgeführten Angeboten
-            bereits enthalten.
+            Das Angebot ist bewusst klar gehalten: Lash Lifting inklusive
+            Färben und pflegender Keratin-Komponente.
           </p>
         </div>
         <div className="pricing-grid">

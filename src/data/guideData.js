@@ -102,7 +102,7 @@ export const guidePosts = [
         heading: 'Welche Behandlung passt zu dir?',
         paragraphs: [
           'Wenn du aus Hannover kommst und eine natürliche Behandlung mit wenig Alltagsaufwand suchst, ist Wimpernlifting eine sehr gute Option.',
-          'Am Standort Barsinghausen kann zusätzlich Brow Lifting kombiniert werden, wenn Wimpern und Augenbrauen zusammen harmonisch wirken sollen.',
+          'Am Standort Barsinghausen wird der Fokus bewusst ruhig gehalten: natürliches Wimpernlifting mit klarer Beratung und gepflegtem Finish.',
         ],
       },
     ],

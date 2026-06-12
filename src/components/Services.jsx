@@ -7,11 +7,10 @@ export default function Services() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Leistungen</p>
-          <h2>Lash Lifting, Brow Lifting und Kombi-Looks</h2>
+          <h2>Lash Lifting für natürlich schöne Wimpern</h2>
           <p>
-            Der Fokus liegt auf kosmetischen Behandlungen, die deine eigenen
-            Wimpern und Brauen veredeln. Schulungen sind ergänzend möglich, aber
-            nicht der Hauptfokus der Website.
+            Der Fokus liegt auf einer ruhigen, sauberen Wimpernbehandlung, die
+            deine eigenen Naturwimpern sichtbar anhebt, färbt und pflegt.
           </p>
         </div>
 

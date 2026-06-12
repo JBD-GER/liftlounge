@@ -1,6 +1,6 @@
 # LiftLounge
 
-Moderne Onepager-Website für LiftLounge, gebaut mit React und Vite. Der Hauptfokus liegt auf Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen bei Hannover. Schulungen sind als sekundärer Bereich vorbereitet.
+Moderne Onepager-Website für LiftLounge, gebaut mit React und Vite. Der Hauptfokus liegt auf Lash Lifting Hannover am Standort Barsinghausen. Schulungen sind als sekundärer Bereich vorbereitet.
 
 ## Lokal starten
 

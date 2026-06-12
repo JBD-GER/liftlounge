@@ -7,11 +7,11 @@ export default function Audience() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Für wen?</p>
-          <h2>Für wen eignen sich Lash & Brow Liftings?</h2>
+          <h2>Für wen eignet sich Lash Lifting?</h2>
           <p>
-            Lash Lifting und Brow Lifting eignen sich, wenn du deine natürlichen
-            Wimpern und Augenbrauen betonen möchtest, ohne täglich viel Zeit in
-            Styling, Mascara oder Brow-Gel zu investieren.
+            Lash Lifting eignet sich, wenn du deine natürlichen Wimpern
+            sichtbarer betonen möchtest, ohne täglich viel Zeit in Mascara oder
+            Wimpernzange zu investieren.
           </p>
         </div>
         <div className="audience-grid">

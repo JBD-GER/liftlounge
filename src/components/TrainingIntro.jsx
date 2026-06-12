@@ -6,20 +6,20 @@ export default function TrainingIntro() {
       <div className="container split-layout">
         <div>
           <p className="eyebrow">Über LiftLounge</p>
-          <h2>Schöne Wimpern und Brauen, ohne künstlich zu wirken</h2>
+          <h2>Schöne Wimpern, ohne künstlich zu wirken</h2>
         </div>
         <div className="text-stack">
           <p>
-            Bei LiftLounge stehen Lash Lifting und Brow Lifting im Mittelpunkt:
-            Behandlungen, die deine natürlichen Wimpern und Augenbrauen
-            sichtbar betonen, ohne Extensions oder einen überzeichneten Look.
-            Das Ergebnis soll frisch, gepflegt und typgerecht wirken.
+            Bei LiftLounge steht Lash Lifting im Mittelpunkt: eine Behandlung,
+            die deine natürlichen Wimpern sichtbar betont, ohne Extensions oder
+            einen überzeichneten Look. Das Ergebnis soll frisch, gepflegt und
+            typgerecht wirken.
           </p>
           <p>
             Jede Behandlung wird ruhig vorbereitet: kurze Beratung, Reinigung,
-            präzises Formen, Färben und eine pflegende Keratin-Komponente. So
-            entsteht ein Augenaufschlag, der im Alltag funktioniert und trotzdem
-            hochwertig aussieht.
+            präzises Positionieren, Färben und eine pflegende
+            Keratin-Komponente. So entsteht ein Augenaufschlag, der im Alltag
+            funktioniert und trotzdem hochwertig aussieht.
           </p>
           <div className="soft-callout">
             <Sparkles aria-hidden="true" size={20} />

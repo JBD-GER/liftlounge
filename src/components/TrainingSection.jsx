@@ -7,11 +7,11 @@ export default function TrainingSection() {
       <div className="container training-layout">
         <div>
           <p className="eyebrow">Schulungen</p>
-          <h2>Ergänzende Lash & Brow Schulungen auf Anfrage</h2>
+          <h2>Ergänzende Lash Lifting Schulung auf Anfrage</h2>
           <p>
-            Neben den kosmetischen Behandlungen können Schulungen für Lash
-            Lifting und Brow Lifting angefragt werden. Dieser Bereich ist
-            bewusst sekundär und wird persönlich abgestimmt.
+            Neben der kosmetischen Behandlung kann eine Lash Lifting Schulung
+            angefragt werden. Dieser Bereich bleibt bewusst sekundär und wird
+            persönlich abgestimmt.
           </p>
           <a className="button button-secondary" href="#kontakt">
             Schulung anfragen
