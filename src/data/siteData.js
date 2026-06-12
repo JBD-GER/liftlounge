@@ -1,17 +1,14 @@
 import {
-  Award,
-  BookOpenCheck,
   CalendarCheck,
   CheckCircle2,
   ClipboardList,
-  GraduationCap,
   HeartHandshake,
   MapPin,
   MessageCircle,
-  Phone,
   ShieldCheck,
   Sparkles,
-  UserCheck,
+  Star,
+  Wand2,
 } from 'lucide-react';
 
 export const site = {
@@ -31,208 +28,265 @@ export const site = {
 };
 
 export const navigation = [
-  { label: 'Schulung', href: '#schulung' },
+  { label: 'Leistungen', href: '#leistungen' },
   { label: 'Ablauf', href: '#ablauf' },
   { label: 'Preise', href: '#preise' },
-  { label: 'Standort', href: '#standort' },
+  { label: 'Schulungen', href: '#schulungen' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 
 export const heroHighlights = [
-  'Persönliche 1:1 Betreuung',
-  'Praxis am Modell',
-  'Zertifikat inklusive',
+  'Lash Lifting',
+  'Brow Lifting',
+  'Kombi-Behandlung',
 ];
 
 export const benefits = [
   {
-    title: '1:1 Betreuung',
-    text: 'Du lernst in ruhiger Atmosphäre mit direktem Feedback und genügend Raum für Fragen.',
-    icon: HeartHandshake,
+    title: 'Natürlicher Schwung',
+    text: 'Deine eigenen Wimpern werden sichtbar angehoben, gefärbt und gepflegt.',
+    icon: Wand2,
   },
   {
-    title: 'Praxisnah am Modell',
-    text: 'Die Anwendung wird Schritt für Schritt erklärt und unter Anleitung praktisch geübt.',
-    icon: UserCheck,
+    title: 'Ausdrucksstarke Brows',
+    text: 'Brow Lifting bringt deine Augenbrauen in Form und sorgt für einen offenen Blick.',
+    icon: Sparkles,
   },
   {
-    title: 'Zertifikat inklusive',
-    text: 'Nach erfolgreicher Teilnahme erhältst du ein Zertifikat für deine Unterlagen.',
-    icon: Award,
+    title: 'Färben & Pflege',
+    text: 'Die Behandlungen sind mit Färben und pflegender Keratin-Komponente aufgebaut.',
+    icon: Star,
   },
   {
-    title: 'Standort Barsinghausen',
-    text: 'Die Schulung findet vor Ort in Barsinghausen in der Region Hannover statt.',
+    title: 'Studio in Barsinghausen',
+    text: 'Ruhiger Beauty-Standort in der Region Hannover, gut erreichbar aus der Umgebung.',
     icon: MapPin,
   },
   {
-    title: 'Für Anfängerinnen',
-    text: 'Der Kurs ist so aufgebaut, dass du auch ohne Vorerfahrung sicher starten kannst.',
-    icon: Sparkles,
+    title: 'Kombi möglich',
+    text: 'Lash Lifting und Brow Lifting können in einem abgestimmten Termin kombiniert werden.',
+    icon: CheckCircle2,
+  },
+];
+
+export const services = [
+  {
+    name: 'Lash Lifting',
+    eyebrow: 'Wimpern',
+    price: 'ab 65 €',
+    duration: 'ca. 60-90 Min.',
+    image: '/images/model-2.jpg',
+    alt: 'Natürliches Lash Lifting Ergebnis mit gepflegten Wimpern und Augenbrauen',
+    description:
+      'Für sichtbar geliftete, dunklere und gepflegte Naturwimpern ohne Extensions. Ideal, wenn du dir einen wachen Blick und einen Mascara-Look ohne tägliches Tuschen wünschst.',
+    features: ['Classic Lash Lifting', 'Korean Lash Lifting', 'inkl. Färben & Keratin', 'Effekt bis zu 6-8 Wochen'],
+  },
+  {
+    name: 'Brow Lifting',
+    eyebrow: 'Augenbrauen',
+    price: '65 €',
+    duration: 'ca. 60 Min.',
+    image: '/images/model-3.jpg',
+    alt: 'Brow Lifting Behandlung mit Bürstchen in einem hellen Beauty-Studio',
+    description:
+      'Für vollere, definierte und sauber gestylte Brauen. Die Härchen werden geordnet, gefärbt, gezupft und mit pflegenden Wirkstoffen versorgt.',
+    features: ['Brow Lamination Effekt', 'inkl. Färben & Keratin', 'Zupfen & Styling', 'Haltbarkeit ca. 4-8 Wochen'],
+  },
+  {
+    name: 'Lash & Brow Kombi',
+    eyebrow: 'Kombi',
+    price: 'ab 120 €',
+    duration: 'ca. 90 Min.',
+    image: '/images/model-1.jpg',
+    alt: 'Kosmetische Lash und Brow Behandlung auf einer Behandlungsliege',
+    description:
+      'Die passende Behandlung, wenn Wimpern und Brauen zusammen harmonisch wirken sollen. Praktisch, ruhig und mit einem sichtbaren Vorher-Nachher-Gefühl.',
+    features: ['Lash Lifting + Brow Lifting', 'Classic oder Korean möglich', 'inkl. Färben & Pflege', 'ein Termin für den kompletten Look'],
   },
 ];
 
 export const audience = [
-  'Anfängerinnen, die Wimpernlifting lernen möchten',
-  'Beauty-Dienstleisterinnen mit Wunsch nach einem neuen Angebot',
-  'Kosmetikerinnen, die ihre Behandlungen erweitern wollen',
-  'Gründerinnen auf dem Weg in die Selbstständigkeit',
-  'Personen, die eine Beauty Schulung vor Ort mit Zertifikat suchen',
+  'Du möchtest einen offenen Blick ohne Wimpernextensions',
+  'Deine Naturwimpern sollen geschwungener und dunkler wirken',
+  'Deine Augenbrauen sollen voller, geordneter und definierter aussehen',
+  'Du suchst Lash Lifting oder Brow Lifting in Barsinghausen bei Hannover',
+  'Du möchtest eine ruhige Behandlung mit sauberem, natürlichem Ergebnis',
 ];
 
 export const processSteps = [
   {
-    title: 'Anfrage stellen',
-    text: 'Du sendest eine kurze Anfrage mit deinen Wünschen und deiner aktuellen Erfahrung.',
+    title: 'Termin anfragen',
+    text: 'Du meldest dich telefonisch oder über das Formular und nennst deine Wunschbehandlung.',
     icon: MessageCircle,
   },
   {
     title: 'Termin abstimmen',
-    text: 'Gemeinsam wird ein passender Schulungstermin in Barsinghausen abgestimmt.',
+    text: 'Gemeinsam wird ein passender Termin am Standort Barsinghausen vereinbart.',
     icon: CalendarCheck,
   },
   {
-    title: 'Vorbereitung & Theorie',
-    text: 'Du erhältst die wichtigsten Grundlagen zu Hygiene, Produkten, Indikationen und Ablauf.',
-    icon: BookOpenCheck,
+    title: 'Kurze Beratung',
+    text: 'Vor Ort werden Wunsch, Naturwimpern, Brauenform und mögliche Hinweise besprochen.',
+    icon: HeartHandshake,
   },
   {
-    title: 'Praxistag vor Ort',
-    text: 'Am Schulungstag werden Technik, Beratung und sichere Anwendung detailliert besprochen.',
+    title: 'Vorbereitung',
+    text: 'Wimpern oder Brauen werden gereinigt, vorbereitet und typgerecht positioniert.',
     icon: ClipboardList,
   },
   {
-    title: 'Übung am Modell',
-    text: 'Du setzt das Gelernte praktisch um und bekommst direktes, ruhiges Feedback.',
-    icon: CheckCircle2,
+    title: 'Lifting & Farbe',
+    text: 'Die Lifting-Lotionen, Farbe und Pflege werden sorgfältig und ruhig angewendet.',
+    icon: Wand2,
   },
   {
-    title: 'Zertifikat erhalten',
-    text: 'Nach der Schulung nimmst du dein Zertifikat und klare nächste Schritte mit.',
-    icon: GraduationCap,
-  },
-  {
-    title: 'Weitere Betreuung',
-    text: 'Auf Wunsch kann eine spätere Begleitung oder ein Lernbereich ergänzt werden.',
+    title: 'Pflegefinish',
+    text: 'Zum Abschluss erhältst du dein Ergebnis und klare Pflegehinweise für die ersten 24 Stunden.',
     icon: ShieldCheck,
   },
 ];
 
 export const pricingPackages = [
   {
-    name: '1:1 Lashlifting Schulung',
-    eyebrow: 'Einzeltraining',
-    price: 'Preis auf Anfrage',
+    name: 'Classic Lash Lifting',
+    eyebrow: 'Wimpern',
+    price: '65 €',
     description:
-      'Persönliche Wimpernschulung für einen sicheren Start in die professionelle Lashlifting-Anwendung.',
-    features: [
-      'Theorie, Hygiene und Produktkunde',
-      'Schritt-für-Schritt Ablauf der Behandlung',
-      'Praxis am Modell vor Ort',
-      'Persönliches Feedback während der Anwendung',
-      'Zertifikat nach erfolgreicher Teilnahme',
-    ],
+      'Für natürlich geschwungene, gefärbte Wimpern mit gepflegtem Mascara-Effekt.',
+    features: ['inkl. Färben', 'inkl. Keratin-Pflege', 'ca. 60-90 Minuten', 'ohne künstliche Wimpern'],
   },
   {
-    name: '1:1 Intensiv Schulung',
-    eyebrow: 'Beliebt',
-    price: 'Preis auf Anfrage',
+    name: 'Korean Lash Lifting',
+    eyebrow: 'Premium Lash',
+    price: '75 €',
     description:
-      'Für Teilnehmerinnen, die besonders viel Praxis, Korrektur und Sicherheit für den Start wünschen.',
-    features: [
-      'Alle Inhalte der 1:1 Lashlifting Schulung',
-      'Vertiefung zu Analyse, Timing und Ergebnisqualität',
-      'Mehr Raum für individuelle Fragen',
-      'Fehlerquellen erkennen und vermeiden',
-      'Optionale Nachbetreuung nach dem Kurstag',
-    ],
+      'Intensiveres Lash Lifting mit präzisem Ansatzlift und besonders pflegendem Finish.',
+    features: ['inkl. Färben', 'inkl. Keratin-Pflege', 'präziser Lifting-Effekt', 'Effekt bis zu 6-8 Wochen'],
     featured: true,
   },
   {
-    name: 'Premium Begleitung',
-    eyebrow: 'Mehr Support',
-    price: 'Preis auf Anfrage',
+    name: 'Brow Lifting',
+    eyebrow: 'Brows',
+    price: '65 €',
     description:
-      'Für angehende Beauty-Dienstleisterinnen, die neben der Technik auch Struktur und Startklarheit suchen.',
-    features: [
-      'Individuelle Vorbereitung auf deinen Einstieg',
-      'Praxisorientierter Schulungstag in Barsinghausen',
-      'Behandlungsablauf, Kundinnenkommunikation und Sicherheit',
-      'Zertifikat inklusive',
-      'Vorbereitet für späteren Lernbereich oder Zusatzsupport',
-    ],
+      'Für vollere, ausdrucksstarke Augenbrauen mit Farbe, Form und natürlichem Styling.',
+    features: ['inkl. Färben', 'inkl. Keratin-Pflege', 'Zupfen & Styling', 'ca. 60 Minuten'],
+  },
+  {
+    name: 'Lash & Brow Kombi',
+    eyebrow: 'Kombi',
+    price: '120 €',
+    description:
+      'Classic Lash Lifting und Brow Lifting in einem abgestimmten Behandlungstermin.',
+    features: ['Lash + Brow', 'inkl. Färben', 'inkl. Keratin-Pflege', 'harmonischer Gesamtlook'],
+  },
+  {
+    name: 'Korean Lash & Brow Kombi',
+    eyebrow: 'Premium Kombi',
+    price: '130 €',
+    description:
+      'Korean Lash Lifting kombiniert mit Brow Lifting für ein besonders gepflegtes Ergebnis.',
+    features: ['Korean Lash Lifting', 'Brow Lifting', 'inkl. Färben & Keratin', 'Premium Pflegefinish'],
+  },
+];
+
+export const trainingOffers = [
+  {
+    name: 'Lash Lifting Schulung',
+    price: '649 €',
+    text: 'Ergänzendes Schulungsangebot nach persönlicher Anfrage und Terminabstimmung.',
+  },
+  {
+    name: 'Brow Lifting Schulung',
+    price: '649 €',
+    text: 'Für Beauty-Interessierte, die Brow Lifting professionell erlernen möchten.',
+  },
+  {
+    name: 'Lash & Brow Kombi-Schulung',
+    price: '1.200 €',
+    text: 'Kombi-Angebot über zwei Behandlungsschwerpunkte, nur nach vorheriger Rücksprache.',
   },
 ];
 
 export const gallery = [
   {
     src: '/images/model-1.jpg',
-    alt: 'Trainerin begleitet eine Teilnehmerin bei einer Lashlifting Schulung in einem hellen Beauty-Studio',
-    title: 'Ruhig lernen',
-    text: 'Persönliche Anleitung statt Massenkurs.',
+    alt: 'Kosmetikerin führt eine Lash und Brow Behandlung in einem hellen Studio aus',
+    title: 'Behandlung',
+    text: 'Ruhig, präzise und typgerecht.',
   },
   {
     src: '/images/model-2.jpg',
-    alt: 'Beauty-Portrait mit natürlichen Wimpern als Beispiel für ein gepflegtes Lashlifting-Ergebnis',
-    title: 'Feine Ergebnisse',
-    text: 'Natürlich, sauber und typgerecht arbeiten.',
+    alt: 'Natürliches Lash Lifting Ergebnis mit gepflegtem Augenaufschlag',
+    title: 'Lash Lifting',
+    text: 'Natürlich geliftete Wimpern.',
   },
   {
     src: '/images/model-3.jpg',
-    alt: 'Lashlifting Tools und Zertifikatsmappe auf einem hochwertigen Schulungstisch',
-    title: 'Klarer Ablauf',
-    text: 'Struktur, Materialkunde und Praxis greifen ineinander.',
+    alt: 'Brow Lifting Behandlung mit Augenbrauenbürste und Beauty-Tools',
+    title: 'Brow Lifting',
+    text: 'Definierte, gepflegte Brauen.',
   },
 ];
 
 export const whyLiftLounge = [
-  'Kleine Schulungsgröße mit voller Aufmerksamkeit für deine Fragen',
-  'Verständliche Erklärungen statt überladener Theorie',
-  'Hochwertige, ruhige Lernatmosphäre für konzentriertes Arbeiten',
-  'Praxisnaher Aufbau mit direktem Feedback',
-  'Ideal als Einstieg in professionelle Lash- und Beauty-Dienstleistungen',
+  'Fokus auf natürliche Ergebnisse statt überzeichnetem Look',
+  'Lash Lifting und Brow Lifting als klare Kernleistungen',
+  'Ruhige Behandlungssituation mit persönlicher Abstimmung',
+  'Färben, Form und Pflege werden passend kombiniert',
+  'Schulungen bleiben bewusst ergänzend und werden separat angefragt',
 ];
 
 export const faqs = [
   {
-    question: 'Ist die Schulung für Anfängerinnen geeignet?',
+    question: 'Was ist ein Lash Lifting?',
     answer:
-      'Ja. Die 1:1 Wimpernschulung ist so aufgebaut, dass auch Anfängerinnen Schritt für Schritt Wimpernlifting lernen können. Vorerfahrung im Beauty-Bereich ist hilfreich, aber nicht zwingend erforderlich.',
+      'Beim Lash Lifting werden die eigenen Naturwimpern vom Ansatz aus sichtbar angehoben, gefärbt und gepflegt. Es werden keine künstlichen Wimpern aufgeklebt.',
   },
   {
-    question: 'Bekomme ich ein Zertifikat?',
+    question: 'Was ist ein Brow Lifting?',
     answer:
-      'Ja. Nach erfolgreicher Teilnahme erhältst du ein Zertifikat. Damit kannst du dokumentieren, dass du eine Lash Schulung mit Zertifikat bei LiftLounge absolviert hast.',
+      'Beim Brow Lifting werden die Augenbrauenhärchen in Form gebracht, gefärbt, gezupft und gestylt. Das Ergebnis wirkt voller, geordneter und öffnet den Blick.',
   },
   {
-    question: 'Findet die Schulung vor Ort statt?',
+    question: 'Wie lange hält das Ergebnis?',
     answer:
-      'Ja. Die Beauty Schulung vor Ort findet am Schulungsstandort Am Schafanger 12, 30890 Barsinghausen statt.',
+      'Ein Lash Lifting hält je nach Wimpernwachstum häufig etwa 6 bis 8 Wochen. Brow Lifting kann je nach Haarstruktur und Pflege etwa 4 bis 8 Wochen sichtbar bleiben.',
   },
   {
-    question: 'Muss ich ein Modell mitbringen?',
+    question: 'Wie lange dauert eine Behandlung?',
     answer:
-      'Das wird individuell bei der Terminabstimmung geklärt. Falls ein Modell benötigt wird, erhältst du rechtzeitig klare Hinweise zur Vorbereitung.',
+      'Für Lash Lifting solltest du etwa 60 bis 90 Minuten einplanen. Brow Lifting dauert etwa 60 Minuten. Eine Kombi-Behandlung kann entsprechend etwas länger dauern.',
   },
   {
-    question: 'Wie lange dauert die Schulung?',
+    question: 'Sind Färben und Keratin inklusive?',
     answer:
-      'Die genaue Dauer hängt vom gewählten Paket und deinem Kenntnisstand ab. Geplant wird mit ausreichend Zeit für Theorie, Vorbereitung, Praxis und Fragen.',
+      'Ja, die Lash- und Brow-Angebote sind mit Färben und pflegender Keratin-Komponente aufgebaut, sofern individuell nichts dagegen spricht.',
   },
   {
-    question: 'Kann ich danach direkt starten?',
+    question: 'Was muss ich vor dem Termin beachten?',
     answer:
-      'Die Schulung gibt dir eine fundierte Basis, um sicher weiterzuüben und dein Angebot professionell aufzubauen. Ob du direkt startest, hängt auch von Übung, Sicherheit und deinen lokalen Anforderungen ab.',
+      'Bitte komme möglichst ungeschminkt zum Termin. Wimpern und Augenbrauen sollten sauber sein, damit die Behandlung direkt und ohne unnötige Wartezeit starten kann.',
   },
   {
-    question: 'Gibt es spätere Unterstützung?',
+    question: 'Was muss ich nach der Behandlung beachten?',
     answer:
-      'Auf Wunsch kann eine weitere Betreuung abgestimmt werden. Ein optionaler Vorbereitungs- oder Lernbereich ist für die Zukunft bereits mitgedacht.',
+      'In den ersten 24 Stunden solltest du Wasser, Wasserdampf, Waschgel und Abschminkprodukte im behandelten Bereich vermeiden, damit das Ergebnis optimal hält.',
   },
   {
-    question: 'Wo findet die Schulung statt?',
+    question: 'Kann ich Lash Lifting und Brow Lifting kombinieren?',
     answer:
-      'Die Lashlifting Schulung findet in Barsinghausen statt und ist gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am Rübenberge, Seelze und der Region Hannover.',
+      'Ja. Die Kombi-Behandlung ist ideal, wenn Wimpern und Brauen zusammen frisch, gepflegt und harmonisch wirken sollen.',
+  },
+  {
+    question: 'Wo findet die Behandlung statt?',
+    answer:
+      'Die Behandlungen finden am Standort Am Schafanger 12, 30890 Barsinghausen statt. LiftLounge ist gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am Rübenberge, Seelze und der Region Hannover.',
+  },
+  {
+    question: 'Bietest du auch Schulungen an?',
+    answer:
+      'Ja, Schulungen für Lash Lifting und Brow Lifting werden ergänzend und nach persönlicher Anfrage angeboten. Der Hauptfokus der Website liegt jedoch auf den kosmetischen Behandlungen.',
   },
 ];
 
@@ -242,10 +296,10 @@ export const localBusinessSchema = {
   name: 'LiftLounge',
   founder: 'Lea Kirfel',
   telephone: '+491756529911',
-  priceRange: 'Auf Anfrage',
+  priceRange: '65-130 EUR',
   image: '/images/model-1.jpg',
   description:
-    'LiftLounge bietet persönliche 1:1 Lashlifting Schulungen in Barsinghausen bei Hannover mit Praxis am Modell und Zertifikat.',
+    'LiftLounge bietet Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen bei Hannover.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Am Schafanger 12',
@@ -265,32 +319,27 @@ export const localBusinessSchema = {
     'Neustadt am Rübenberge',
     'Seelze',
   ],
-  makesOffer: {
+  makesOffer: pricingPackages.map((item) => ({
     '@type': 'Offer',
-    name: '1:1 Lashlifting Schulung mit Zertifikat',
-    category: 'Beauty Schulung',
+    name: item.name,
+    category: 'Kosmetische Behandlung',
+    priceCurrency: 'EUR',
+    price: item.price.replace(' €', '').replace('.', ''),
     availability: 'https://schema.org/InStock',
-    priceSpecification: {
-      '@type': 'PriceSpecification',
-      priceCurrency: 'EUR',
-      description: 'Preis auf Anfrage',
-    },
-  },
+  })),
 };
 
-export const courseSchema = {
+export const serviceSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: 'Lashlifting Schulung Barsinghausen',
+  '@type': 'Service',
+  name: 'Lash Lifting und Brow Lifting Barsinghausen',
   description:
-    'Praxisnahe 1:1 Wimpernschulung in Barsinghausen bei Hannover mit persönlicher Betreuung, Modellarbeit und Zertifikat.',
+    'Kosmetische Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen bei LiftLounge in Barsinghausen.',
   provider: {
-    '@type': 'Organization',
+    '@type': 'BeautySalon',
     name: 'LiftLounge',
     telephone: '+491756529911',
   },
-  courseMode: 'In-person',
-  educationalCredentialAwarded: 'Zertifikat',
-  inLanguage: 'de',
-  areaServed: 'Region Hannover',
+  areaServed: 'Barsinghausen, Hannover und Region Hannover',
+  serviceType: ['Lash Lifting', 'Brow Lifting', 'Korean Lash Lifting'],
 };

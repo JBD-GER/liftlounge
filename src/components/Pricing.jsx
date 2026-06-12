@@ -7,12 +7,11 @@ export default function Pricing() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Preise & Pakete</p>
-          <h2>Pakete für deine 1:1 Wimpernschulung</h2>
+          <h2>Preise für Lash Lifting und Brow Lifting</h2>
           <p>
-            Die Pakete sind für unterschiedliche Startpunkte vorbereitet. Die
-            finalen Preise werden transparent vor der Terminbestätigung
-            abgestimmt, da der Referenzlink für die exakte Preisübernahme noch
-            fehlt.
+            Wähle deine Behandlung einzeln oder als Kombi. Färben und die
+            pflegende Keratin-Komponente sind in den aufgeführten Angeboten
+            bereits enthalten.
           </p>
         </div>
         <div className="pricing-grid">
@@ -34,7 +33,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a className="button button-primary full-width" href="#kontakt">
-                Schulung anfragen
+                Termin anfragen
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
             </article>

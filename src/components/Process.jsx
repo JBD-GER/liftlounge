@@ -6,10 +6,10 @@ export default function Process() {
       <div className="container">
         <div className="section-heading narrow">
           <p className="eyebrow">Ablauf</p>
-          <h2>Von der Anfrage bis zum Zertifikat</h2>
+          <h2>So läuft deine Behandlung ab</h2>
           <p>
-            Der Lashlifting Kurs in der Region Hannover ist klar strukturiert,
-            damit du jederzeit weißt, was als Nächstes passiert.
+            Vom ersten Kontakt bis zum Pflegefinish ist der Ablauf klar,
+            entspannt und auf ein sauberes Ergebnis ausgerichtet.
           </p>
         </div>
         <div className="process-list">

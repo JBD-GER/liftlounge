@@ -7,11 +7,11 @@ export default function Audience() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Für wen?</p>
-          <h2>Für Anfängerinnen, Gründerinnen und Beauty-Profis</h2>
+          <h2>Für wen eignen sich Lash & Brow Liftings?</h2>
           <p>
-            Die Schulung richtet sich an Menschen, die Wimpernlifting lernen,
-            ihr Angebot erweitern oder eine Beauty Schulung vor Ort mit
-            persönlichem Feedback absolvieren möchten.
+            Lash Lifting und Brow Lifting eignen sich, wenn du deine natürlichen
+            Wimpern und Augenbrauen betonen möchtest, ohne täglich viel Zeit in
+            Styling, Mascara oder Brow-Gel zu investieren.
           </p>
         </div>
         <div className="audience-grid">

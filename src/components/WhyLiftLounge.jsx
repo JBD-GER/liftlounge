@@ -7,7 +7,7 @@ export default function WhyLiftLounge() {
       <div className="container split-layout why-layout">
         <div>
           <p className="eyebrow">Warum LiftLounge?</p>
-          <h2>Kein Massenkurs. Eine Schulung, die dich wirklich abholt.</h2>
+          <h2>Natürlich gepflegt statt künstlich überladen.</h2>
         </div>
         <div className="why-panel">
           {whyLiftLounge.map((item) => (

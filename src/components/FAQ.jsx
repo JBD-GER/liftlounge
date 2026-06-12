@@ -7,7 +7,7 @@ export default function FAQ() {
       <div className="container">
         <div className="section-heading narrow">
           <p className="eyebrow">FAQ</p>
-          <h2>Häufige Fragen zur Lashlifting Schulung</h2>
+          <h2>Häufige Fragen zu Lash Lifting und Brow Lifting</h2>
         </div>
         <div className="faq-list">
           {faqs.map((item) => (

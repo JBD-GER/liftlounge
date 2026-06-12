@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
-import { pricingPackages, site } from '../data/siteData.js';
+import { pricingPackages, site, trainingOffers } from '../data/siteData.js';
 
 const initialForm = {
   name: '',
@@ -20,7 +20,7 @@ function validate(form) {
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
     errors.email = 'Bitte gib eine gültige E-Mail-Adresse ein.';
   }
-  if (!form.packageName) errors.packageName = 'Bitte wähle eine Schulung aus.';
+  if (!form.packageName) errors.packageName = 'Bitte wähle eine Behandlung aus.';
   if (!form.message.trim()) errors.message = 'Bitte schreibe kurz, worum es geht.';
 
   return errors;
@@ -30,7 +30,13 @@ export default function ContactForm() {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const packageOptions = useMemo(() => pricingPackages.map((plan) => plan.name), []);
+  const packageOptions = useMemo(
+    () => [
+      ...pricingPackages.map((plan) => plan.name),
+      ...trainingOffers.map((offer) => offer.name),
+    ],
+    [],
+  );
 
   function updateField(event) {
     const { name, value } = event.target;
@@ -57,11 +63,11 @@ export default function ContactForm() {
       <div className="container contact-layout">
         <div className="contact-copy">
           <p className="eyebrow">Kontakt</p>
-          <h2>Schulung anfragen</h2>
+          <h2>Termin anfragen</h2>
           <p>
-            Sende deine Anfrage für eine Wimpernschulung in Barsinghausen. Du
-            erhältst anschließend eine persönliche Rückmeldung zur passenden
-            Schulung, freien Terminen und nächsten Schritten.
+            Sende deine Anfrage für Lash Lifting, Brow Lifting oder eine
+            Kombi-Behandlung in Barsinghausen. Du erhältst anschließend eine
+            persönliche Rückmeldung zu freien Terminen und nächsten Schritten.
           </p>
           <a className="direct-call" href={site.phoneHref}>
             <Phone aria-hidden="true" size={20} />
@@ -128,7 +134,7 @@ export default function ContactForm() {
           </label>
 
           <label>
-            <span>Gewünschte Schulung / Paket</span>
+            <span>Gewünschte Behandlung / Interesse</span>
             <select
               name="packageName"
               value={form.packageName}

@@ -14,8 +14,8 @@ export default function Footer() {
             </span>
           </a>
           <p>
-            Hochwertige 1:1 Wimpernschulung und Lashlifting Schulung in
-            Barsinghausen bei Hannover.
+            Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen
+            bei Hannover.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export default function Footer() {
         </address>
 
         <address>
-          <strong>Standort der Ausführung</strong>
+          <strong>Standort der Behandlungen</strong>
           <span>{site.trainingAddress.street}</span>
           <span>{site.trainingAddress.postalCity}</span>
           <a href={site.phoneHref}>

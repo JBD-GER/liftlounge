@@ -6,7 +6,7 @@ export default function Gallery() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Einblicke</p>
-          <h2>Beauty-Schulung mit ruhiger, hochwertiger Atmosphäre</h2>
+          <h2>Beauty-Behandlungen mit ruhiger, hochwertiger Atmosphäre</h2>
         </div>
         <div className="gallery-grid">
           {gallery.map((image) => (

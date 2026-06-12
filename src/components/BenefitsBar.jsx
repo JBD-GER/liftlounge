@@ -2,7 +2,7 @@ import { benefits } from '../data/siteData.js';
 
 export default function BenefitsBar() {
   return (
-    <section className="benefit-strip" aria-label="Vorteile der Schulung">
+    <section className="benefit-strip" aria-label="Vorteile der Behandlungen">
       <div className="container benefit-grid">
         {benefits.map(({ title, text, icon: Icon }) => (
           <article className="benefit-item" key={title}>

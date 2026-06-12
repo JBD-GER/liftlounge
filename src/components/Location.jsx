@@ -7,16 +7,16 @@ export default function Location() {
       <div className="container location-layout">
         <div>
           <p className="eyebrow">Standort</p>
-          <h2>Lashlifting Schulung in Barsinghausen bei Hannover</h2>
+          <h2>Lash Lifting und Brow Lifting in Barsinghausen bei Hannover</h2>
           <p>
-            Die Schulung findet in Barsinghausen statt und ist gut erreichbar
-            aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am Rübenberge,
-            Seelze und der Region Hannover.
+            Die Behandlungen finden in Barsinghausen statt und sind gut
+            erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am
+            Rübenberge, Seelze und der Region Hannover.
           </p>
           <div className="address-block">
             <MapPin aria-hidden="true" size={22} />
             <address>
-              <strong>Standort der Schulung</strong>
+              <strong>Standort der Behandlungen</strong>
               <span>{site.trainingAddress.street}</span>
               <span>{site.trainingAddress.postalCity}</span>
             </address>

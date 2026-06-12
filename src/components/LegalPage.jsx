@@ -78,19 +78,19 @@ const pageContent = {
       {
         heading: 'Geltungsbereich',
         paragraphs: [
-          'Diese AGB sind ein Platzhalter. Sie müssen an die tatsächlichen Schulungsangebote, Zahlungsbedingungen, Stornoregeln und rechtlichen Anforderungen angepasst werden.',
+          'Diese AGB sind ein Platzhalter. Sie müssen an die tatsächlichen Behandlungen, optionalen Schulungsangebote, Zahlungsbedingungen, Stornoregeln und rechtlichen Anforderungen angepasst werden.',
         ],
       },
       {
-        heading: 'Schulungsanfragen',
+        heading: 'Termin- und Schulungsanfragen',
         paragraphs: [
-          'Eine Anfrage über die Website ist unverbindlich. Ein verbindlicher Termin oder Vertrag entsteht erst nach persönlicher Bestätigung durch LiftLounge.',
+          'Eine Anfrage über die Website ist unverbindlich. Ein verbindlicher Behandlungstermin, Schulungstermin oder Vertrag entsteht erst nach persönlicher Bestätigung durch LiftLounge.',
         ],
       },
       {
         heading: 'Preise und Leistungen',
         paragraphs: [
-          'Die finalen Preise und Leistungsumfänge müssen nach Ergänzung der Referenzpreisstruktur klar angegeben und rechtlich geprüft werden.',
+          'Die finalen Preise und Leistungsumfänge für Behandlungen und optionale Schulungen müssen vor Veröffentlichung rechtlich geprüft werden.',
         ],
       },
       {

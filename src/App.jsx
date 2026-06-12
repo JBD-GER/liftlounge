@@ -14,9 +14,11 @@ import MobileCTA from './components/MobileCTA.jsx';
 import Pricing from './components/Pricing.jsx';
 import Process from './components/Process.jsx';
 import SEO from './components/SEO.jsx';
+import Services from './components/Services.jsx';
 import TrainingIntro from './components/TrainingIntro.jsx';
+import TrainingSection from './components/TrainingSection.jsx';
 import WhyLiftLounge from './components/WhyLiftLounge.jsx';
-import { courseSchema, faqs, localBusinessSchema } from './data/siteData.js';
+import { faqs, localBusinessSchema, serviceSchema } from './data/siteData.js';
 
 const legalPaths = ['/impressum', '/datenschutz', '/agb'];
 
@@ -51,20 +53,22 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="LiftLounge | Lashlifting Schulung Barsinghausen & Hannover"
-        description="Hochwertige 1:1 Wimpernschulung in Barsinghausen bei Hannover. Lashlifting lernen mit Praxis am Modell, Zertifikat und persönlicher Betreuung."
+        title="LiftLounge | Lash Lifting & Brow Lifting Barsinghausen"
+        description="Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen bei Hannover. Natürlich, gepflegt und hochwertig."
         path="/"
-        schema={[localBusinessSchema, courseSchema, faqSchema()]}
+        schema={[localBusinessSchema, serviceSchema, faqSchema()]}
       />
       <main>
         <Hero />
         <BenefitsBar />
         <TrainingIntro />
+        <Services />
         <Audience />
         <Process />
         <Pricing />
         <Gallery />
         <WhyLiftLounge />
+        <TrainingSection />
         <Location />
         <ContactForm />
         <FAQ />

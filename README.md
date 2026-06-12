@@ -1,6 +1,6 @@
 # LiftLounge
 
-Moderne Onepager-Website für LiftLounge, gebaut mit React und Vite. Die Seite ist auf Performance, mobile Nutzung, lokale SEO-Signale und eine spätere Erweiterung um Schulungsportal- oder Web-App-Funktionen vorbereitet.
+Moderne Onepager-Website für LiftLounge, gebaut mit React und Vite. Der Hauptfokus liegt auf Lash Lifting, Korean Lash Lifting, Brow Lifting und Kombi-Behandlungen in Barsinghausen bei Hannover. Schulungen sind als sekundärer Bereich vorbereitet.
 
 ## Lokal starten
 
@@ -28,10 +28,8 @@ Die verwendeten Bilddateien liegen unter:
 - `public/images/model-2.jpg`
 - `public/images/model-3.jpg`
 
-Sie können später 1:1 durch eigene Bilder mit denselben Dateinamen ersetzt werden.
+Sie können später durch eigene Bilder mit denselben Dateinamen ersetzt werden.
 
-## Wichtiger Hinweis zu Preisen und Rechtstexten
+## Wichtiger Hinweis zu Rechtstexten
 
-Der Referenzlink für die exakt zu übernehmende Preisstruktur wurde im Briefing nicht mitgeliefert. Deshalb sind die Pakete zentral in `src/data/siteData.js` vorbereitet und aktuell auf `Preis auf Anfrage` gesetzt. Sobald die Referenzpreise vorliegen, müssen nur diese Daten angepasst werden.
-
-Impressum, Datenschutz und AGB sind bewusst als Platzhalter gekennzeichnet und müssen vor Veröffentlichung rechtlich geprüft und ergänzt werden.
+Preise, Leistungen, FAQs und Schulungsangebote sind zentral in `src/data/siteData.js` gepflegt. Impressum, Datenschutz und AGB sind bewusst als Platzhalter gekennzeichnet und müssen vor Veröffentlichung rechtlich geprüft und ergänzt werden.

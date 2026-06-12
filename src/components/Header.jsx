@@ -53,7 +53,7 @@ export default function Header({ isHome }) {
             </a>
           ))}
           <a className="mobile-nav-cta" href={isHome ? '#kontakt' : '/#kontakt'}>
-            Schulung anfragen
+            Termin anfragen
           </a>
         </nav>
       )}
