@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useState } from 'react';
 import Audience from './components/Audience.jsx';
 import BenefitsBar from './components/BenefitsBar.jsx';
@@ -110,6 +111,7 @@ export default function App() {
       {page}
       <Footer />
       <CookieConsent />
+      <Analytics />
     </>
   );
 }
