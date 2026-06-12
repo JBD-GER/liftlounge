@@ -2,11 +2,11 @@ import { Sparkles } from 'lucide-react';
 
 export default function TrainingIntro() {
   return (
-    <section className="section" id="leistungen">
-      <div className="container split-layout">
+    <section className="section">
+      <div className="container intro-editorial">
         <div>
           <p className="eyebrow">Über LiftLounge</p>
-          <h2>Schöne Wimpern, ohne künstlich zu wirken</h2>
+          <h2>Schöne Wimpern, ohne künstlich zu wirken.</h2>
         </div>
         <div className="text-stack">
           <p>
@@ -21,13 +21,13 @@ export default function TrainingIntro() {
             Keratin-Komponente. So entsteht ein Augenaufschlag, der im Alltag
             funktioniert und trotzdem hochwertig aussieht.
           </p>
-          <div className="soft-callout">
-            <Sparkles aria-hidden="true" size={20} />
-            <span>
-              Ideal für alle, die Lash Lifting Hannover suchen und einen
-              ruhigen Beauty-Standort in Barsinghausen bevorzugen.
-            </span>
-          </div>
+        </div>
+        <div className="intro-note">
+          <Sparkles aria-hidden="true" size={19} />
+          <span>
+            Ideal für alle, die Lash Lifting Hannover suchen und einen ruhigen
+            Beauty-Standort in Barsinghausen bevorzugen.
+          </span>
         </div>
       </div>
     </section>

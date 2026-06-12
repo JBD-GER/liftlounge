@@ -8,7 +8,7 @@ export default function BenefitsBar() {
           <article className="benefit-item" key={title}>
             <Icon aria-hidden="true" size={22} />
             <div>
-              <h2>{title}</h2>
+              <h3>{title}</h3>
               <p>{text}</p>
             </div>
           </article>

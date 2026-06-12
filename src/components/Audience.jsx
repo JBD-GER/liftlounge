@@ -4,7 +4,7 @@ import { audience } from '../data/siteData.js';
 export default function Audience() {
   return (
     <section className="section section-muted">
-      <div className="container">
+      <div className="container audience-layout">
         <div className="section-heading">
           <p className="eyebrow">Für wen?</p>
           <h2>Für wen eignet sich Lash Lifting?</h2>

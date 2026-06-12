@@ -1,4 +1,4 @@
-import { ArrowRight, Award, CheckCircle2, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, Award, CheckCircle2, MapPin, Phone, Sparkles } from 'lucide-react';
 import { heroHighlights, site } from '../data/siteData.js';
 
 export default function Hero() {
@@ -9,8 +9,9 @@ export default function Hero() {
           <p className="eyebrow">LiftLounge by Lea Kirfel</p>
           <h1>Lash Lifting Hannover</h1>
           <p className="hero-claim">
-            Natürlich geliftete Wimpern am Standort Barsinghausen. Für
-            Hannover, die Region Hannover und Umgebung.
+            Natürlicher Schwung, gepflegte Wimpern und ein frischer Blick ohne
+            Extensions. Persönlich behandelt am Standort Barsinghausen bei
+            Hannover.
           </p>
           <div className="hero-actions" aria-label="Kontaktoptionen">
             <a className="button button-primary" href="#kontakt">
@@ -30,6 +31,10 @@ export default function Hero() {
               </li>
             ))}
           </ul>
+          <div className="hero-location">
+            <MapPin aria-hidden="true" size={17} />
+            Am Schafanger 12, 30890 Barsinghausen
+          </div>
         </div>
 
         <div className="hero-visual animate-in delay-1">

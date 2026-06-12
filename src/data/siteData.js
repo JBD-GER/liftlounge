@@ -43,23 +43,23 @@ export const heroHighlights = [
 
 export const benefits = [
   {
-    title: 'Natürlicher Schwung',
-    text: 'Deine eigenen Wimpern werden sichtbar angehoben, gefärbt und gepflegt.',
+    title: 'Natürliches Ergebnis',
+    text: 'Geliftete Naturwimpern mit frischem, gepflegtem Ausdruck.',
     icon: Wand2,
   },
   {
     title: 'Ohne Extensions',
-    text: 'Deine Naturwimpern werden betont, ohne künstliche Wimpern anzubringen.',
+    text: 'Keine künstlichen Wimpern, kein schwerer Look, keine tägliche Wimpernzange.',
     icon: CheckCircle2,
   },
   {
     title: 'Färben & Pflege',
-    text: 'Lash Lifting wird mit Färben und pflegender Keratin-Komponente angeboten.',
+    text: 'Farbe und Keratin-Pflege sind im Lash Lifting enthalten.',
     icon: Star,
   },
   {
-    title: 'Studio in Barsinghausen',
-    text: 'Ruhiger Standort bei Hannover: Am Schafanger 12 in 30890 Barsinghausen.',
+    title: 'Bei Hannover',
+    text: 'Ruhiger Standort in Barsinghausen, gut erreichbar aus Hannover.',
     icon: MapPin,
   },
 ];
@@ -74,15 +74,17 @@ export const services = [
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegten Wimpern',
     description:
       'Für sichtbar geliftete, dunklere und gepflegte Naturwimpern ohne Extensions. Ideal, wenn du dir einen wachen Blick und einen Mascara-Look ohne tägliches Tuschen wünschst.',
-    features: ['Naturwimpern-Lifting', 'inkl. Färben', 'inkl. Keratin-Pflege', 'Effekt bis zu 6-8 Wochen'],
+    features: ['Beratung vor der Behandlung', 'Lifting der Naturwimpern', 'Färben für mehr Ausdruck', 'Keratin-Pflegefinish'],
   },
 ];
 
 export const audience = [
-  'Du möchtest einen offenen Blick ohne Wimpernextensions',
-  'Deine Naturwimpern sollen geschwungener und dunkler wirken',
-  'Du suchst Lash Lifting Hannover mit Standort in Barsinghausen',
-  'Du möchtest eine ruhige Behandlung mit sauberem, natürlichem Ergebnis',
+  'Du möchtest einen offenen Blick ohne Wimpernextensions.',
+  'Deine Naturwimpern sollen geschwungener und dunkler wirken.',
+  'Du suchst Lash Lifting Hannover an einem ruhigen Standort in Barsinghausen.',
+  'Du willst morgens schneller fertig sein, ohne künstlich auszusehen.',
+  'Du magst Beauty-Behandlungen, die sauber, ruhig und typgerecht umgesetzt werden.',
+  'Du wünschst dir ein natürliches Ergebnis mit gepflegtem Finish.',
 ];
 
 export const processSteps = [
@@ -141,23 +143,29 @@ export const gallery = [
   {
     src: '/images/model-1.jpg',
     alt: 'Kosmetikerin führt eine Lash Lifting Behandlung in einem hellen Studio aus',
-    title: 'Behandlung',
-    text: 'Ruhig, präzise und typgerecht.',
+    title: 'Ruhige Behandlung',
+    text: 'Sorgfältig vorbereitet und entspannt umgesetzt.',
   },
   {
     src: '/images/model-2.jpg',
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegtem Augenaufschlag',
-    title: 'Lash Lifting',
-    text: 'Natürlich geliftete Wimpern.',
+    title: 'Natürliches Finish',
+    text: 'Mehr Schwung, mehr Ausdruck, ohne Extensions.',
+  },
+  {
+    src: '/images/model-3.jpg',
+    alt: 'Beauty-Behandlung mit Fokus auf gepflegte Wimpern in heller Studioatmosphäre',
+    title: 'Studio-Gefühl',
+    text: 'Clean, hell und persönlich.',
   },
 ];
 
 export const whyLiftLounge = [
-  'Fokus auf natürliche Ergebnisse statt überzeichnetem Look',
-  'Lash Lifting als klare Kernleistung',
-  'Ruhige Behandlungssituation mit persönlicher Abstimmung',
-  'Färben und Pflege werden passend kombiniert',
-  'Schulungen bleiben bewusst ergänzend und werden separat angefragt',
+  'Ein klarer Fokus: natürliches Lash Lifting statt überladener Beauty-Menüs.',
+  'Persönliche Abstimmung vor Ort, damit das Ergebnis zu deinen Naturwimpern passt.',
+  'Färben und Pflege werden direkt in die Behandlung integriert.',
+  'Ruhige Studioatmosphäre statt schneller Massenabfertigung.',
+  'Schulungen bleiben bewusst sekundär und werden nur auf Anfrage angeboten.',
 ];
 
 export const faqs = [

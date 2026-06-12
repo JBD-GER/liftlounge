@@ -16,7 +16,7 @@ export default function GuideTeaser() {
         <div className="guide-teaser-grid">
           {guidePosts.map((post) => (
             <a className="guide-teaser-card" href={`/ratgeber/${post.slug}`} key={post.slug}>
-              <img src={post.image} alt={post.imageAlt} width="1200" height="800" loading="lazy" />
+              <img src={post.image} alt={post.imageAlt} width="1200" height="800" loading="eager" />
               <span>{post.eyebrow}</span>
               <strong>{post.title}</strong>
             </a>

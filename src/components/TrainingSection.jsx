@@ -4,7 +4,7 @@ import { trainingOffers } from '../data/siteData.js';
 export default function TrainingSection() {
   return (
     <section className="section section-muted" id="schulungen">
-      <div className="container training-layout">
+      <div className="container training-strip">
         <div>
           <p className="eyebrow">Schulungen</p>
           <h2>Ergänzende Lash Lifting Schulung auf Anfrage</h2>
