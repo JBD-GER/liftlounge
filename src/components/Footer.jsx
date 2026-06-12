@@ -7,11 +7,15 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <a className="brand footer-brand" href="/" aria-label="LiftLounge Startseite">
-            <span className="brand-mark">LL</span>
-            <span>
-              <strong>LiftLounge</strong>
-              <small>{site.owner}</small>
-            </span>
+            <img
+              className="brand-logo"
+              src="/images/liftlounge.png"
+              alt="LiftLounge by Lea Kirfel"
+              width="750"
+              height="188"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
           <p>
             Lash Lifting Hannover am Standort Barsinghausen.

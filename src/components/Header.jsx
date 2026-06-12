@@ -13,11 +13,14 @@ export default function Header({ isHome }) {
   return (
     <header className="site-header">
       <a className="brand" href="/" aria-label="LiftLounge Startseite">
-        <span className="brand-mark">LL</span>
-        <span>
-          <strong>LiftLounge</strong>
-          <small>by Lea Kirfel</small>
-        </span>
+        <img
+          className="brand-logo"
+          src="/images/liftlounge.png"
+          alt="LiftLounge by Lea Kirfel"
+          width="750"
+          height="188"
+          decoding="async"
+        />
       </a>
 
       <nav className="desktop-nav" aria-label="Hauptnavigation">
