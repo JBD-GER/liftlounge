@@ -36,7 +36,6 @@ export const navigation = [
 export const heroHighlights = [
   'Lash Lifting',
   'Brow Lifting',
-  'Wimpernlifting',
   'Schulungen',
 ];
 
@@ -67,7 +66,7 @@ export const services = [
   {
     name: 'Lash Lifting',
     eyebrow: 'Wimpern',
-    price: 'ab 65 €',
+    price: '65 €',
     duration: 'ca. 60-90 Min.',
     image: '/images/model-2.jpg',
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegten Wimpern',
@@ -78,13 +77,13 @@ export const services = [
   {
     name: 'Brow Lifting',
     eyebrow: 'Augenbrauen',
-    price: 'auf Anfrage',
+    price: '65 €',
     duration: 'ca. 45-60 Min.',
     image: '/images/model-3.jpg',
     alt: 'Natürlich gepflegte Augenpartie für Brow Lifting',
     description:
-      'Für definierte, voller wirkende Augenbrauen mit sauberem Finish.',
-    features: ['Form wird abgestimmt', 'gepflegtes Styling', 'natürlicher Look'],
+      'Für definierte, voller wirkende Augenbrauen mit sauberem Finish inklusive Färben.',
+    features: ['inkl. Färben', 'Form wird abgestimmt', 'natürlicher Look'],
   },
 ];
 
@@ -130,23 +129,39 @@ export const pricingPackages = [
   {
     name: 'Brow Lifting',
     eyebrow: 'Augenbrauen',
-    price: 'auf Anfrage',
+    price: '65 €',
     description:
-      'Definierte Augenbrauen mit sauberer Form und natürlichem Ausdruck.',
-    features: ['typgerechte Form', 'gepflegtes Finish', 'Termin nach Absprache'],
+      'Definierte Augenbrauen mit sauberer Form, natürlichem Ausdruck und Färben.',
+    features: ['inkl. Färben', 'typgerechte Form', 'ca. 45-60 Minuten'],
+  },
+  {
+    name: 'Lash & Brow Lifting',
+    eyebrow: 'Kombi-Behandlung',
+    price: '120 €',
+    description:
+      'Lash Lifting und Brow Lifting zusammen in einem Termin zum Kombipreis.',
+    features: ['inkl. Färben', 'beide Liftings kombiniert', 'ein Termin'],
   },
 ];
 
 export const trainingOffers = [
   {
     name: 'Lash Lifting Schulung',
+    format: '1:1 Einzelschulung',
+    duration: 'Dauer: 1 Tag',
     price: '649 €',
-    text: 'Praxisnah, persönlich und nach Terminabstimmung.',
   },
   {
     name: 'Brow Lifting Schulung',
-    price: 'auf Anfrage',
-    text: 'Als eigenständige oder ergänzende Schulung möglich.',
+    format: '1:1 Einzelschulung',
+    duration: 'Dauer: 1 Tag',
+    price: '649 €',
+  },
+  {
+    name: 'Lash- & Brow Lifting Kombi Schulung',
+    format: '1:1 Einzelschulung',
+    duration: 'Dauer: 2 Tage',
+    price: '1.200 €',
   },
 ];
 
@@ -210,7 +225,7 @@ export const faqs = [
   {
     question: 'Bietest du auch Brow Lifting und Schulungen an?',
     answer:
-      'Ja, Brow Lifting sowie Lash Lifting und Brow Lifting Schulungen werden nach persönlicher Anfrage angeboten.',
+      'Ja, Brow Lifting ist als Einzelbehandlung oder als Kombi mit Lash Lifting möglich. Schulungen werden nach persönlicher Anfrage angeboten.',
   },
 ];
 
@@ -225,7 +240,7 @@ export const localBusinessSchema = {
   name: 'LiftLounge',
   founder: 'Lea Kirfel',
   telephone: '+491756529911',
-  priceRange: '65 EUR',
+  priceRange: '65-120 EUR',
   image: '/images/model-1.jpg',
   description:
     'LiftLounge bietet Lash Lifting und Brow Lifting am Standort Barsinghausen bei Hannover.',
@@ -273,5 +288,5 @@ export const serviceSchema = {
     telephone: '+491756529911',
   },
   areaServed: 'Hannover, Barsinghausen und Region Hannover',
-  serviceType: ['Lash Lifting', 'Wimpernlifting', 'Brow Lifting'],
+  serviceType: ['Lash Lifting', 'Brow Lifting', 'Lash & Brow Lifting'],
 };

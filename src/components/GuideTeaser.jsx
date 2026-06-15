@@ -7,9 +7,9 @@ export default function GuideTeaser() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Ratgeber</p>
-          <h2>Wimpernlifting Wissen für Hannover</h2>
+          <h2>Lash Lifting Wissen für Hannover</h2>
           <p>
-            Drei kompakte SEO-Beiträge rund um Wimpernlifting, Pflege,
+            Drei kompakte SEO-Beiträge rund um Lash Lifting, Pflege,
             Haltbarkeit und die Entscheidung für einen natürlichen Lash-Look.
           </p>
         </div>

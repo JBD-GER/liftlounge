@@ -7,17 +7,17 @@ const guideSchema = {
   '@type': 'Blog',
   name: 'LiftLounge Ratgeber',
   description:
-    'SEO-Ratgeber rund um Wimpernlifting, Lash Lifting und Pflege für Hannover und die Region.',
+    'SEO-Ratgeber rund um Lash Lifting und Pflege für Hannover und die Region.',
 };
 
 export default function GuideIndex() {
   return (
     <>
       <SEO
-        title="Ratgeber | Wimpernlifting Hannover"
-        description="LiftLounge Ratgeber mit SEO-Beiträgen zu Wimpernlifting, Haltbarkeit, Pflege und Lash Lifting in Hannover."
+        title="Ratgeber | Lash Lifting Hannover"
+        description="LiftLounge Ratgeber mit SEO-Beiträgen zu Lash Lifting, Haltbarkeit und Pflege in Hannover."
         path="/ratgeber"
-        image="/images/ratgeber-wimpernlifting-hannover.jpg"
+        image="/images/ratgeber-lash-lifting-hannover.jpg"
         schema={guideSchema}
       />
       <main className="guide-main">
@@ -28,16 +28,16 @@ export default function GuideIndex() {
                 Zur Startseite
               </a>
               <p className="eyebrow">Ratgeber</p>
-              <h1>Wimpernlifting Ratgeber</h1>
+              <h1>Lash Lifting Ratgeber</h1>
               <p>
-                Wissenswertes rund um Wimpernlifting, Lash Lifting Hannover,
-                Pflege, Haltbarkeit und die Entscheidung zwischen natürlichem
-                Lifting und künstlicher Verlängerung.
+                Wissenswertes rund um Lash Lifting Hannover, Pflege,
+                Haltbarkeit und die Entscheidung zwischen natürlichem Lifting
+                und künstlicher Verlängerung.
               </p>
             </div>
             <img
-              src="/images/ratgeber-wimpernlifting-hannover.jpg"
-              alt="Natürliches Wimpernlifting Ergebnis in einem hellen Beauty-Studio"
+              src="/images/ratgeber-lash-lifting-hannover.jpg"
+              alt="Natürliches Lash Lifting Ergebnis in einem hellen Beauty-Studio"
               width="1200"
               height="800"
               decoding="async"

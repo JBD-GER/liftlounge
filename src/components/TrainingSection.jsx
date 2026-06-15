@@ -27,7 +27,10 @@ export default function TrainingSection() {
               <div>
                 <h3>{offer.name}</h3>
                 <strong>{offer.price}</strong>
-                <p>{offer.text}</p>
+                <p className="training-meta">
+                  <span>{offer.format}</span>
+                  <span>{offer.duration}</span>
+                </p>
               </div>
             </article>
           ))}

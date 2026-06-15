@@ -109,7 +109,10 @@ export default function ContactForm() {
           </p>
           <a className="direct-call" href={site.phoneHref}>
             <Phone aria-hidden="true" size={20} />
-            Oder direkt telefonisch kontaktieren: {site.phone}
+            <span className="direct-call-copy">
+              <span>Oder direkt telefonisch kontaktieren:</span>
+              <span className="direct-call-number">{site.phone}</span>
+            </span>
           </a>
         </div>
 

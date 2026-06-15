@@ -90,7 +90,7 @@ export default function GuidePost({ post }) {
             </aside>
 
             <section>
-              <h2>Weitere Beiträge zum Wimpernlifting</h2>
+              <h2>Weitere Beiträge zum Lash Lifting</h2>
               <div className="related-posts">
                 {guidePosts
                   .filter((item) => item.slug !== post.slug)
