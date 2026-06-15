@@ -1042,24 +1042,50 @@ p {
   display: block;
 }
 
-.location-layout {
+.location-panel {
   display: grid;
-  grid-template-columns: minmax(0, 720px);
-  gap: 44px;
-  align-items: start;
-  justify-content: center;
+  grid-template-columns: minmax(0, 0.94fr) minmax(300px, 0.56fr);
+  gap: clamp(28px, 5vw, 68px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 58px);
+  border: 1px solid rgba(224, 213, 205, 0.9);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(250, 247, 244, 0.72)),
+    var(--white);
+  box-shadow: 0 26px 70px rgba(58, 47, 43, 0.06);
+}
+
+.location-copy {
+  max-width: 680px;
+}
+
+.location-copy p:not(.eyebrow) {
+  max-width: 590px;
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.location-card {
+  display: grid;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .address-block {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  margin-top: 24px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--white);
-  max-width: 440px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.address-block:last-child {
+  border-bottom: 0;
 }
 
 .address-block svg {
@@ -1741,7 +1767,7 @@ label small {
   .intro-editorial,
   .audience-layout,
   .pricing-panel,
-  .location-layout,
+  .location-panel,
   .contact-layout,
   .training-layout,
   .training-strip,
@@ -1885,11 +1911,13 @@ label small {
   }
 
   .hero-actions,
+  .location-actions,
   .cookie-actions {
     display: grid;
   }
 
   .hero-actions .button,
+  .location-actions .button,
   .cookie-actions .button {
     width: 100%;
   }
@@ -2016,12 +2044,16 @@ label small {
   }
 
   .split-layout,
-  .location-layout,
+  .location-panel,
   .contact-layout,
   .training-layout,
   .guide-hero-grid,
   .article-hero-grid {
     gap: 32px;
+  }
+
+  .location-panel {
+    padding: 22px;
   }
 
   .guide-hero,
