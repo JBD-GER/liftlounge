@@ -9,8 +9,8 @@ export default function Audience() {
           <p className="eyebrow">Für wen?</p>
           <h2>Für wen passt ein Lifting?</h2>
           <p>
-            Wenn Wimpern oder Brauen sichtbarer wirken sollen, ohne künstlichen
-            Look.
+            Wenn Wimpern oder Augenbrauen sichtbarer wirken sollen, ohne
+            künstlichen Look.
           </p>
         </div>
         <div className="audience-grid">

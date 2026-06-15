@@ -42,7 +42,7 @@ export const heroHighlights = [
 
 export const benefits = [
   {
-    title: 'Wimpern & Brauen',
+    title: 'Wimpern und Augenbrauen',
     text: 'Lash Lifting und Brow Lifting mit natürlichem Finish.',
     icon: Wand2,
   },
@@ -83,14 +83,14 @@ export const services = [
     image: '/images/model-3.jpg',
     alt: 'Natürlich gepflegte Augenpartie für Brow Lifting',
     description:
-      'Für definierte, voller wirkende Brauen mit sauberem Finish.',
+      'Für definierte, voller wirkende Augenbrauen mit sauberem Finish.',
     features: ['Form wird abgestimmt', 'gepflegtes Styling', 'natürlicher Look'],
   },
 ];
 
 export const audience = [
   'Du möchtest einen offenen Blick ohne künstlichen Look.',
-  'Wimpern oder Brauen sollen gepflegter und definierter wirken.',
+  'Wimpern oder Augenbrauen sollen gepflegter und definierter wirken.',
   'Du suchst Lash Lifting oder Brow Lifting bei Hannover.',
   'Du willst morgens schneller fertig sein.',
 ];
@@ -108,7 +108,7 @@ export const processSteps = [
   },
   {
     title: 'Vorbereitung',
-    text: 'Wimpern oder Brauen werden gereinigt und präzise vorbereitet.',
+    text: 'Wimpern oder Augenbrauen werden gereinigt und präzise vorbereitet.',
     icon: ClipboardList,
   },
   {
@@ -132,7 +132,7 @@ export const pricingPackages = [
     eyebrow: 'Augenbrauen',
     price: 'auf Anfrage',
     description:
-      'Definierte Brauen mit sauberer Form und natürlichem Ausdruck.',
+      'Definierte Augenbrauen mit sauberer Form und natürlichem Ausdruck.',
     features: ['typgerechte Form', 'gepflegtes Finish', 'Termin nach Absprache'],
   },
 ];

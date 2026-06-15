@@ -6,7 +6,7 @@ export default function TrainingIntro() {
       <div className="container intro-editorial">
         <div>
           <p className="eyebrow">Über LiftLounge</p>
-          <h2>Wimpern und Brauen, natürlich geliftet.</h2>
+          <h2>Wimpern und Augenbrauen, natürlich geliftet.</h2>
         </div>
         <div className="text-stack">
           <p>
