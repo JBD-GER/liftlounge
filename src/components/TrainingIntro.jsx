@@ -10,9 +10,22 @@ export default function TrainingIntro() {
         </div>
         <div className="text-stack">
           <p>
-            LiftLounge steht für gepflegte Ergebnisse, die frisch wirken, ohne
-            überzeichnet auszusehen.
+            Bei LiftLounge geht es um Behandlungen, die den eigenen Look
+            unterstreichen, statt ihn zu verändern. Wimpern und Augenbrauen
+            werden typgerecht vorbereitet, geliftet, gepflegt und so geformt,
+            dass das Ergebnis frisch, ruhig und natürlich wirkt.
           </p>
+          <p>
+            Der Fokus liegt auf Lash Lifting, Brow Lifting und persönlichen
+            Schulungen in kleiner, konzentrierter Atmosphäre. Jede Anfrage wird
+            individuell abgestimmt, damit Behandlung, Ablauf und Ergebnis zu dir
+            passen.
+          </p>
+          <ul className="intro-points" aria-label="Schwerpunkte von LiftLounge">
+            <li>Natürlicher Ausdruck ohne künstlichen Look</li>
+            <li>Wimpern und Augenbrauen als klarer Schwerpunkt</li>
+            <li>Persönliche Termine und Schulungen nach Anfrage</li>
+          </ul>
         </div>
         <div className="intro-note">
           <Sparkles aria-hidden="true" size={19} />

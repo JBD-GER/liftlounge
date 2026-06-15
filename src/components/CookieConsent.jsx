@@ -72,9 +72,8 @@ export default function CookieConsent() {
       </div>
 
       <p>
-        Diese Website nutzt aktuell nur technisch notwendige Speicherung für
-        deine Cookie-Auswahl. Optionale Kategorien sind vorbereitet, falls
-        später Analyse- oder Marketing-Dienste ergänzt werden.
+        Diese Website speichert aktuell nur deine Cookie-Auswahl. Optionale
+        Kategorien sind vorbereitet, aber nicht aktiv.
       </p>
 
       {settingsOpen && (

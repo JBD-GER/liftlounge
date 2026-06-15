@@ -26,7 +26,9 @@ export default function Pricing() {
                 </div>
                 <div className="price-box">
                   <span>Behandlungspreis</span>
-                  <p className="price">{plan.price}</p>
+                  <p className={plan.price.includes('Anfrage') ? 'price price-request' : 'price'}>
+                    {plan.price}
+                  </p>
                   <a className="button button-primary full-width" href="#kontakt">
                     Termin anfragen
                     <ArrowRight aria-hidden="true" size={18} />
