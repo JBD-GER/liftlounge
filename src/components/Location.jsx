@@ -1,4 +1,4 @@
-import { Car, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { site } from '../data/siteData.js';
 
 export default function Location() {
@@ -19,26 +19,6 @@ export default function Location() {
               <span>{site.trainingAddress.street}</span>
               <span>{site.trainingAddress.postalCity}</span>
             </address>
-          </div>
-        </div>
-        <div className="parking-card">
-          <img
-            src="/images/parken.png"
-            alt="Parkhinweis für LiftLounge: Parken an der Straße Am Schafanger, Eingang gegenüber"
-            width="1126"
-            height="1081"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="parking-copy">
-            <Car aria-hidden="true" size={22} />
-            <div>
-              <strong>Parken vor Ort</strong>
-              <p>
-                Du kannst direkt am Schafanger parken. Der Eingang liegt
-                gegenüber der markierten Parkfläche.
-              </p>
-            </div>
           </div>
         </div>
       </div>

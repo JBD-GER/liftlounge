@@ -218,6 +218,17 @@ export const faqs = [
       'Die Behandlungen finden am Standort Am Schafanger 12, 30890 Barsinghausen statt. LiftLounge ist gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am Rübenberge, Seelze und der Region Hannover.',
   },
   {
+    question: 'Wo kann ich parken?',
+    answer:
+      'Du kannst direkt am Schafanger parken. Der Eingang liegt gegenüber der markierten Parkfläche.',
+    image: {
+      src: '/images/parken.png',
+      alt: 'Parkhinweis für LiftLounge mit markierter Parkfläche und Eingang am Schafanger',
+      width: 1126,
+      height: 1081,
+    },
+  },
+  {
     question: 'Bietest du auch Brow Lifting und Schulungen an?',
     answer:
       'Ja, Brow Lifting ist als Einzelbehandlung oder als Kombi mit Lash Lifting möglich. Schulungen werden nach persönlicher Anfrage angeboten.',

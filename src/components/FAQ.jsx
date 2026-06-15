@@ -16,7 +16,20 @@ export default function FAQ() {
                 <span>{item.question}</span>
                 <ChevronDown aria-hidden="true" size={20} />
               </summary>
-              <p>{item.answer}</p>
+              <div className="faq-answer">
+                <p>{item.answer}</p>
+                {item.image && (
+                  <img
+                    className="faq-image"
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    width={item.image.width}
+                    height={item.image.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+              </div>
             </details>
           ))}
         </div>

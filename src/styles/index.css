@@ -1044,9 +1044,10 @@ p {
 
 .location-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.75fr);
+  grid-template-columns: minmax(0, 720px);
   gap: 44px;
-  align-items: center;
+  align-items: start;
+  justify-content: center;
 }
 
 .address-block {
@@ -1073,42 +1074,6 @@ p {
 
 .address-block strong {
   margin-bottom: 7px;
-}
-
-.parking-card {
-  display: grid;
-  gap: 16px;
-}
-
-.parking-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border: 1px solid rgba(232, 222, 216, 0.95);
-  object-fit: cover;
-}
-
-.parking-copy {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 18px;
-  border: 1px solid var(--line);
-  background: var(--white);
-}
-
-.parking-copy svg {
-  flex: 0 0 auto;
-  color: var(--rose-strong);
-}
-
-.parking-copy strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.parking-copy p {
-  margin: 0;
-  line-height: 1.55;
 }
 
 .contact-section {
@@ -1295,9 +1260,21 @@ label small {
   transform: rotate(180deg);
 }
 
-.faq-item p {
+.faq-answer {
+  display: grid;
+  gap: 16px;
   padding: 0 22px 22px;
+}
+
+.faq-answer p {
   margin: 0;
+}
+
+.faq-image {
+  width: min(100%, 620px);
+  height: auto;
+  border: 1px solid var(--line);
+  background: var(--soft);
 }
 
 .site-footer {
@@ -2085,10 +2062,6 @@ label small {
     aspect-ratio: 4 / 3;
     min-height: 0;
     grid-row: auto;
-  }
-
-  .map-card {
-    min-height: 260px;
   }
 
   .contact-form {
