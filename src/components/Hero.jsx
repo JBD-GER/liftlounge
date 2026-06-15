@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy animate-in">
           <p className="eyebrow">LiftLounge by Lea Kirfel</p>
-          <h1>Lash Lifting & Braulifting Hannover</h1>
+          <h1>Lash Lifting & Brow Lifting Hannover</h1>
           <p className="hero-claim">
             Natürlicher Schwung, gepflegte Brauen und ein frischer Blick in
             Barsinghausen bei Hannover.

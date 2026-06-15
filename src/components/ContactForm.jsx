@@ -104,7 +104,7 @@ export default function ContactForm() {
           <p className="eyebrow">Kontakt</p>
           <h2>Termin anfragen</h2>
           <p>
-            Sende deine Anfrage für Lash Lifting, Braulifting oder eine
+            Sende deine Anfrage für Lash Lifting, Brow Lifting oder eine
             Schulung. Der Standort ist in Barsinghausen bei Hannover.
           </p>
           <a className="direct-call" href={site.phoneHref}>

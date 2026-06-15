@@ -59,8 +59,8 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="LiftLounge | Lash Lifting & Braulifting Hannover"
-        description="Lash Lifting und Braulifting bei LiftLounge: natürlich gepflegte Wimpern und Brauen am Standort Barsinghausen bei Hannover."
+        title="LiftLounge | Lash Lifting & Brow Lifting Hannover"
+        description="Lash Lifting und Brow Lifting bei LiftLounge: natürlich gepflegte Wimpern und Brauen am Standort Barsinghausen bei Hannover."
         path="/"
         schema={[localBusinessSchema, serviceSchema, faqSchema()]}
       />

@@ -7,7 +7,7 @@ export default function Location() {
       <div className="container location-layout">
         <div>
           <p className="eyebrow">Standort</p>
-          <h2>Standort Barsinghausen für Lash Lifting & Braulifting</h2>
+          <h2>Standort Barsinghausen für Lash Lifting & Brow Lifting</h2>
           <p>
             Gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen,
             Neustadt am Rübenberge, Seelze und der Region Hannover.

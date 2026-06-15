@@ -35,7 +35,7 @@ export const navigation = [
 
 export const heroHighlights = [
   'Lash Lifting',
-  'Braulifting',
+  'Brow Lifting',
   'Wimpernlifting',
   'Schulungen',
 ];
@@ -43,7 +43,7 @@ export const heroHighlights = [
 export const benefits = [
   {
     title: 'Wimpern & Brauen',
-    text: 'Lash Lifting und Braulifting mit natürlichem Finish.',
+    text: 'Lash Lifting und Brow Lifting mit natürlichem Finish.',
     icon: Wand2,
   },
   {
@@ -76,12 +76,12 @@ export const services = [
     features: ['inkl. Färben', 'inkl. Pflegefinish', 'ohne künstliche Wimpern'],
   },
   {
-    name: 'Braulifting',
+    name: 'Brow Lifting',
     eyebrow: 'Augenbrauen',
     price: 'auf Anfrage',
     duration: 'ca. 45-60 Min.',
     image: '/images/model-3.jpg',
-    alt: 'Natürlich gepflegte Augenpartie für Brow Lifting und Braulifting',
+    alt: 'Natürlich gepflegte Augenpartie für Brow Lifting',
     description:
       'Für definierte, voller wirkende Brauen mit sauberem Finish.',
     features: ['Form wird abgestimmt', 'gepflegtes Styling', 'natürlicher Look'],
@@ -91,7 +91,7 @@ export const services = [
 export const audience = [
   'Du möchtest einen offenen Blick ohne künstlichen Look.',
   'Wimpern oder Brauen sollen gepflegter und definierter wirken.',
-  'Du suchst Lash Lifting oder Braulifting bei Hannover.',
+  'Du suchst Lash Lifting oder Brow Lifting bei Hannover.',
   'Du willst morgens schneller fertig sein.',
 ];
 
@@ -128,7 +128,7 @@ export const pricingPackages = [
     features: ['inkl. Färben', 'inkl. Pflege', 'ca. 60-90 Minuten'],
   },
   {
-    name: 'Braulifting',
+    name: 'Brow Lifting',
     eyebrow: 'Augenbrauen',
     price: 'auf Anfrage',
     description:
@@ -144,7 +144,7 @@ export const trainingOffers = [
     text: 'Praxisnah, persönlich und nach Terminabstimmung.',
   },
   {
-    name: 'Braulifting Schulung',
+    name: 'Brow Lifting Schulung',
     price: 'auf Anfrage',
     text: 'Als eigenständige oder ergänzende Schulung möglich.',
   },
@@ -166,7 +166,7 @@ export const gallery = [
 ];
 
 export const whyLiftLounge = [
-  'Klarer Fokus auf Lash Lifting und Braulifting statt überladener Beauty-Menüs.',
+  'Klarer Fokus auf Lash Lifting und Brow Lifting statt überladener Beauty-Menüs.',
   'Persönliche Abstimmung, damit Form und Ergebnis zu dir passen.',
   'Ruhige Studioatmosphäre mit sauberem, gepflegtem Finish.',
 ];
@@ -208,9 +208,9 @@ export const faqs = [
       'Die Behandlungen finden am Standort Am Schafanger 12, 30890 Barsinghausen statt. LiftLounge ist gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am Rübenberge, Seelze und der Region Hannover.',
   },
   {
-    question: 'Bietest du auch Braulifting und Schulungen an?',
+    question: 'Bietest du auch Brow Lifting und Schulungen an?',
     answer:
-      'Ja, Braulifting sowie Lash Lifting und Braulifting Schulungen werden nach persönlicher Anfrage angeboten.',
+      'Ja, Brow Lifting sowie Lash Lifting und Brow Lifting Schulungen werden nach persönlicher Anfrage angeboten.',
   },
 ];
 
@@ -228,7 +228,7 @@ export const localBusinessSchema = {
   priceRange: '65 EUR',
   image: '/images/model-1.jpg',
   description:
-    'LiftLounge bietet Lash Lifting und Braulifting am Standort Barsinghausen bei Hannover.',
+    'LiftLounge bietet Lash Lifting und Brow Lifting am Standort Barsinghausen bei Hannover.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Am Schafanger 12',
@@ -266,12 +266,12 @@ export const serviceSchema = {
   '@type': 'Service',
   name: 'Lash und Brow Lifting Hannover',
   description:
-    'Kosmetische Lash Lifting und Braulifting Behandlung bei LiftLounge am Standort Barsinghausen bei Hannover.',
+    'Kosmetische Lash Lifting und Brow Lifting Behandlung bei LiftLounge am Standort Barsinghausen bei Hannover.',
   provider: {
     '@type': 'BeautySalon',
     name: 'LiftLounge',
     telephone: '+491756529911',
   },
   areaServed: 'Hannover, Barsinghausen und Region Hannover',
-  serviceType: ['Lash Lifting', 'Wimpernlifting', 'Brow Lifting', 'Braulifting'],
+  serviceType: ['Lash Lifting', 'Wimpernlifting', 'Brow Lifting'],
 };

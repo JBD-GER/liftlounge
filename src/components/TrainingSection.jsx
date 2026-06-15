@@ -7,7 +7,7 @@ export default function TrainingSection() {
       <div className="container training-strip">
         <div>
           <p className="eyebrow">Schulungen</p>
-          <h2>Schulungen für Lash Lifting & Braulifting</h2>
+          <h2>Schulungen für Lash Lifting & Brow Lifting</h2>
           <p>
             Praxisnahe Einzelschulungen, persönlich abgestimmt und nach Anfrage
             terminiert.

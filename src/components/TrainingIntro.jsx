@@ -17,7 +17,7 @@ export default function TrainingIntro() {
         <div className="intro-note">
           <Sparkles aria-hidden="true" size={19} />
           <span>
-            Für Lash Lifting, Braulifting und Schulungsanfragen in
+            Für Lash Lifting, Brow Lifting und Schulungsanfragen in
             Barsinghausen bei Hannover.
           </span>
         </div>

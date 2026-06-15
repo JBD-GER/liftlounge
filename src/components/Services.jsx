@@ -7,7 +7,7 @@ export default function Services() {
       <div className="container">
         <div className="section-heading narrow">
           <p className="eyebrow">Leistungen</p>
-          <h2>Lash Lifting und Braulifting</h2>
+          <h2>Lash Lifting und Brow Lifting</h2>
           <p>
             Zwei klare Angebote, typgerecht abgestimmt.
           </p>
