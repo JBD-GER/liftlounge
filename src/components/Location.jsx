@@ -1,4 +1,4 @@
-import { MapPin, Navigation } from 'lucide-react';
+import { Car, MapPin } from 'lucide-react';
 import { site } from '../data/siteData.js';
 
 export default function Location() {
@@ -21,11 +21,24 @@ export default function Location() {
             </address>
           </div>
         </div>
-        <div className="map-card" aria-label="Standortkarte LiftLounge Barsinghausen">
-          <div className="map-card-inner">
-            <Navigation aria-hidden="true" size={32} />
-            <strong>Barsinghausen</strong>
-            <span>Region Hannover</span>
+        <div className="parking-card">
+          <img
+            src="/images/parken.png"
+            alt="Parkhinweis für LiftLounge: Parken an der Straße Am Schafanger, Eingang gegenüber"
+            width="1126"
+            height="1081"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="parking-copy">
+            <Car aria-hidden="true" size={22} />
+            <div>
+              <strong>Parken vor Ort</strong>
+              <p>
+                Du kannst direkt am Schafanger parken. Der Eingang liegt
+                gegenüber der markierten Parkfläche.
+              </p>
+            </div>
           </div>
         </div>
       </div>

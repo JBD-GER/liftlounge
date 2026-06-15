@@ -181,12 +181,6 @@ export const gallery = [
   },
 ];
 
-export const whyLiftLounge = [
-  'Klarer Fokus auf Lash Lifting und Brow Lifting statt überladener Beauty-Menüs.',
-  'Persönliche Abstimmung, damit Form und Ergebnis zu dir passen.',
-  'Ruhige Studioatmosphäre mit sauberem, gepflegtem Finish.',
-];
-
 export const faqs = [
   {
     question: 'Was ist ein Lash Lifting?',

@@ -963,37 +963,6 @@ p {
   transform: scale(1.025);
 }
 
-.why-layout {
-  align-items: start;
-}
-
-.why-panel {
-  display: grid;
-  gap: 0;
-}
-
-.why-row {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 18px 0;
-  border: 0;
-  border-top: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-}
-
-.why-row svg {
-  flex: 0 0 auto;
-  color: var(--rose-strong);
-}
-
-.why-row p {
-  margin: 0;
-  color: #4c4541;
-  line-height: 1.6;
-}
-
 .training-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1fr);
@@ -1106,49 +1075,40 @@ p {
   margin-bottom: 7px;
 }
 
-.map-card {
+.parking-card {
   display: grid;
-  min-height: 340px;
-  place-items: center;
+  gap: 16px;
+}
+
+.parking-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border: 1px solid rgba(232, 222, 216, 0.95);
-  border-radius: 0;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.58) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.58) 1px, transparent 1px),
-    linear-gradient(135deg, #f8efed, #f3f6f0 70%);
-  background-size:
-    38px 38px,
-    38px 38px,
-    auto;
-  box-shadow: none;
+  object-fit: cover;
 }
 
-.map-card-inner {
-  display: grid;
-  width: min(76%, 290px);
-  min-height: 180px;
-  place-items: center;
-  padding: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 0;
-  background: rgba(255, 255, 255, 0.82);
-  text-align: center;
-  backdrop-filter: blur(12px);
+.parking-copy {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--white);
 }
 
-.map-card-inner svg {
-  margin-bottom: 10px;
-  color: var(--sage);
+.parking-copy svg {
+  flex: 0 0 auto;
+  color: var(--rose-strong);
 }
 
-.map-card-inner strong {
-  font-family: var(--display-font);
-  font-size: 1.9rem;
-  font-weight: 800;
+.parking-copy strong {
+  display: block;
+  margin-bottom: 6px;
 }
 
-.map-card-inner span {
-  color: var(--muted);
+.parking-copy p {
+  margin: 0;
+  line-height: 1.55;
 }
 
 .contact-section {

@@ -25,7 +25,6 @@ import SEO from './components/SEO.jsx';
 import Services from './components/Services.jsx';
 import TrainingIntro from './components/TrainingIntro.jsx';
 import TrainingSection from './components/TrainingSection.jsx';
-import WhyLiftLounge from './components/WhyLiftLounge.jsx';
 import { getGuidePost } from './data/guideData.js';
 import { faqs, localBusinessSchema, serviceSchema } from './data/siteData.js';
 
@@ -109,7 +108,6 @@ function HomePage() {
         <Process />
         <Pricing />
         <Gallery />
-        <WhyLiftLounge />
         <TrainingSection />
         <Location />
         <GuideTeaser />
