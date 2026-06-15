@@ -6,7 +6,7 @@ export default function Gallery() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Einblicke</p>
-          <h2>Ruhige Lash-Lifting Atmosphäre</h2>
+          <h2>Einblicke in die LiftLounge</h2>
         </div>
         <div className="gallery-grid">
           {gallery.map((image) => (
@@ -19,10 +19,6 @@ export default function Gallery() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>
-                <strong>{image.title}</strong>
-                <span>{image.text}</span>
-              </figcaption>
             </figure>
           ))}
         </div>

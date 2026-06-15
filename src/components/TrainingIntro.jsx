@@ -6,27 +6,19 @@ export default function TrainingIntro() {
       <div className="container intro-editorial">
         <div>
           <p className="eyebrow">Über LiftLounge</p>
-          <h2>Schöne Wimpern, ohne künstlich zu wirken.</h2>
+          <h2>Wimpern und Brauen, natürlich geliftet.</h2>
         </div>
         <div className="text-stack">
           <p>
-            Bei LiftLounge steht Lash Lifting im Mittelpunkt: eine Behandlung,
-            die deine natürlichen Wimpern sichtbar betont, ohne Extensions oder
-            einen überzeichneten Look. Das Ergebnis soll frisch, gepflegt und
-            typgerecht wirken.
-          </p>
-          <p>
-            Jede Behandlung wird ruhig vorbereitet: kurze Beratung, Reinigung,
-            präzises Positionieren, Färben und eine pflegende
-            Keratin-Komponente. So entsteht ein Augenaufschlag, der im Alltag
-            funktioniert und trotzdem hochwertig aussieht.
+            LiftLounge steht für gepflegte Ergebnisse, die frisch wirken, ohne
+            überzeichnet auszusehen.
           </p>
         </div>
         <div className="intro-note">
           <Sparkles aria-hidden="true" size={19} />
           <span>
-            Ideal für alle, die Lash Lifting Hannover suchen und einen ruhigen
-            Beauty-Standort in Barsinghausen bevorzugen.
+            Für Lash Lifting, Braulifting und Schulungsanfragen in
+            Barsinghausen bei Hannover.
           </span>
         </div>
       </div>

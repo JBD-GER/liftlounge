@@ -8,8 +8,7 @@ export default function Process() {
           <p className="eyebrow">Ablauf</p>
           <h2>So läuft deine Behandlung ab</h2>
           <p>
-            Vom ersten Kontakt bis zum Pflegefinish ist der Ablauf klar,
-            entspannt und auf ein sauberes Ergebnis ausgerichtet.
+            Klarer Ablauf, ruhiger Termin, gepflegtes Ergebnis.
           </p>
         </div>
         <div className="process-list">

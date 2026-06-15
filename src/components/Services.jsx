@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Clock, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
 import { services } from '../data/siteData.js';
 
 export default function Services() {
@@ -7,16 +7,15 @@ export default function Services() {
       <div className="container">
         <div className="section-heading narrow">
           <p className="eyebrow">Leistungen</p>
-          <h2>Lash Lifting für natürlich schöne Wimpern</h2>
+          <h2>Lash Lifting und Braulifting</h2>
           <p>
-            Der Fokus liegt auf einer ruhigen, sauberen Wimpernbehandlung, die
-            deine eigenen Naturwimpern sichtbar anhebt, färbt und pflegt.
+            Zwei klare Angebote, typgerecht abgestimmt.
           </p>
         </div>
 
-        {services.map((service) => (
-          <article className="treatment-showcase" key={service.name}>
-            <div className="treatment-image-wrap">
+        <div className="services-grid">
+          {services.map((service) => (
+            <article className="service-card" key={service.name}>
               <img
                 src={service.image}
                 alt={service.alt}
@@ -25,41 +24,34 @@ export default function Services() {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="treatment-floating">
-                <Sparkles aria-hidden="true" size={18} />
-                <span>Färben & Pflege inklusive</span>
-              </div>
-            </div>
 
-            <div className="treatment-content">
-              <div className="service-meta">
-                <span>{service.eyebrow}</span>
-                <span>
-                  <Clock aria-hidden="true" size={15} />
-                  {service.duration}
-                </span>
-              </div>
-              <h3>{service.name}</h3>
-              <p>{service.description}</p>
-              <div className="treatment-price-row">
+              <div className="service-card-body">
+                <div className="service-meta">
+                  <span>{service.eyebrow}</span>
+                  <span>
+                    <Clock aria-hidden="true" size={15} />
+                    {service.duration}
+                  </span>
+                </div>
+                <h3>{service.name}</h3>
+                <p>{service.description}</p>
                 <strong>{service.price}</strong>
-                <span>inklusive Färben & Keratin-Pflege</span>
+                <ul>
+                  {service.features.map((feature) => (
+                    <li key={feature}>
+                      <CheckCircle2 aria-hidden="true" size={17} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a className="inline-link" href="#kontakt">
+                  Termin anfragen
+                  <ArrowRight aria-hidden="true" size={18} />
+                </a>
               </div>
-              <ul className="treatment-features">
-                {service.features.map((feature) => (
-                  <li key={feature}>
-                    <CheckCircle2 aria-hidden="true" size={17} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a className="button button-primary" href="#kontakt">
-                Termin anfragen
-                <ArrowRight aria-hidden="true" size={18} />
-              </a>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

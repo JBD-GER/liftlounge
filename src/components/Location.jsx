@@ -7,11 +7,10 @@ export default function Location() {
       <div className="container location-layout">
         <div>
           <p className="eyebrow">Standort</p>
-          <h2>Standort Barsinghausen für Lash Lifting Hannover</h2>
+          <h2>Standort Barsinghausen für Lash Lifting & Braulifting</h2>
           <p>
-            Der LiftLounge Standort liegt in Barsinghausen und ist gut
-            erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am
-            Rübenberge, Seelze und der Region Hannover.
+            Gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen,
+            Neustadt am Rübenberge, Seelze und der Region Hannover.
           </p>
           <div className="address-block">
             <MapPin aria-hidden="true" size={22} />

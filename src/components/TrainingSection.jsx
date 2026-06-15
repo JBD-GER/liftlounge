@@ -7,11 +7,10 @@ export default function TrainingSection() {
       <div className="container training-strip">
         <div>
           <p className="eyebrow">Schulungen</p>
-          <h2>Ergänzende Lash Lifting Schulung auf Anfrage</h2>
+          <h2>Schulungen für Lash Lifting & Braulifting</h2>
           <p>
-            Neben der kosmetischen Behandlung kann eine Lash Lifting Schulung
-            angefragt werden. Dieser Bereich bleibt bewusst sekundär und wird
-            persönlich abgestimmt.
+            Praxisnahe Einzelschulungen, persönlich abgestimmt und nach Anfrage
+            terminiert.
           </p>
           <a className="button button-secondary" href="#kontakt">
             Schulung anfragen
@@ -22,7 +21,9 @@ export default function TrainingSection() {
         <div className="training-cards">
           {trainingOffers.map((offer) => (
             <article className="training-card" key={offer.name}>
-              <GraduationCap aria-hidden="true" size={22} />
+              <span className="training-icon">
+                <GraduationCap aria-hidden="true" size={21} />
+              </span>
               <div>
                 <h3>{offer.name}</h3>
                 <strong>{offer.price}</strong>

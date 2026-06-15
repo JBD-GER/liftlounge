@@ -18,7 +18,7 @@ export default function Footer() {
             />
           </a>
           <p>
-            Lash Lifting Hannover am Standort Barsinghausen.
+            Lash Lifting und Braulifting am Standort Barsinghausen.
           </p>
         </div>
 

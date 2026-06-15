@@ -1,4 +1,4 @@
-import { ArrowRight, Award, CheckCircle2, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MapPin, Phone } from 'lucide-react';
 import { heroHighlights, site } from '../data/siteData.js';
 
 export default function Hero() {
@@ -7,11 +7,10 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy animate-in">
           <p className="eyebrow">LiftLounge by Lea Kirfel</p>
-          <h1>Lash Lifting Hannover</h1>
+          <h1>Lash Lifting & Braulifting Hannover</h1>
           <p className="hero-claim">
-            Natürlicher Schwung, gepflegte Wimpern und ein frischer Blick ohne
-            Extensions. Persönlich behandelt am Standort Barsinghausen bei
-            Hannover.
+            Natürlicher Schwung, gepflegte Brauen und ein frischer Blick in
+            Barsinghausen bei Hannover.
           </p>
           <div className="hero-actions" aria-label="Kontaktoptionen">
             <a className="button button-primary" href="#kontakt">
@@ -46,19 +45,6 @@ export default function Hero() {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="hero-note" aria-label="Lash Lifting Behandlung">
-            <span className="note-icon">
-              <Award aria-hidden="true" size={19} />
-            </span>
-            <span>
-              <strong>Färben & Pflege inklusive</strong>
-              <small>für gepflegte Naturwimpern</small>
-            </span>
-          </div>
-          <div className="hero-badge">
-            <Sparkles aria-hidden="true" size={17} />
-            Natürliche Ergebnisse
-          </div>
         </div>
       </div>
     </section>

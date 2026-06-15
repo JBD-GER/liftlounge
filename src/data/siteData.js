@@ -1,11 +1,9 @@
 import {
-  CalendarCheck,
   CheckCircle2,
   ClipboardList,
   HeartHandshake,
   MapPin,
   MessageCircle,
-  ShieldCheck,
   Star,
   Wand2,
 } from 'lucide-react';
@@ -37,24 +35,25 @@ export const navigation = [
 
 export const heroHighlights = [
   'Lash Lifting',
+  'Braulifting',
   'Wimpernlifting',
-  'Standort Barsinghausen',
+  'Schulungen',
 ];
 
 export const benefits = [
   {
-    title: 'Natürliches Ergebnis',
-    text: 'Geliftete Naturwimpern mit frischem, gepflegtem Ausdruck.',
+    title: 'Wimpern & Brauen',
+    text: 'Lash Lifting und Braulifting mit natürlichem Finish.',
     icon: Wand2,
   },
   {
     title: 'Ohne Extensions',
-    text: 'Keine künstlichen Wimpern, kein schwerer Look, keine tägliche Wimpernzange.',
+    text: 'Mehr Ausdruck ohne künstliche Wimpern.',
     icon: CheckCircle2,
   },
   {
-    title: 'Färben & Pflege',
-    text: 'Farbe und Keratin-Pflege sind im Lash Lifting enthalten.',
+    title: 'Farbe & Pflege',
+    text: 'Sauber vorbereitet, gefärbt und gepflegt.',
     icon: Star,
   },
   {
@@ -73,50 +72,49 @@ export const services = [
     image: '/images/model-2.jpg',
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegten Wimpern',
     description:
-      'Für sichtbar geliftete, dunklere und gepflegte Naturwimpern ohne Extensions. Ideal, wenn du dir einen wachen Blick und einen Mascara-Look ohne tägliches Tuschen wünschst.',
-    features: ['Beratung vor der Behandlung', 'Lifting der Naturwimpern', 'Färben für mehr Ausdruck', 'Keratin-Pflegefinish'],
+      'Für geliftete, dunklere Naturwimpern ohne Extensions. Frisch, sauber und alltagstauglich.',
+    features: ['inkl. Färben', 'inkl. Pflegefinish', 'ohne künstliche Wimpern'],
+  },
+  {
+    name: 'Braulifting',
+    eyebrow: 'Augenbrauen',
+    price: 'auf Anfrage',
+    duration: 'ca. 45-60 Min.',
+    image: '/images/model-3.jpg',
+    alt: 'Natürlich gepflegte Augenpartie für Brow Lifting und Braulifting',
+    description:
+      'Für definierte, voller wirkende Brauen mit sauberem Finish.',
+    features: ['Form wird abgestimmt', 'gepflegtes Styling', 'natürlicher Look'],
   },
 ];
 
 export const audience = [
-  'Du möchtest einen offenen Blick ohne Wimpernextensions.',
-  'Deine Naturwimpern sollen geschwungener und dunkler wirken.',
-  'Du suchst Lash Lifting Hannover an einem ruhigen Standort in Barsinghausen.',
-  'Du willst morgens schneller fertig sein, ohne künstlich auszusehen.',
-  'Du magst Beauty-Behandlungen, die sauber, ruhig und typgerecht umgesetzt werden.',
-  'Du wünschst dir ein natürliches Ergebnis mit gepflegtem Finish.',
+  'Du möchtest einen offenen Blick ohne künstlichen Look.',
+  'Wimpern oder Brauen sollen gepflegter und definierter wirken.',
+  'Du suchst Lash Lifting oder Braulifting bei Hannover.',
+  'Du willst morgens schneller fertig sein.',
 ];
 
 export const processSteps = [
   {
     title: 'Termin anfragen',
-    text: 'Du meldest dich telefonisch oder über das Formular und nennst deine Wunschbehandlung.',
+    text: 'Du meldest dich telefonisch oder über das Formular.',
     icon: MessageCircle,
   },
   {
-    title: 'Termin abstimmen',
-    text: 'Gemeinsam wird ein passender Termin am Standort Barsinghausen vereinbart.',
-    icon: CalendarCheck,
-  },
-  {
-    title: 'Kurze Beratung',
-    text: 'Vor Ort werden Wunsch, Naturwimpern und mögliche Hinweise besprochen.',
+    title: 'Kurz beraten',
+    text: 'Vor Ort werden Wunsch, Ausgangslage und Form abgestimmt.',
     icon: HeartHandshake,
   },
   {
     title: 'Vorbereitung',
-    text: 'Die Wimpern werden gereinigt, vorbereitet und typgerecht positioniert.',
+    text: 'Wimpern oder Brauen werden gereinigt und präzise vorbereitet.',
     icon: ClipboardList,
   },
   {
-    title: 'Lifting & Farbe',
-    text: 'Die Lifting-Lotionen, Farbe und Pflege werden sorgfältig und ruhig angewendet.',
+    title: 'Lifting & Finish',
+    text: 'Das Lifting wird ruhig umgesetzt und gepflegt abgeschlossen.',
     icon: Wand2,
-  },
-  {
-    title: 'Pflegefinish',
-    text: 'Zum Abschluss erhältst du dein Ergebnis und klare Pflegehinweise für die ersten 24 Stunden.',
-    icon: ShieldCheck,
   },
 ];
 
@@ -126,8 +124,16 @@ export const pricingPackages = [
     eyebrow: 'Wimpern',
     price: '65 €',
     description:
-      'Für natürlich geschwungene, gefärbte Wimpern mit gepflegtem Mascara-Effekt.',
-    features: ['inkl. Färben', 'inkl. Keratin-Pflege', 'ca. 60-90 Minuten', 'ohne künstliche Wimpern'],
+      'Natürlich geliftete und gefärbte Wimpern mit gepflegtem Finish.',
+    features: ['inkl. Färben', 'inkl. Pflege', 'ca. 60-90 Minuten'],
+  },
+  {
+    name: 'Braulifting',
+    eyebrow: 'Augenbrauen',
+    price: 'auf Anfrage',
+    description:
+      'Definierte Brauen mit sauberer Form und natürlichem Ausdruck.',
+    features: ['typgerechte Form', 'gepflegtes Finish', 'Termin nach Absprache'],
   },
 ];
 
@@ -135,7 +141,12 @@ export const trainingOffers = [
   {
     name: 'Lash Lifting Schulung',
     price: '649 €',
-    text: 'Ergänzendes Schulungsangebot nach persönlicher Anfrage und Terminabstimmung.',
+    text: 'Praxisnah, persönlich und nach Terminabstimmung.',
+  },
+  {
+    name: 'Braulifting Schulung',
+    price: 'auf Anfrage',
+    text: 'Als eigenständige oder ergänzende Schulung möglich.',
   },
 ];
 
@@ -143,36 +154,28 @@ export const gallery = [
   {
     src: '/images/model-1.jpg',
     alt: 'Kosmetikerin führt eine Lash Lifting Behandlung in einem hellen Studio aus',
-    title: 'Ruhige Behandlung',
-    text: 'Sorgfältig vorbereitet und entspannt umgesetzt.',
   },
   {
     src: '/images/model-2.jpg',
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegtem Augenaufschlag',
-    title: 'Natürliches Finish',
-    text: 'Mehr Schwung, mehr Ausdruck, ohne Extensions.',
   },
   {
     src: '/images/model-3.jpg',
     alt: 'Beauty-Behandlung mit Fokus auf gepflegte Wimpern in heller Studioatmosphäre',
-    title: 'Studio-Gefühl',
-    text: 'Clean, hell und persönlich.',
   },
 ];
 
 export const whyLiftLounge = [
-  'Ein klarer Fokus: natürliches Lash Lifting statt überladener Beauty-Menüs.',
-  'Persönliche Abstimmung vor Ort, damit das Ergebnis zu deinen Naturwimpern passt.',
-  'Färben und Pflege werden direkt in die Behandlung integriert.',
-  'Ruhige Studioatmosphäre statt schneller Massenabfertigung.',
-  'Schulungen bleiben bewusst sekundär und werden nur auf Anfrage angeboten.',
+  'Klarer Fokus auf Lash Lifting und Braulifting statt überladener Beauty-Menüs.',
+  'Persönliche Abstimmung, damit Form und Ergebnis zu dir passen.',
+  'Ruhige Studioatmosphäre mit sauberem, gepflegtem Finish.',
 ];
 
 export const faqs = [
   {
     question: 'Was ist ein Lash Lifting?',
     answer:
-      'Beim Lash Lifting werden die eigenen Naturwimpern vom Ansatz aus sichtbar angehoben, gefärbt und gepflegt. Es werden keine künstlichen Wimpern aufgeklebt.',
+      'Beim Lash Lifting werden die eigenen Naturwimpern vom Ansatz aus angehoben, gefärbt und gepflegt. Es werden keine künstlichen Wimpern aufgeklebt.',
   },
   {
     question: 'Wie lange hält das Ergebnis?',
@@ -205,11 +208,16 @@ export const faqs = [
       'Die Behandlungen finden am Standort Am Schafanger 12, 30890 Barsinghausen statt. LiftLounge ist gut erreichbar aus Hannover, Wunstorf, Gehrden, Wennigsen, Neustadt am Rübenberge, Seelze und der Region Hannover.',
   },
   {
-    question: 'Bietest du auch Schulungen an?',
+    question: 'Bietest du auch Braulifting und Schulungen an?',
     answer:
-      'Ja, Lash Lifting Schulungen werden ergänzend und nach persönlicher Anfrage angeboten. Der Hauptfokus der Website liegt jedoch auf der kosmetischen Behandlung.',
+      'Ja, Braulifting sowie Lash Lifting und Braulifting Schulungen werden nach persönlicher Anfrage angeboten.',
   },
 ];
+
+function numericPrice(price) {
+  const match = price.match(/\d+/);
+  return match ? match[0] : undefined;
+}
 
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
@@ -220,7 +228,7 @@ export const localBusinessSchema = {
   priceRange: '65 EUR',
   image: '/images/model-1.jpg',
   description:
-    'LiftLounge bietet Lash Lifting Hannover am Standort Barsinghausen.',
+    'LiftLounge bietet Lash Lifting und Braulifting am Standort Barsinghausen bei Hannover.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Am Schafanger 12',
@@ -240,27 +248,30 @@ export const localBusinessSchema = {
     'Neustadt am Rübenberge',
     'Seelze',
   ],
-  makesOffer: pricingPackages.map((item) => ({
-    '@type': 'Offer',
-    name: item.name,
-    category: 'Kosmetische Behandlung',
-    priceCurrency: 'EUR',
-    price: item.price.replace(' €', '').replace('.', ''),
-    availability: 'https://schema.org/InStock',
-  })),
+  makesOffer: pricingPackages.map((item) => {
+    const price = numericPrice(item.price);
+
+    return {
+      '@type': 'Offer',
+      name: item.name,
+      category: 'Kosmetische Behandlung',
+      ...(price ? { priceCurrency: 'EUR', price } : {}),
+      availability: 'https://schema.org/InStock',
+    };
+  }),
 };
 
 export const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Lash Lifting Hannover',
+  name: 'Lash und Brow Lifting Hannover',
   description:
-    'Kosmetische Lash Lifting Behandlung bei LiftLounge am Standort Barsinghausen bei Hannover.',
+    'Kosmetische Lash Lifting und Braulifting Behandlung bei LiftLounge am Standort Barsinghausen bei Hannover.',
   provider: {
     '@type': 'BeautySalon',
     name: 'LiftLounge',
     telephone: '+491756529911',
   },
   areaServed: 'Hannover, Barsinghausen und Region Hannover',
-  serviceType: ['Lash Lifting', 'Wimpernlifting'],
+  serviceType: ['Lash Lifting', 'Wimpernlifting', 'Brow Lifting', 'Braulifting'],
 };
