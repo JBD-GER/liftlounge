@@ -13,7 +13,8 @@ export const site = {
   owner: 'Lea Kirfel',
   phone: '0175 6529911',
   phoneHref: 'tel:+491756529911',
-  email: '',
+  email: 'info@liftlounge.de',
+  emailHref: 'mailto:info@liftlounge.de',
   legalAddress: {
     street: 'Großer Kamp 5a',
     postalCity: '31633 Leese',
@@ -240,6 +241,7 @@ export const localBusinessSchema = {
   name: 'LiftLounge',
   founder: 'Lea Kirfel',
   telephone: '+491756529911',
+  email: 'info@liftlounge.de',
   priceRange: '65-120 EUR',
   image: '/images/model-1.jpg',
   description:

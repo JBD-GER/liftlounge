@@ -1722,16 +1722,6 @@ label small {
   font-weight: 800;
 }
 
-.legal-warning {
-  margin: 28px 0 40px;
-  padding: 18px 20px;
-  border: 1px solid rgba(196, 162, 88, 0.34);
-  border-radius: 8px;
-  background: rgba(196, 162, 88, 0.12);
-  color: #5c4b25;
-  line-height: 1.62;
-}
-
 .legal-section {
   padding: 28px 0;
   border-top: 1px solid var(--line);

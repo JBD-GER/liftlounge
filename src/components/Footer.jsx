@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { site } from '../data/siteData.js';
 
 export default function Footer() {
@@ -36,6 +36,10 @@ export default function Footer() {
           <a href={site.phoneHref}>
             <Phone aria-hidden="true" size={16} />
             {site.phone}
+          </a>
+          <a href={site.emailHref}>
+            <Mail aria-hidden="true" size={16} />
+            {site.email}
           </a>
         </address>
 

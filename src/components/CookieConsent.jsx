@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Check, Cookie, Settings, X } from 'lucide-react';
 
-const storageKey = 'liftlounge-cookie-consent';
+export const cookieConsentStorageKey = 'liftlounge-cookie-consent';
+export const cookieConsentUpdatedEvent = 'liftlounge-cookie-consent-updated';
 
 const defaultConsent = {
   necessary: true,
   analytics: false,
-  marketing: false,
 };
 
 export default function CookieConsent() {
@@ -15,7 +15,14 @@ export default function CookieConsent() {
   const [consent, setConsent] = useState(defaultConsent);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(storageKey);
+    let stored;
+
+    try {
+      stored = window.localStorage.getItem(cookieConsentStorageKey);
+    } catch {
+      setVisible(true);
+      return;
+    }
 
     if (stored) {
       try {
@@ -30,7 +37,15 @@ export default function CookieConsent() {
   }, []);
 
   function save(nextConsent) {
-    window.localStorage.setItem(storageKey, JSON.stringify(nextConsent));
+    try {
+      window.localStorage.setItem(cookieConsentStorageKey, JSON.stringify(nextConsent));
+    } catch {
+      // The current choice still applies for this session through the event below.
+    }
+
+    window.dispatchEvent(
+      new CustomEvent(cookieConsentUpdatedEvent, { detail: nextConsent }),
+    );
     setConsent(nextConsent);
     setVisible(false);
     setSettingsOpen(false);
@@ -72,8 +87,8 @@ export default function CookieConsent() {
       </div>
 
       <p>
-        Diese Website speichert aktuell nur deine Cookie-Auswahl. Optionale
-        Kategorien sind vorbereitet, aber nicht aktiv.
+        Diese Website speichert deine Cookie-Auswahl. Optionale Analyse wird
+        nur nach deiner Einwilligung aktiviert.
       </p>
 
       {settingsOpen && (
@@ -88,23 +103,12 @@ export default function CookieConsent() {
           <label className="toggle-row">
             <span>
               <strong>Analyse</strong>
-              <small>Vorbereitet für spätere Reichweitenmessung.</small>
+              <small>Datensparsame Reichweitenmessung mit Vercel Web Analytics.</small>
             </span>
             <input
               type="checkbox"
               checked={consent.analytics}
               onChange={() => toggle('analytics')}
-            />
-          </label>
-          <label className="toggle-row">
-            <span>
-              <strong>Marketing</strong>
-              <small>Vorbereitet für spätere Kampagnen- oder Pixel-Dienste.</small>
-            </span>
-            <input
-              type="checkbox"
-              checked={consent.marketing}
-              onChange={() => toggle('marketing')}
             />
           </label>
         </div>
@@ -125,7 +129,7 @@ export default function CookieConsent() {
         <button
           className="button button-primary"
           type="button"
-          onClick={() => save({ necessary: true, analytics: true, marketing: true })}
+          onClick={() => save({ necessary: true, analytics: true })}
         >
           <Check aria-hidden="true" size={17} />
           Alle akzeptieren

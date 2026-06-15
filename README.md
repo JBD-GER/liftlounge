@@ -18,7 +18,7 @@ npm run preview
 
 ## Kontaktformular mit Resend
 
-Das Kontaktformular sendet über die serverseitige Route `/api/contact` eine Bestätigung an die Kundin und eine Anfrage-Mail an `lea.kirfel@web.de`.
+Das Kontaktformular sendet über die serverseitige Route `/api/contact` eine Bestätigung an die Kundin und eine Anfrage-Mail an `info@liftlounge.de`.
 
 Benötigte Environment Variable:
 
@@ -29,8 +29,8 @@ RESEND_API=...
 Optional kann für Produktion eine verifizierte Absenderadresse gesetzt werden:
 
 ```bash
-RESEND_FROM_EMAIL="LiftLounge <kontakt@deine-domain.de>"
-CONTACT_TO_EMAIL="lea.kirfel@web.de"
+RESEND_FROM_EMAIL="LiftLounge <info@liftlounge.de>"
+CONTACT_TO_EMAIL="info@liftlounge.de"
 ```
 
 Lokal funktioniert die API mit `npm run dev`, weil Vite die Route als Dev-Middleware bereitstellt. In Vercel müssen die Variablen zusätzlich im Projekt unter Environment Variables hinterlegt werden.
@@ -49,6 +49,6 @@ Die verwendeten Bilddateien liegen unter:
 
 Sie können später durch eigene Bilder mit denselben Dateinamen ersetzt werden.
 
-## Wichtiger Hinweis zu Rechtstexten
+## Inhalte pflegen
 
-Preise, Leistungen, FAQs und Schulungsangebote sind zentral in `src/data/siteData.js` gepflegt. Impressum, Datenschutz und AGB sind bewusst als Platzhalter gekennzeichnet und müssen vor Veröffentlichung rechtlich geprüft und ergänzt werden.
+Preise, Leistungen, FAQs, Schulungsangebote und Stammdaten sind zentral in `src/data/siteData.js` gepflegt. Impressum, Datenschutz und AGB liegen in `src/components/LegalPage.jsx`.

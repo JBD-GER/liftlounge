@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const defaultOwnerEmail = 'lea.kirfel@web.de';
+const defaultOwnerEmail = 'info@liftlounge.de';
 const defaultFromEmail = 'LiftLounge <onboarding@resend.dev>';
 const businessPhone = '0175 6529911';
 const businessLocation = 'Am Schafanger 12, 30890 Barsinghausen';

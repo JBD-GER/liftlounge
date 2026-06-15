@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react';
 import Audience from './components/Audience.jsx';
 import BenefitsBar from './components/BenefitsBar.jsx';
 import ContactForm from './components/ContactForm.jsx';
-import CookieConsent from './components/CookieConsent.jsx';
+import CookieConsent, {
+  cookieConsentStorageKey,
+  cookieConsentUpdatedEvent,
+} from './components/CookieConsent.jsx';
 import FAQ from './components/FAQ.jsx';
 import Footer from './components/Footer.jsx';
 import Gallery from './components/Gallery.jsx';
@@ -38,6 +41,39 @@ function usePathname() {
   }, []);
 
   return pathname;
+}
+
+function readAnalyticsConsent() {
+  let stored;
+
+  try {
+    stored = window.localStorage.getItem(cookieConsentStorageKey);
+  } catch {
+    return false;
+  }
+
+  if (!stored) return false;
+
+  try {
+    return Boolean(JSON.parse(stored).analytics);
+  } catch {
+    return false;
+  }
+}
+
+function useAnalyticsConsent() {
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(readAnalyticsConsent);
+
+  useEffect(() => {
+    function onConsentUpdated(event) {
+      setAnalyticsEnabled(Boolean(event.detail?.analytics));
+    }
+
+    window.addEventListener(cookieConsentUpdatedEvent, onConsentUpdated);
+    return () => window.removeEventListener(cookieConsentUpdatedEvent, onConsentUpdated);
+  }, []);
+
+  return analyticsEnabled;
 }
 
 function faqSchema() {
@@ -87,6 +123,7 @@ function HomePage() {
 
 export default function App() {
   const pathname = usePathname();
+  const analyticsEnabled = useAnalyticsConsent();
   const normalizedPath = pathname.replace(/\/$/, '') || '/';
   const isLegalPage = legalPaths.includes(normalizedPath);
   const guideMatch = normalizedPath.match(/^\/ratgeber\/(.+)$/);
@@ -111,7 +148,7 @@ export default function App() {
       {page}
       <Footer />
       <CookieConsent />
-      <Analytics />
+      {analyticsEnabled && <Analytics />}
     </>
   );
 }
