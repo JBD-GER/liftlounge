@@ -205,7 +205,7 @@ address {
   isolation: isolate;
   display: grid;
   overflow: hidden;
-  min-height: min(760px, calc(100svh - 78px));
+  min-height: calc(100svh - 78px);
   padding: 0;
   background: #231f1d;
 }
@@ -216,8 +216,8 @@ address {
   z-index: 1;
   content: "";
   background:
-    linear-gradient(90deg, rgba(29, 24, 22, 0.78) 0%, rgba(29, 24, 22, 0.56) 48%, rgba(29, 24, 22, 0.24) 100%),
-    linear-gradient(180deg, rgba(29, 24, 22, 0.18), rgba(29, 24, 22, 0.42));
+    linear-gradient(90deg, rgba(29, 24, 22, 0.44) 0%, rgba(29, 24, 22, 0.22) 48%, rgba(29, 24, 22, 0.05) 100%),
+    linear-gradient(180deg, rgba(29, 24, 22, 0.04), rgba(29, 24, 22, 0.14));
 }
 
 .hero-grid {
@@ -226,7 +226,7 @@ address {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  min-height: min(760px, calc(100svh - 78px));
+  min-height: calc(100svh - 78px);
   padding-block: clamp(86px, 12vw, 150px);
 }
 
@@ -271,6 +271,7 @@ h1 {
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 800;
   line-height: 0.98;
+  text-shadow: 0 18px 42px rgba(24, 19, 17, 0.34);
 }
 
 .hero h1 span {
@@ -300,6 +301,7 @@ p {
   color: rgba(255, 255, 255, 0.84);
   font-size: clamp(1.04rem, 1.35vw, 1.28rem);
   line-height: 1.65;
+  text-shadow: 0 10px 28px rgba(24, 19, 17, 0.34);
 }
 
 .hero-actions {
@@ -1904,12 +1906,18 @@ label small {
   }
 
   .hero {
-    min-height: min(700px, calc(100svh - 68px));
+    min-height: calc(100svh - 68px);
     padding: 0;
   }
 
+  .hero::before {
+    background:
+      linear-gradient(90deg, rgba(29, 24, 22, 0.5) 0%, rgba(29, 24, 22, 0.28) 58%, rgba(29, 24, 22, 0.08) 100%),
+      linear-gradient(180deg, rgba(29, 24, 22, 0.06), rgba(29, 24, 22, 0.18));
+  }
+
   .hero-grid {
-    min-height: min(700px, calc(100svh - 68px));
+    min-height: calc(100svh - 68px);
     padding-block: 64px;
   }
 
