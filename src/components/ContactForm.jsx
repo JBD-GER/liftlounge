@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { AlertCircle, ArrowRight, CheckCircle2, Phone } from 'lucide-react';
-import { pricingPackages, site, trainingOffers } from '../data/siteData.js';
+import { addOnServices, pricingPackages, site, trainingOffers } from '../data/siteData.js';
 
 const initialForm = {
   name: '',
@@ -33,6 +33,7 @@ export default function ContactForm() {
   const packageOptions = useMemo(
     () => [
       ...pricingPackages.map((plan) => plan.name),
+      ...addOnServices.map((service) => service.name),
       ...trainingOffers.map((offer) => offer.name),
     ],
     [],

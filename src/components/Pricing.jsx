@@ -1,5 +1,5 @@
 import { ArrowRight, Check, Clock, ShieldCheck, Sparkles } from 'lucide-react';
-import { pricingPackages } from '../data/siteData.js';
+import { addOnServices, pricingPackages } from '../data/siteData.js';
 
 export default function Pricing() {
   return (
@@ -42,6 +42,33 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
+              </article>
+            ))}
+          </div>
+          <div className="pricing-add-ons" aria-label="Zusatzservices">
+            {addOnServices.map((service) => (
+              <article className="pricing-add-on-card" key={service.name}>
+                <div className="pricing-add-on-copy">
+                  <p className="pricing-eyebrow">Zusatzservice</p>
+                  <h3>{service.name}</h3>
+                  <p className="pricing-description">{service.description}</p>
+                  <ul>
+                    {service.features.map((feature) => (
+                      <li key={feature}>
+                        <Check aria-hidden="true" size={18} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pricing-add-on-action">
+                  <span>ab</span>
+                  <strong>{service.price}</strong>
+                  <a className="button button-primary" href="#kontakt">
+                    Anfragen
+                    <ArrowRight aria-hidden="true" size={18} />
+                  </a>
+                </div>
               </article>
             ))}
           </div>

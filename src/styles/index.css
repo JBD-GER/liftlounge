@@ -890,6 +890,83 @@ p {
   margin-top: auto;
 }
 
+.pricing-add-ons {
+  display: grid;
+  gap: 12px;
+}
+
+.pricing-add-on-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(18px, 4vw, 42px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid rgba(166, 97, 99, 0.24);
+  border-left: 4px solid var(--rose-strong);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94), rgba(250, 248, 246, 0.9));
+}
+
+.pricing-add-on-copy {
+  min-width: 0;
+}
+
+.pricing-add-on-card h3 {
+  max-width: 760px;
+  margin-bottom: 8px;
+  font-size: clamp(1.08rem, 1.8vw, 1.45rem);
+}
+
+.pricing-add-on-card .pricing-description {
+  max-width: 760px;
+}
+
+.pricing-add-on-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 18px;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+.pricing-add-on-card li {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #4f4743;
+  line-height: 1.4;
+}
+
+.pricing-add-on-card li svg {
+  flex: 0 0 auto;
+  color: var(--sage);
+}
+
+.pricing-add-on-action {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+  min-width: 176px;
+}
+
+.pricing-add-on-action > span {
+  color: var(--rose-strong);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.pricing-add-on-action strong {
+  color: var(--ink);
+  font-family: var(--display-font);
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+.pricing-add-on-action .button {
+  min-width: 148px;
+}
+
 .pricing-side-note {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2027,6 +2104,27 @@ label small {
   .pricing-cards,
   .pricing-side-note {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-add-on-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .pricing-add-on-card ul {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-add-on-action {
+    justify-items: start;
+    min-width: 0;
+  }
+
+  .pricing-add-on-action .button {
+    width: 100%;
+    min-width: 0;
   }
 
   .pricing-card {

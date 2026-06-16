@@ -154,6 +154,9 @@ export const pricingPackages = [
       'Lash Lifting und Brow Lifting zusammen in einem Termin zum Kombipreis.',
     features: ['inkl. Färben', 'beide Liftings kombiniert', 'ein Termin'],
   },
+];
+
+export const addOnServices = [
   {
     name: 'Augenbrauenkorrektur mit Heißwachs',
     eyebrow: 'Augenbrauen',
@@ -289,7 +292,7 @@ export const localBusinessSchema = {
     'Neustadt am Rübenberge',
     'Seelze',
   ],
-  makesOffer: pricingPackages.map((item) => {
+  makesOffer: [...pricingPackages, ...addOnServices].map((item) => {
     const price = numericPrice(item.price);
 
     return {
