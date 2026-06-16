@@ -28,10 +28,14 @@ class RequestError extends Error {
 }
 
 function getEmailConfig() {
+  const explicitFromEmail = process.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM;
+
   return {
     apiKey: process.env.RESEND_API_KEY || process.env.RESEND_API,
-    fromEmail: process.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM || defaultFromEmail,
+    fromEmail: explicitFromEmail || defaultFromEmail,
     ownerEmail: process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL || defaultOwnerEmail,
+    customerConfirmationEnabled:
+      process.env.RESEND_CUSTOMER_CONFIRMATION === 'true' || Boolean(explicitFromEmail),
   };
 }
 
@@ -242,7 +246,7 @@ async function sendEmail(resend, payload) {
 }
 
 async function sendContactEmails(form) {
-  const { apiKey, fromEmail, ownerEmail } = getEmailConfig();
+  const { apiKey, fromEmail, ownerEmail, customerConfirmationEnabled } = getEmailConfig();
 
   if (!apiKey) {
     throw new RequestError(500, 'Resend API Key fehlt.');
@@ -251,7 +255,7 @@ async function sendContactEmails(form) {
   const resend = new Resend(apiKey);
   const receivedAt = formatDate(new Date());
 
-  const ownerEmailPromise = sendEmail(resend, {
+  await sendEmail(resend, {
     from: fromEmail,
     to: ownerEmail,
     replyTo: form.email,
@@ -260,16 +264,25 @@ async function sendContactEmails(form) {
     text: createOwnerText(form, receivedAt),
   });
 
-  const customerEmailPromise = sendEmail(resend, {
-    from: fromEmail,
-    to: form.email,
-    replyTo: ownerEmail,
-    subject: 'Deine Anfrage bei LiftLounge ist angekommen',
-    html: createCustomerEmail(form),
-    text: createCustomerText(form),
-  });
+  if (!customerConfirmationEnabled) {
+    return { customerEmailSent: false };
+  }
 
-  await Promise.all([ownerEmailPromise, customerEmailPromise]);
+  try {
+    await sendEmail(resend, {
+      from: fromEmail,
+      to: form.email,
+      replyTo: ownerEmail,
+      subject: 'Deine Anfrage bei LiftLounge ist angekommen',
+      html: createCustomerEmail(form),
+      text: createCustomerText(form),
+    });
+
+    return { customerEmailSent: true };
+  } catch (error) {
+    console.error('Customer confirmation email error:', error);
+    return { customerEmailSent: false };
+  }
 }
 
 export async function createContactResponse(request) {
@@ -290,14 +303,15 @@ export async function createContactResponse(request) {
       throw new RequestError(400, messages.invalidRequest, errors);
     }
 
-    await sendContactEmails(form);
+    const emailResult = await sendContactEmails(form);
 
     return {
       status: 200,
       body: {
         ok: true,
-        message:
-          'Danke, deine Anfrage wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.',
+        message: emailResult.customerEmailSent
+          ? 'Danke, deine Anfrage wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.'
+          : 'Danke, deine Anfrage wurde gesendet. Lea meldet sich zeitnah persönlich bei dir.',
       },
     };
   } catch (error) {

@@ -24,13 +24,15 @@ Benötigte Environment Variable:
 
 ```bash
 RESEND_API=...
+CONTACT_TO_EMAIL="info@liftlounge.de"
 ```
 
-Optional kann für Produktion eine verifizierte Absenderadresse gesetzt werden:
+Mit nur `RESEND_API` wird die Anfrage-Mail an `CONTACT_TO_EMAIL` gesendet. Eine
+Kundenbestätigung wird erst verschickt, sobald eine verifizierte
+Absenderadresse gesetzt ist:
 
 ```bash
 RESEND_FROM_EMAIL="LiftLounge <info@liftlounge.de>"
-CONTACT_TO_EMAIL="info@liftlounge.de"
 ```
 
 Lokal funktioniert die API mit `npm run dev`, weil Vite die Route als Dev-Middleware bereitstellt. In Vercel müssen die Variablen zusätzlich im Projekt unter Environment Variables hinterlegt werden.

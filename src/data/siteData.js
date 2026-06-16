@@ -86,6 +86,17 @@ export const services = [
       'Für definierte, voller wirkende Augenbrauen mit sauberem Finish inklusive Färben.',
     features: ['inkl. Färben', 'Form wird abgestimmt', 'natürlicher Look'],
   },
+  {
+    name: 'Augenbrauenkorrektur mit Heißwachs',
+    eyebrow: 'Augenbrauen',
+    price: '15 €',
+    duration: 'ca. 15-20 Min.',
+    image: '/images/model-3.jpg',
+    alt: 'Gepflegte Augenbrauen nach einer präzisen Augenbrauenkorrektur',
+    description:
+      'Für eine saubere Augenbrauenform mit warmem Wachs, fein abgestimmt auf deine natürliche Form.',
+    features: ['mit Heißwachs', 'präzise Formkorrektur', 'kurzer Zusatztermin'],
+  },
 ];
 
 export const audience = [
@@ -142,6 +153,14 @@ export const pricingPackages = [
     description:
       'Lash Lifting und Brow Lifting zusammen in einem Termin zum Kombipreis.',
     features: ['inkl. Färben', 'beide Liftings kombiniert', 'ein Termin'],
+  },
+  {
+    name: 'Augenbrauenkorrektur mit Heißwachs',
+    eyebrow: 'Augenbrauen',
+    price: '15 €',
+    description:
+      'Saubere Augenbrauenkorrektur mit warmem Wachs für eine gepflegte, natürliche Form.',
+    features: ['mit Heißwachs', 'präzise Form', 'ca. 15-20 Minuten'],
   },
 ];
 
@@ -231,7 +250,7 @@ export const faqs = [
   {
     question: 'Bietest du auch Brow Lifting und Schulungen an?',
     answer:
-      'Ja, Brow Lifting ist als Einzelbehandlung oder als Kombi mit Lash Lifting möglich. Schulungen werden nach persönlicher Anfrage angeboten.',
+      'Ja, Brow Lifting ist als Einzelbehandlung oder als Kombi mit Lash Lifting möglich. Zusätzlich gibt es eine Augenbrauenkorrektur mit Heißwachs. Schulungen werden nach persönlicher Anfrage angeboten.',
   },
 ];
 
@@ -247,7 +266,7 @@ export const localBusinessSchema = {
   founder: 'Lea Kirfel',
   telephone: '+491756529911',
   email: 'info@liftlounge.de',
-  priceRange: '65-120 EUR',
+  priceRange: '15-120 EUR',
   image: '/images/model-1.jpg',
   description:
     'LiftLounge bietet Lash Lifting und Brow Lifting am Standort Barsinghausen bei Hannover.',
@@ -295,5 +314,10 @@ export const serviceSchema = {
     telephone: '+491756529911',
   },
   areaServed: 'Hannover, Barsinghausen und Region Hannover',
-  serviceType: ['Lash Lifting', 'Brow Lifting', 'Lash & Brow Lifting'],
+  serviceType: [
+    'Lash Lifting',
+    'Brow Lifting',
+    'Lash & Brow Lifting',
+    'Augenbrauenkorrektur mit Heißwachs',
+  ],
 };
