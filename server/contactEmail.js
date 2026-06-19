@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 
 const defaultOwnerEmail = 'info@liftlounge.de';
+const defaultOwnerCopyEmail = 'lea.kirfel@web.de';
 const defaultFromEmail = 'LiftLounge <onboarding@resend.dev>';
 const businessPhone = '0175 6529911';
 const businessLocation = 'Am Schafanger 12, 30890 Barsinghausen';
@@ -29,14 +30,38 @@ class RequestError extends Error {
 
 function getEmailConfig() {
   const explicitFromEmail = process.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM;
+  const ownerEmail = process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL || defaultOwnerEmail;
+  const ownerCopyEmails = parseEmailList(
+    process.env.CONTACT_CC_EMAIL || process.env.CONTACT_COPY_EMAIL || defaultOwnerCopyEmail,
+  ).filter((email) => email.toLowerCase() !== ownerEmail.toLowerCase());
 
   return {
     apiKey: process.env.RESEND_API_KEY || process.env.RESEND_API,
     fromEmail: explicitFromEmail || defaultFromEmail,
-    ownerEmail: process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL || defaultOwnerEmail,
+    ownerEmail,
+    ownerCopyEmails,
     customerConfirmationEnabled:
       process.env.RESEND_CUSTOMER_CONFIRMATION === 'true' || Boolean(explicitFromEmail),
   };
+}
+
+function parseEmailList(value) {
+  const seen = new Set();
+
+  return String(value ?? '')
+    .split(',')
+    .map((email) => email.trim())
+    .filter(Boolean)
+    .filter((email) => {
+      const normalizedEmail = email.toLowerCase();
+
+      if (seen.has(normalizedEmail)) {
+        return false;
+      }
+
+      seen.add(normalizedEmail);
+      return true;
+    });
 }
 
 function normalizeField(value, limit) {
@@ -246,7 +271,8 @@ async function sendEmail(resend, payload) {
 }
 
 async function sendContactEmails(form) {
-  const { apiKey, fromEmail, ownerEmail, customerConfirmationEnabled } = getEmailConfig();
+  const { apiKey, fromEmail, ownerEmail, ownerCopyEmails, customerConfirmationEnabled } =
+    getEmailConfig();
 
   if (!apiKey) {
     throw new RequestError(500, 'Resend API Key fehlt.');
@@ -255,14 +281,20 @@ async function sendContactEmails(form) {
   const resend = new Resend(apiKey);
   const receivedAt = formatDate(new Date());
 
-  await sendEmail(resend, {
+  const ownerEmailPayload = {
     from: fromEmail,
     to: ownerEmail,
     replyTo: form.email,
     subject: `Neue LiftLounge Anfrage: ${form.name}`,
     html: createOwnerEmail(form, receivedAt),
     text: createOwnerText(form, receivedAt),
-  });
+  };
+
+  if (ownerCopyEmails.length > 0) {
+    ownerEmailPayload.cc = ownerCopyEmails;
+  }
+
+  await sendEmail(resend, ownerEmailPayload);
 
   if (!customerConfirmationEnabled) {
     return { customerEmailSent: false };
