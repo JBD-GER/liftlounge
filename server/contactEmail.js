@@ -31,10 +31,10 @@ class RequestError extends Error {
 function getEmailConfig() {
   const explicitFromEmail = process.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM;
   const ownerEmail = process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL || defaultOwnerEmail;
-  const ownerBccEmails = parseEmailList(
-    process.env.CONTACT_BCC_EMAIL ||
+  const ownerCopyEmails = parseEmailList(
+    process.env.CONTACT_COPY_EMAIL ||
+      process.env.CONTACT_BCC_EMAIL ||
       process.env.CONTACT_CC_EMAIL ||
-      process.env.CONTACT_COPY_EMAIL ||
       defaultOwnerCopyEmail,
   ).filter((email) => email.toLowerCase() !== ownerEmail.toLowerCase());
 
@@ -42,7 +42,7 @@ function getEmailConfig() {
     apiKey: process.env.RESEND_API_KEY || process.env.RESEND_API,
     fromEmail: explicitFromEmail || defaultFromEmail,
     ownerEmail,
-    ownerBccEmails,
+    ownerCopyEmails,
     customerConfirmationEnabled:
       process.env.RESEND_CUSTOMER_CONFIRMATION === 'true' || Boolean(explicitFromEmail),
   };
@@ -274,7 +274,7 @@ async function sendEmail(resend, payload) {
 }
 
 async function sendContactEmails(form) {
-  const { apiKey, fromEmail, ownerEmail, ownerBccEmails, customerConfirmationEnabled } =
+  const { apiKey, fromEmail, ownerEmail, ownerCopyEmails, customerConfirmationEnabled } =
     getEmailConfig();
 
   if (!apiKey) {
@@ -293,11 +293,22 @@ async function sendContactEmails(form) {
     text: createOwnerText(form, receivedAt),
   };
 
-  if (ownerBccEmails.length > 0) {
-    ownerEmailPayload.bcc = ownerBccEmails;
-  }
-
   await sendEmail(resend, ownerEmailPayload);
+
+  const ownerCopyResults = await Promise.allSettled(
+    ownerCopyEmails.map((copyEmail) =>
+      sendEmail(resend, {
+        ...ownerEmailPayload,
+        to: copyEmail,
+      }),
+    ),
+  );
+
+  ownerCopyResults.forEach((result, index) => {
+    if (result.status === 'rejected') {
+      console.error('Owner copy email error:', ownerCopyEmails[index], result.reason);
+    }
+  });
 
   if (!customerConfirmationEnabled) {
     return { customerEmailSent: false };

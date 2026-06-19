@@ -18,14 +18,14 @@ npm run preview
 
 ## Kontaktformular mit Resend
 
-Das Kontaktformular sendet über die serverseitige Route `/api/contact` eine Bestätigung an die Kundin und eine Anfrage-Mail an `info@liftlounge.de`. Eine BCC-Kopie der Anfrage geht zusätzlich an `lea.kirfel@web.de`.
+Das Kontaktformular sendet über die serverseitige Route `/api/contact` eine Bestätigung an die Kundin und eine Anfrage-Mail an `info@liftlounge.de`. Eine direkt adressierte Kopie der Anfrage geht zusätzlich an `lea.kirfel@web.de`.
 
 Benötigte Environment Variable:
 
 ```bash
 RESEND_API=...
 CONTACT_TO_EMAIL="info@liftlounge.de"
-CONTACT_BCC_EMAIL="lea.kirfel@web.de"
+CONTACT_COPY_EMAIL="lea.kirfel@web.de"
 ```
 
 Mit nur `RESEND_API` wird die Anfrage-Mail an `CONTACT_TO_EMAIL` gesendet. Eine
