@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 const defaultOwnerEmail = 'info@liftlounge.de';
 const defaultOwnerCopyEmail = 'lea.kirfel@web.de';
-const defaultFromEmail = 'LiftLounge <onboarding@resend.dev>';
+const defaultFromEmail = 'LiftLounge <info@liftlounge.de>';
 const businessPhone = '0175 6529911';
 const businessLocation = 'Am Schafanger 12, 30890 Barsinghausen';
 
@@ -31,15 +31,18 @@ class RequestError extends Error {
 function getEmailConfig() {
   const explicitFromEmail = process.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM;
   const ownerEmail = process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL || defaultOwnerEmail;
-  const ownerCopyEmails = parseEmailList(
-    process.env.CONTACT_CC_EMAIL || process.env.CONTACT_COPY_EMAIL || defaultOwnerCopyEmail,
+  const ownerBccEmails = parseEmailList(
+    process.env.CONTACT_BCC_EMAIL ||
+      process.env.CONTACT_CC_EMAIL ||
+      process.env.CONTACT_COPY_EMAIL ||
+      defaultOwnerCopyEmail,
   ).filter((email) => email.toLowerCase() !== ownerEmail.toLowerCase());
 
   return {
     apiKey: process.env.RESEND_API_KEY || process.env.RESEND_API,
     fromEmail: explicitFromEmail || defaultFromEmail,
     ownerEmail,
-    ownerCopyEmails,
+    ownerBccEmails,
     customerConfirmationEnabled:
       process.env.RESEND_CUSTOMER_CONFIRMATION === 'true' || Boolean(explicitFromEmail),
   };
@@ -271,7 +274,7 @@ async function sendEmail(resend, payload) {
 }
 
 async function sendContactEmails(form) {
-  const { apiKey, fromEmail, ownerEmail, ownerCopyEmails, customerConfirmationEnabled } =
+  const { apiKey, fromEmail, ownerEmail, ownerBccEmails, customerConfirmationEnabled } =
     getEmailConfig();
 
   if (!apiKey) {
@@ -290,8 +293,8 @@ async function sendContactEmails(form) {
     text: createOwnerText(form, receivedAt),
   };
 
-  if (ownerCopyEmails.length > 0) {
-    ownerEmailPayload.cc = ownerCopyEmails;
+  if (ownerBccEmails.length > 0) {
+    ownerEmailPayload.bcc = ownerBccEmails;
   }
 
   await sendEmail(resend, ownerEmailPayload);
