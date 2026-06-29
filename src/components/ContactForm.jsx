@@ -79,7 +79,7 @@ export default function ContactForm() {
         throw new Error(payload.message || 'Die Anfrage konnte gerade nicht gesendet werden.');
       }
 
-      window.location.assign('/danke');
+      window.location.assign(`/danke?lead=${Date.now().toString(36)}`);
     } catch (error) {
       setSubmitState({
         status: 'error',

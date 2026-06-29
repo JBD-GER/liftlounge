@@ -1,10 +1,63 @@
+import { useEffect } from 'react';
 import { ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
 import { site } from '../data/siteData.js';
 import SEO from './SEO.jsx';
 
+const googleAdsConversionId = 'AW-18282813022';
+const googleAdsConversionLabel = '-R6RCP7Tw8ccEN6s9o1E';
+const googleAdsScriptId = 'liftlounge-google-ads-tag';
+const googleAdsSendTo = `${googleAdsConversionId}/${googleAdsConversionLabel}`;
+const conversionStoragePrefix = 'liftlounge-google-ads-lead-conversion:';
+
+function loadGoogleAdsTag() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+  if (!document.getElementById(googleAdsScriptId)) {
+    const script = document.createElement('script');
+    script.id = googleAdsScriptId;
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${googleAdsConversionId}`;
+    document.head.appendChild(script);
+  }
+
+  if (!window.__liftloungeGoogleAdsConfigured) {
+    window.gtag('js', new Date());
+    window.gtag('config', googleAdsConversionId);
+    window.__liftloungeGoogleAdsConfigured = true;
+  }
+}
+
+function GoogleAdsLeadConversion() {
+  useEffect(() => {
+    const leadToken =
+      new URLSearchParams(window.location.search).get('lead') || 'direct-thank-you';
+    const storageKey = `${conversionStoragePrefix}${leadToken}`;
+
+    try {
+      if (window.sessionStorage.getItem(storageKey)) return;
+      window.sessionStorage.setItem(storageKey, '1');
+    } catch {
+      // Tracking should still run if sessionStorage is unavailable.
+    }
+
+    loadGoogleAdsTag();
+    window.gtag('event', 'conversion', {
+      send_to: googleAdsSendTo,
+    });
+  }, []);
+
+  return null;
+}
+
 export default function ThankYou() {
   return (
     <>
+      <GoogleAdsLeadConversion />
       <SEO
         title="Danke für deine Anfrage | LiftLounge"
         description="Deine Anfrage wurde erfolgreich an LiftLounge übermittelt."
