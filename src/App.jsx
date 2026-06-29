@@ -23,6 +23,7 @@ import Pricing from './components/Pricing.jsx';
 import Process from './components/Process.jsx';
 import SEO from './components/SEO.jsx';
 import Services from './components/Services.jsx';
+import ThankYou from './components/ThankYou.jsx';
 import TrainingIntro from './components/TrainingIntro.jsx';
 import TrainingSection from './components/TrainingSection.jsx';
 import { getGuidePost } from './data/guideData.js';
@@ -132,6 +133,8 @@ export default function App() {
 
   if (isHome) {
     page = <HomePage />;
+  } else if (normalizedPath === '/danke') {
+    page = <ThankYou />;
   } else if (isLegalPage) {
     page = <LegalPage path={normalizedPath} />;
   } else if (normalizedPath === '/ratgeber') {

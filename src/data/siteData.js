@@ -13,6 +13,7 @@ export const site = {
   owner: 'Lea Kirfel',
   phone: '0175 6529911',
   phoneHref: 'tel:+491756529911',
+  whatsappHref: 'https://wa.me/491756529911',
   email: 'info@liftlounge.de',
   emailHref: 'mailto:info@liftlounge.de',
   legalAddress: {

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { AlertCircle, ArrowRight, CheckCircle2, Phone } from 'lucide-react';
+import { AlertCircle, ArrowRight, Phone } from 'lucide-react';
 import { addOnServices, pricingPackages, site, trainingOffers } from '../data/siteData.js';
 
 const initialForm = {
@@ -79,13 +79,7 @@ export default function ContactForm() {
         throw new Error(payload.message || 'Die Anfrage konnte gerade nicht gesendet werden.');
       }
 
-      setSubmitState({
-        status: 'success',
-        message:
-          payload.message ||
-          'Danke, deine Anfrage wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.',
-      });
-      setForm(initialForm);
+      window.location.assign('/danke');
     } catch (error) {
       setSubmitState({
         status: 'error',
@@ -119,13 +113,6 @@ export default function ContactForm() {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit} noValidate>
-          {submitState.status === 'success' && (
-            <div className="success-message" role="status">
-              <CheckCircle2 aria-hidden="true" size={21} />
-              <span>{submitState.message}</span>
-            </div>
-          )}
-
           {submitState.status === 'error' && (
             <div className="error-message" role="alert">
               <AlertCircle aria-hidden="true" size={21} />
