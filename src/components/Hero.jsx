@@ -44,6 +44,27 @@ export default function Hero() {
             Am Schafanger 12, 30890 Barsinghausen
           </div>
         </div>
+        <div className="hero-media" aria-hidden="true">
+          <div className="hero-media-frame">
+            <img
+              src="/images/model-2.jpg"
+              alt=""
+              width="1800"
+              height="1350"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="hero-media-inset">
+            <img
+              src="/images/model-3.jpg"
+              alt=""
+              width="1800"
+              height="1350"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

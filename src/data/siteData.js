@@ -131,6 +131,16 @@ export const processSteps = [
 
 export const pricingPackages = [
   {
+    name: 'Lash & Brow Lifting',
+    eyebrow: 'Kombi-Behandlung',
+    badge: 'Beliebt',
+    featured: true,
+    price: '120 €',
+    description:
+      'Lash Lifting und Brow Lifting zusammen in einem Termin zum Kombipreis.',
+    features: ['inkl. Färben', 'beide Liftings kombiniert', 'ein Termin'],
+  },
+  {
     name: 'Lash Lifting',
     eyebrow: 'Wimpern',
     price: '65 €',
@@ -145,14 +155,6 @@ export const pricingPackages = [
     description:
       'Definierte Augenbrauen mit sauberer Form, natürlichem Ausdruck und Färben.',
     features: ['inkl. Färben', 'typgerechte Form', 'ca. 45-60 Minuten'],
-  },
-  {
-    name: 'Lash & Brow Lifting',
-    eyebrow: 'Kombi-Behandlung',
-    price: '120 €',
-    description:
-      'Lash Lifting und Brow Lifting zusammen in einem Termin zum Kombipreis.',
-    features: ['inkl. Färben', 'beide Liftings kombiniert', 'ein Termin'],
   },
 ];
 

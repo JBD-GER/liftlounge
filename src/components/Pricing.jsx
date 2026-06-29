@@ -20,7 +20,10 @@ export default function Pricing() {
                 key={plan.name}
               >
                 <div>
-                  <p className="pricing-eyebrow">{plan.eyebrow}</p>
+                  <div className="pricing-card-topline">
+                    <p className="pricing-eyebrow">{plan.eyebrow}</p>
+                    {plan.badge && <span className="pricing-badge">{plan.badge}</span>}
+                  </div>
                   <h3>{plan.name}</h3>
                   <p className="pricing-description">{plan.description}</p>
                 </div>
