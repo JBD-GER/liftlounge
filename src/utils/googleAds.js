@@ -1,6 +1,7 @@
 export const googleAdsConversionId = 'AW-18282813022';
 
 const googleAdsScriptId = 'liftlounge-google-ads-tag';
+const googleAdsScriptSelector = `script[src*="googletagmanager.com/gtag/js?id=${googleAdsConversionId}"]`;
 
 export const googleAdsConversionLabels = {
   leadForm: '-R6RCP7Tw8ccEN6s9o1E',
@@ -15,7 +16,10 @@ export function loadGoogleAdsTag() {
       window.dataLayer.push(arguments);
     };
 
-  if (!document.getElementById(googleAdsScriptId)) {
+  if (
+    !document.getElementById(googleAdsScriptId) &&
+    !document.querySelector(googleAdsScriptSelector)
+  ) {
     const script = document.createElement('script');
     script.id = googleAdsScriptId;
     script.async = true;
@@ -23,11 +27,18 @@ export function loadGoogleAdsTag() {
     document.head.appendChild(script);
   }
 
-  if (!window.__liftloungeGoogleAdsConfigured) {
+  const isConfigured =
+    window.__liftloungeGoogleAdsConfigured ||
+    window.dataLayer.some(
+      (entry) => entry?.[0] === 'config' && entry?.[1] === googleAdsConversionId,
+    );
+
+  if (!isConfigured) {
     window.gtag('js', new Date());
     window.gtag('config', googleAdsConversionId);
-    window.__liftloungeGoogleAdsConfigured = true;
   }
+
+  window.__liftloungeGoogleAdsConfigured = true;
 }
 
 export function fireGoogleAdsConversion(label) {
