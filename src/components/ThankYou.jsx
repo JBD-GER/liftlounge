@@ -1,36 +1,13 @@
 import { useEffect } from 'react';
 import { ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
 import { site } from '../data/siteData.js';
+import {
+  fireGoogleAdsConversion,
+  googleAdsConversionLabels,
+} from '../utils/googleAds.js';
 import SEO from './SEO.jsx';
 
-const googleAdsConversionId = 'AW-18282813022';
-const googleAdsConversionLabel = '-R6RCP7Tw8ccEN6s9o1E';
-const googleAdsScriptId = 'liftlounge-google-ads-tag';
-const googleAdsSendTo = `${googleAdsConversionId}/${googleAdsConversionLabel}`;
 const conversionStoragePrefix = 'liftlounge-google-ads-lead-conversion:';
-
-function loadGoogleAdsTag() {
-  window.dataLayer = window.dataLayer || [];
-  window.gtag =
-    window.gtag ||
-    function gtag() {
-      window.dataLayer.push(arguments);
-    };
-
-  if (!document.getElementById(googleAdsScriptId)) {
-    const script = document.createElement('script');
-    script.id = googleAdsScriptId;
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${googleAdsConversionId}`;
-    document.head.appendChild(script);
-  }
-
-  if (!window.__liftloungeGoogleAdsConfigured) {
-    window.gtag('js', new Date());
-    window.gtag('config', googleAdsConversionId);
-    window.__liftloungeGoogleAdsConfigured = true;
-  }
-}
 
 function GoogleAdsLeadConversion() {
   useEffect(() => {
@@ -45,13 +22,14 @@ function GoogleAdsLeadConversion() {
       // Tracking should still run if sessionStorage is unavailable.
     }
 
-    loadGoogleAdsTag();
-    window.gtag('event', 'conversion', {
-      send_to: googleAdsSendTo,
-    });
+    fireGoogleAdsConversion(googleAdsConversionLabels.leadForm);
   }, []);
 
   return null;
+}
+
+function handleWhatsAppClick() {
+  fireGoogleAdsConversion(googleAdsConversionLabels.whatsappContact);
 }
 
 export default function ThankYou() {
@@ -91,6 +69,7 @@ export default function ThankYou() {
                 href={site.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleWhatsAppClick}
               >
                 <MessageCircle aria-hidden="true" size={18} />
                 WhatsApp
