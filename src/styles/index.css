@@ -2910,13 +2910,12 @@ label small {
   }
 
   .liability-stepper {
-    display: flex;
-    overflow-x: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow-x: visible;
     padding-bottom: 2px;
   }
 
   .stepper-button {
-    flex: 0 0 112px;
     min-height: 66px;
   }
 
