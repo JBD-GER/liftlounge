@@ -59,8 +59,8 @@ export default function Hero() {
             <img
               src="/images/kundin.jpeg"
               alt=""
-              width="4279"
-              height="4735"
+              width="1600"
+              height="2000"
               decoding="async"
             />
           </div>

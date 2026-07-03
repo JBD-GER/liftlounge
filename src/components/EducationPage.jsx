@@ -85,8 +85,8 @@ export default function EducationPage() {
               <img
                 src="/images/kundin.jpeg"
                 alt="Echtes LiftLounge Ergebnis nach Lash und Brow Lifting"
-                width="4279"
-                height="4735"
+                width="1600"
+                height="2000"
                 decoding="async"
               />
             </figure>
