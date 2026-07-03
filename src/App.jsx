@@ -105,11 +105,11 @@ function HomePage() {
       <main>
         <Hero />
         <BenefitsBar />
+        <Pricing />
         <TrainingIntro />
         <Services />
         <Audience />
         <Process />
-        <Pricing />
         <Gallery />
         <TrainingSection />
         <Location />
