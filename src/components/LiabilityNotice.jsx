@@ -284,7 +284,7 @@ export default function LiabilityNotice() {
                 Zurück zur Startseite
               </a>
               <p className="eyebrow">Haftungshinweis</p>
-              <h1>Bitte vor der Behandlung ausfüllen.</h1>
+              <h1>Vorab ausfüllen.</h1>
               <p>
                 Deine Angaben helfen Lea, die Behandlung passend und
                 verantwortungsvoll einzuschätzen. Nach dem Absenden erhältst du
