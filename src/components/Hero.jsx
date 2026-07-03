@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="hero-media" aria-hidden="true">
           <div className="hero-media-frame">
             <picture>
-              <source media="(max-width: 760px)" srcSet="/images/kundin.jpeg" />
+              <source media="(max-width: 760px)" srcSet="/images/kundin-hochkant.jpeg" />
               <img
                 className="hero-media-image"
                 src="/images/model-2.jpg"
@@ -61,7 +61,7 @@ export default function Hero() {
           </div>
           <div className="hero-media-inset">
             <img
-              src="/images/kundin.jpeg"
+              src="/images/kundin-hochkant.jpeg"
               alt=""
               width="1600"
               height="2000"

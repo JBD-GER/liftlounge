@@ -48,7 +48,7 @@ export default function EducationPage() {
         title="Aufklärung & Pflege | LiftLounge"
         description="Allgemeine Aufklärung zu Lash Lifting, Brow Lifting, Vorbereitung und Pflege nach der Behandlung bei LiftLounge."
         path="/aufklaerung"
-        image="/images/kundin.jpeg"
+        image="/images/kundin-hochkant.jpeg"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
@@ -83,7 +83,7 @@ export default function EducationPage() {
             </div>
             <figure className="education-hero-image">
               <img
-                src="/images/kundin.jpeg"
+                src="/images/kundin-hochkant.jpeg"
                 alt="Echtes LiftLounge Ergebnis nach Lash und Brow Lifting"
                 width="1600"
                 height="2000"

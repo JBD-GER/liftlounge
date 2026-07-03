@@ -257,7 +257,7 @@ export default function LiabilityNotice() {
         title="Haftungshinweis ausfüllen | LiftLounge"
         description="Digitaler Haftungshinweis und Datenschutzhinweis für Lash Lifting und Brow Lifting bei LiftLounge."
         path="/haftungshinweis"
-        image="/images/kundin.jpeg"
+        image="/images/kundin-hochkant.jpeg"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',

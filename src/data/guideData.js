@@ -7,7 +7,7 @@ export const guidePosts = [
       'Brow Lifting in Hannover und Barsinghausen erklärt: Für wen es geeignet ist, wie die Behandlung abläuft und wie du deine Augenbrauen danach pflegst.',
     date: '2026-07-03',
     readingTime: '8 Min.',
-    image: '/images/kundin.jpeg',
+    image: '/images/kundin-hochkant.jpeg',
     imageAlt: 'Echtes LiftLounge Ergebnis mit gepflegten Augenbrauen nach Brow Lifting',
     intro:
       'Brow Lifting ist ideal, wenn deine Augenbrauen voller, geordneter und definierter wirken sollen, ohne dass der natürliche Ausdruck verloren geht. Gerade in Hannover und der Region suchen viele Kundinnen nach einer Lösung, die alltagstauglich aussieht und morgens Zeit spart.',

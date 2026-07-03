@@ -80,7 +80,7 @@ export const services = [
     eyebrow: 'Augenbrauen',
     price: '65 €',
     duration: 'ca. 45-60 Min.',
-    image: '/images/kundin.jpeg',
+    image: '/images/kundin-hochkant.jpeg',
     alt: 'Echtes Brow und Lash Lifting Ergebnis einer LiftLounge Kundin',
     description:
       'Für definierte, voller wirkende Augenbrauen mit sauberem Finish inklusive Färben.',
@@ -91,7 +91,7 @@ export const services = [
     eyebrow: 'Augenbrauen',
     price: '15 €',
     duration: 'ca. 15-20 Min.',
-    image: '/images/kundin.jpeg',
+    image: '/images/kundin-hochkant.jpeg',
     alt: 'Gepflegte Augenbrauen nach einer präzisen Augenbrauenkorrektur',
     description:
       'Für eine saubere Augenbrauenform mit warmem Wachs, fein abgestimmt auf deine natürliche Form.',
@@ -200,7 +200,7 @@ export const gallery = [
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegtem Augenaufschlag',
   },
   {
-    src: '/images/kundin.jpeg',
+    src: '/images/kundin-hochkant.jpeg',
     alt: 'Echtes LiftLounge Kundinnen-Ergebnis mit gelifteten Wimpern und gepflegten Augenbrauen',
   },
 ];
