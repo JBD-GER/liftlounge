@@ -13,13 +13,9 @@ const fieldLimits = {
   packageName: 140,
   message: 2200,
   treatment: 140,
-  appointmentDate: 40,
   allergies: 900,
   eyeHealth: 900,
-  contactLenses: 140,
-  medications: 900,
   recentTreatments: 900,
-  aftercareNotes: 1200,
   signature: 120,
 };
 
@@ -110,16 +106,12 @@ function normalizeLiabilitySubmission(body) {
     phone: normalizeField(body.phone, fieldLimits.phone),
     email: normalizeField(body.email, fieldLimits.email).toLowerCase(),
     treatment: normalizeField(body.treatment, fieldLimits.treatment),
-    appointmentDate: normalizeField(body.appointmentDate, fieldLimits.appointmentDate),
     allergies: normalizeField(body.allergies, fieldLimits.allergies),
     eyeHealth: normalizeField(body.eyeHealth, fieldLimits.eyeHealth),
-    contactLenses: normalizeField(body.contactLenses, fieldLimits.contactLenses),
-    medications: normalizeField(body.medications, fieldLimits.medications),
     recentTreatments: normalizeField(body.recentTreatments, fieldLimits.recentTreatments),
     aftercareNoWater: normalizeBoolean(body.aftercareNoWater),
     aftercareNoRubbing: normalizeBoolean(body.aftercareNoRubbing),
     aftercareContact: normalizeBoolean(body.aftercareContact),
-    aftercareNotes: normalizeField(body.aftercareNotes, fieldLimits.aftercareNotes),
     riskConsent: normalizeBoolean(body.riskConsent),
     liabilityConsent: normalizeBoolean(body.liabilityConsent),
     privacyConsent: normalizeBoolean(body.privacyConsent),
@@ -156,10 +148,6 @@ function validateLiabilitySubmission(form) {
   if (!form.treatment) errors.treatment = 'Bitte wähle eine Behandlung aus.';
   if (!form.allergies) errors.allergies = 'Bitte trage Allergien ein oder schreibe „keine“.';
   if (!form.eyeHealth) errors.eyeHealth = 'Bitte trage Beschwerden ein oder schreibe „keine“.';
-  if (!form.contactLenses) errors.contactLenses = 'Bitte wähle eine Kontaktlinsen-Angabe aus.';
-  if (!form.medications) {
-    errors.medications = 'Bitte trage relevante Umstände ein oder schreibe „keine“.';
-  }
   if (!form.recentTreatments) {
     errors.recentTreatments = 'Bitte trage frische Behandlungen ein oder schreibe „keine“.';
   }
@@ -239,16 +227,6 @@ function formatDate(date) {
     timeStyle: 'short',
     timeZone: 'Europe/Berlin',
   }).format(date);
-}
-
-function formatAppointmentDate(value) {
-  if (!value) return 'Noch nicht angegeben';
-
-  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-
-  if (!match) return value;
-
-  return `${match[3]}.${match[2]}.${match[1]}`;
 }
 
 function renderShell(content) {
@@ -355,7 +333,6 @@ function createLiabilityDetailsHtml(form, receivedAt) {
       ${renderField('Telefon', `<a href="tel:${escapeHtml(form.phone.replace(/\s/g, ''))}" style="color:#292321;">${escapeHtml(form.phone)}</a>`)}
       ${renderField('E-Mail', `<a href="mailto:${escapeHtml(form.email)}" style="color:#292321;">${escapeHtml(form.email)}</a>`)}
       ${renderField('Behandlung', escapeHtml(form.treatment))}
-      ${renderField('Termin', escapeHtml(formatAppointmentDate(form.appointmentDate)))}
       ${renderField('Eingang', escapeHtml(receivedAt))}
       ${renderField('Digitale Bestätigung', escapeHtml(form.signature))}
     </table>
@@ -364,8 +341,6 @@ function createLiabilityDetailsHtml(form, receivedAt) {
     <table style="width:100%;border-collapse:collapse;border-top:1px solid #e8ded8;border-bottom:1px solid #e8ded8;">
       ${renderField('Allergien', formatMultiline(form.allergies))}
       ${renderField('Augen/Haut', formatMultiline(form.eyeHealth))}
-      ${renderField('Kontaktlinsen', escapeHtml(form.contactLenses))}
-      ${renderField('Medikamente/Umstände', formatMultiline(form.medications))}
       ${renderField('Frische Behandlungen', formatMultiline(form.recentTreatments))}
     </table>
 
@@ -376,9 +351,6 @@ function createLiabilityDetailsHtml(form, receivedAt) {
       <li>Bei ungewöhnlichen Reaktionen meldet sich die Kundin zeitnah.</li>
       <li>Aufklärung, richtige Angaben, Haftungshinweis und Datenschutz wurden bestätigt.</li>
     </ul>
-
-    <h2 style="margin:24px 0 10px;font-size:18px;">Pflegenotiz</h2>
-    <p style="margin:0;color:#292321;line-height:1.7;">${formatMultiline(form.aftercareNotes || 'Keine zusätzliche Notiz.')}</p>
   `;
 }
 
@@ -421,15 +393,12 @@ function createLiabilityText(form, receivedAt) {
     `Telefon: ${form.phone}`,
     `E-Mail: ${form.email}`,
     `Behandlung: ${form.treatment}`,
-    `Termin: ${formatAppointmentDate(form.appointmentDate)}`,
     `Eingang: ${receivedAt}`,
     `Digitale Bestätigung: ${form.signature}`,
     '',
     'Gesundheitliche Angaben:',
     `Allergien: ${form.allergies}`,
     `Augen/Haut: ${form.eyeHealth}`,
-    `Kontaktlinsen: ${form.contactLenses}`,
-    `Medikamente/Umstände: ${form.medications}`,
     `Frische Behandlungen: ${form.recentTreatments}`,
     '',
     'Bestätigte Hinweise:',
@@ -437,9 +406,6 @@ function createLiabilityText(form, receivedAt) {
     '- Kein starkes Reiben, Zupfen oder Bürsten direkt nach der Behandlung.',
     '- Bei ungewöhnlichen Reaktionen meldet sich die Kundin zeitnah.',
     '- Aufklärung, richtige Angaben, Haftungshinweis und Datenschutz wurden bestätigt.',
-    '',
-    'Pflegenotiz:',
-    form.aftercareNotes || 'Keine zusätzliche Notiz.',
   ].join('\n');
 }
 

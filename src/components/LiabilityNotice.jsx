@@ -52,16 +52,12 @@ const initialForm = {
   phone: '',
   email: '',
   treatment: '',
-  appointmentDate: '',
   allergies: '',
   eyeHealth: '',
-  contactLenses: '',
-  medications: '',
   recentTreatments: '',
   aftercareNoWater: false,
   aftercareNoRubbing: false,
   aftercareContact: false,
-  aftercareNotes: '',
   riskConsent: false,
   liabilityConsent: false,
   privacyConsent: false,
@@ -70,7 +66,7 @@ const initialForm = {
 
 const stepFieldKeys = [
   ['name', 'phone', 'email', 'treatment'],
-  ['allergies', 'eyeHealth', 'contactLenses', 'medications', 'recentTreatments'],
+  ['allergies', 'eyeHealth', 'recentTreatments'],
   ['aftercareNoWater', 'aftercareNoRubbing', 'aftercareContact'],
   ['riskConsent', 'liabilityConsent', 'privacyConsent', 'signature'],
 ];
@@ -99,12 +95,6 @@ function validateStep(index, form) {
     }
     if (!form.eyeHealth.trim()) {
       errors.eyeHealth = 'Bitte trage aktuelle Beschwerden ein oder schreibe „keine“.';
-    }
-    if (!form.contactLenses) {
-      errors.contactLenses = 'Bitte wähle aus, ob Kontaktlinsen relevant sind.';
-    }
-    if (!form.medications.trim()) {
-      errors.medications = 'Bitte trage relevante Medikamente/Umstände ein oder schreibe „keine“.';
     }
     if (!form.recentTreatments.trim()) {
       errors.recentTreatments =
@@ -402,41 +392,29 @@ export default function LiabilityNotice() {
                     {errors.email && <small id="liability-email-error">{errors.email}</small>}
                   </label>
 
-                  <div className="form-grid">
-                    <label>
-                      <span>Behandlung</span>
-                      <select
-                        name="treatment"
-                        value={form.treatment}
-                        onChange={updateField}
-                        aria-invalid={Boolean(errors.treatment)}
-                        aria-describedby={
-                          errors.treatment ? 'liability-treatment-error' : undefined
-                        }
-                        required
-                      >
-                        <option value="">Bitte auswählen</option>
-                        {treatmentOptions.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                      {errors.treatment && (
-                        <small id="liability-treatment-error">{errors.treatment}</small>
-                      )}
-                    </label>
-
-                    <label>
-                      <span>Termin am</span>
-                      <input
-                        name="appointmentDate"
-                        type="date"
-                        value={form.appointmentDate}
-                        onChange={updateField}
-                      />
-                    </label>
-                  </div>
+                  <label>
+                    <span>Behandlung</span>
+                    <select
+                      name="treatment"
+                      value={form.treatment}
+                      onChange={updateField}
+                      aria-invalid={Boolean(errors.treatment)}
+                      aria-describedby={
+                        errors.treatment ? 'liability-treatment-error' : undefined
+                      }
+                      required
+                    >
+                      <option value="">Bitte auswählen</option>
+                      {treatmentOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    {errors.treatment && (
+                      <small id="liability-treatment-error">{errors.treatment}</small>
+                    )}
+                  </label>
                 </div>
               )}
 
@@ -477,53 +455,6 @@ export default function LiabilityNotice() {
                     />
                     {errors.eyeHealth && (
                       <small id="liability-eye-health-error">{errors.eyeHealth}</small>
-                    )}
-                  </label>
-
-                  <label>
-                    <span>Kontaktlinsen / sensible Augen</span>
-                    <select
-                      name="contactLenses"
-                      value={form.contactLenses}
-                      onChange={updateField}
-                      aria-invalid={Boolean(errors.contactLenses)}
-                      aria-describedby={
-                        errors.contactLenses ? 'liability-contact-lenses-error' : undefined
-                      }
-                      required
-                    >
-                      <option value="">Bitte auswählen</option>
-                      <option value="Keine Kontaktlinsen / nicht relevant">
-                        Keine Kontaktlinsen / nicht relevant
-                      </option>
-                      <option value="Kontaktlinsen werden vor der Behandlung entfernt">
-                        Kontaktlinsen werden vor der Behandlung entfernt
-                      </option>
-                      <option value="Sehr sensible Augen">
-                        Sehr sensible Augen
-                      </option>
-                    </select>
-                    {errors.contactLenses && (
-                      <small id="liability-contact-lenses-error">{errors.contactLenses}</small>
-                    )}
-                  </label>
-
-                  <label>
-                    <span>Medikamente, Schwangerschaft oder weitere relevante Umstände</span>
-                    <textarea
-                      name="medications"
-                      rows="3"
-                      value={form.medications}
-                      onChange={updateField}
-                      placeholder="z. B. keine oder kurze Beschreibung"
-                      aria-invalid={Boolean(errors.medications)}
-                      aria-describedby={
-                        errors.medications ? 'liability-medications-error' : undefined
-                      }
-                      required
-                    />
-                    {errors.medications && (
-                      <small id="liability-medications-error">{errors.medications}</small>
                     )}
                   </label>
 
@@ -601,17 +532,6 @@ export default function LiabilityNotice() {
                     </label>
                     {errors.aftercareContact && <small>{errors.aftercareContact}</small>}
                   </div>
-
-                  <label>
-                    <span>Notiz zur Pflege oder Behandlung</span>
-                    <textarea
-                      name="aftercareNotes"
-                      rows="4"
-                      value={form.aftercareNotes}
-                      onChange={updateField}
-                      placeholder="Optional"
-                    />
-                  </label>
                 </div>
               )}
 
