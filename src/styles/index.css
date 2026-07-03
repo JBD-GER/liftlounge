@@ -204,7 +204,6 @@ address {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: calc(100svh - 184px);
   padding: clamp(38px, 5vw, 58px) 0 clamp(30px, 4vw, 44px);
   border-bottom: 1px solid rgba(232, 222, 216, 0.76);
   background: #faf6f1;
