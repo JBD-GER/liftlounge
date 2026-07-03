@@ -46,14 +46,18 @@ export default function Hero() {
         </div>
         <div className="hero-media" aria-hidden="true">
           <div className="hero-media-frame">
-            <img
-              src="/images/model-2.jpg"
-              alt=""
-              width="1800"
-              height="1350"
-              decoding="async"
-              fetchPriority="high"
-            />
+            <picture>
+              <source media="(max-width: 760px)" srcSet="/images/kundin.jpeg" />
+              <img
+                className="hero-media-image"
+                src="/images/model-2.jpg"
+                alt=""
+                width="1800"
+                height="1350"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </picture>
           </div>
           <div className="hero-media-inset">
             <img

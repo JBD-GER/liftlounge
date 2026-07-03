@@ -468,11 +468,16 @@ p {
   box-shadow: 0 34px 70px rgba(73, 55, 47, 0.18);
 }
 
+.hero-media-frame picture,
 .hero-media-frame img,
 .hero-media-inset img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero-media-frame picture {
+  display: block;
 }
 
 .hero-media-frame img {
@@ -2668,7 +2673,7 @@ label small {
   }
 
   .hero-media-frame img {
-    object-position: 50% 42%;
+    object-position: 50% 47%;
   }
 
   .hero-media-inset {
