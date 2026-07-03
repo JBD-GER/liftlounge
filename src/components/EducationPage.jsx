@@ -1,11 +1,9 @@
 import {
-  AlertTriangle,
   ArrowRight,
   CheckCircle2,
   Clock3,
   Droplets,
   Eye,
-  ShieldCheck,
 } from 'lucide-react';
 import SEO from './SEO.jsx';
 
@@ -142,29 +140,6 @@ export default function EducationPage() {
                 ))}
               </ul>
             </article>
-          </div>
-        </section>
-
-        <section className="section education-note-section">
-          <div className="container education-note">
-            <div className="education-note-icon" aria-hidden="true">
-              <AlertTriangle size={24} />
-            </div>
-            <div>
-              <p className="eyebrow">Wichtig</p>
-              <h2>Bei Reizungen lieber kurz prüfen</h2>
-              <p>
-                Lash und Brow Lifting sind kosmetische Behandlungen und ersetzen
-                keine medizinische Beratung. Wenn deine Augen oder deine Haut
-                akut gereizt, entzündet oder ungewöhnlich empfindlich sind,
-                sag bitte vor dem Termin Bescheid. So kann Lea einschätzen, ob
-                die Behandlung sinnvoll ist oder besser verschoben wird.
-              </p>
-            </div>
-            <a className="button button-secondary" href="/haftungshinweis">
-              Hinweis bestätigen
-              <ShieldCheck aria-hidden="true" size={18} />
-            </a>
           </div>
         </section>
       </main>

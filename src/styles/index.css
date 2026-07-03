@@ -1926,8 +1926,7 @@ label small {
 
 .education-hero-grid > *,
 .education-care-grid > *,
-.liability-layout > *,
-.education-note > * {
+.liability-layout > * {
   min-width: 0;
 }
 
@@ -2044,36 +2043,6 @@ label small {
 .care-list svg {
   margin-top: 2px;
   color: var(--sage);
-}
-
-.education-note {
-  display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) auto;
-  gap: 22px;
-  align-items: center;
-  padding: clamp(22px, 4vw, 36px);
-  border: 1px solid rgba(232, 222, 216, 0.96);
-  border-left: 4px solid var(--champagne);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(250, 248, 246, 0.92));
-}
-
-.education-note-icon {
-  display: grid;
-  width: 54px;
-  height: 54px;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(196, 162, 88, 0.14);
-  color: var(--champagne);
-}
-
-.education-note h2,
-.education-note p {
-  margin-bottom: 8px;
-}
-
-.education-note .button {
-  white-space: nowrap;
 }
 
 .liability-layout {
@@ -2437,7 +2406,6 @@ label small {
   .seo-service-layout,
   .education-hero-grid,
   .education-care-grid,
-  .education-note,
   .liability-layout,
   .guide-hero-grid,
   .article-hero-grid {
@@ -2511,14 +2479,6 @@ label small {
 
   .liability-intro {
     position: static;
-  }
-
-  .education-note {
-    align-items: start;
-  }
-
-  .education-note .button {
-    width: fit-content;
   }
 
   .footer-grid {
@@ -2906,17 +2866,6 @@ label small {
   .education-fact {
     min-height: 0;
     padding: 20px;
-  }
-
-  .education-note {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 20px;
-  }
-
-  .education-note .button {
-    width: 100%;
-    white-space: normal;
   }
 
   .liability-form {
