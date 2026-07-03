@@ -57,10 +57,10 @@ export default function Hero() {
           </div>
           <div className="hero-media-inset">
             <img
-              src="/images/model-3.jpg"
+              src="/images/kundin.jpeg"
               alt=""
-              width="1800"
-              height="1350"
+              width="4279"
+              height="4735"
               decoding="async"
             />
           </div>

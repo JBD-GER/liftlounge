@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 
 const defaultOwnerEmail = 'info@liftlounge.de';
-const defaultOwnerCopyEmail = 'lea.kirfel@web.de';
+const defaultOwnerBccEmail = 'lea.kirfel@web.de';
 const defaultFromEmail = 'LiftLounge <info@liftlounge.de>';
 const businessPhone = '0175 6529911';
 const businessLocation = 'Am Schafanger 12, 30890 Barsinghausen';
@@ -12,6 +12,15 @@ const fieldLimits = {
   email: 180,
   packageName: 140,
   message: 2200,
+  treatment: 140,
+  appointmentDate: 40,
+  allergies: 900,
+  eyeHealth: 900,
+  contactLenses: 140,
+  medications: 900,
+  recentTreatments: 900,
+  aftercareNotes: 1200,
+  signature: 120,
 };
 
 const messages = {
@@ -31,20 +40,24 @@ class RequestError extends Error {
 function getEmailConfig() {
   const explicitFromEmail = process.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM;
   const ownerEmail = process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL || defaultOwnerEmail;
-  const ownerCopyEmails = parseEmailList(
-    process.env.CONTACT_COPY_EMAIL ||
-      process.env.CONTACT_BCC_EMAIL ||
+  const ownerBccEmails = parseEmailList(
+    process.env.CONTACT_BCC_EMAIL ||
+      process.env.contact_BCC_Email ||
+      process.env.CONTACT_COPY_EMAIL ||
       process.env.CONTACT_CC_EMAIL ||
-      defaultOwnerCopyEmail,
+      defaultOwnerBccEmail,
   ).filter((email) => email.toLowerCase() !== ownerEmail.toLowerCase());
+  const customerConfirmationSetting = process.env.RESEND_CUSTOMER_CONFIRMATION;
 
   return {
     apiKey: process.env.RESEND_API_KEY || process.env.RESEND_API,
     fromEmail: explicitFromEmail || defaultFromEmail,
     ownerEmail,
-    ownerCopyEmails,
+    ownerBccEmails,
     customerConfirmationEnabled:
-      process.env.RESEND_CUSTOMER_CONFIRMATION === 'true' || Boolean(explicitFromEmail),
+      customerConfirmationSetting === undefined
+        ? true
+        : customerConfirmationSetting !== 'false',
   };
 }
 
@@ -77,11 +90,40 @@ function normalizeField(value, limit) {
 
 function normalizeSubmission(body) {
   return {
+    formType: 'contact',
     name: normalizeField(body.name, fieldLimits.name),
     phone: normalizeField(body.phone, fieldLimits.phone),
     email: normalizeField(body.email, fieldLimits.email).toLowerCase(),
     packageName: normalizeField(body.packageName, fieldLimits.packageName),
     message: normalizeField(body.message, fieldLimits.message),
+  };
+}
+
+function normalizeBoolean(value) {
+  return value === true || value === 'true' || value === 'on';
+}
+
+function normalizeLiabilitySubmission(body) {
+  return {
+    formType: 'liability_notice',
+    name: normalizeField(body.name, fieldLimits.name),
+    phone: normalizeField(body.phone, fieldLimits.phone),
+    email: normalizeField(body.email, fieldLimits.email).toLowerCase(),
+    treatment: normalizeField(body.treatment, fieldLimits.treatment),
+    appointmentDate: normalizeField(body.appointmentDate, fieldLimits.appointmentDate),
+    allergies: normalizeField(body.allergies, fieldLimits.allergies),
+    eyeHealth: normalizeField(body.eyeHealth, fieldLimits.eyeHealth),
+    contactLenses: normalizeField(body.contactLenses, fieldLimits.contactLenses),
+    medications: normalizeField(body.medications, fieldLimits.medications),
+    recentTreatments: normalizeField(body.recentTreatments, fieldLimits.recentTreatments),
+    aftercareNoWater: normalizeBoolean(body.aftercareNoWater),
+    aftercareNoRubbing: normalizeBoolean(body.aftercareNoRubbing),
+    aftercareContact: normalizeBoolean(body.aftercareContact),
+    aftercareNotes: normalizeField(body.aftercareNotes, fieldLimits.aftercareNotes),
+    riskConsent: normalizeBoolean(body.riskConsent),
+    liabilityConsent: normalizeBoolean(body.liabilityConsent),
+    privacyConsent: normalizeBoolean(body.privacyConsent),
+    signature: normalizeField(body.signature, fieldLimits.signature),
   };
 }
 
@@ -97,6 +139,39 @@ function validateSubmission(form) {
   }
   if (!form.packageName) errors.packageName = 'Bitte wähle eine Behandlung aus.';
   if (!form.message) errors.message = 'Bitte schreibe kurz, worum es geht.';
+
+  return errors;
+}
+
+function validateLiabilitySubmission(form) {
+  const errors = {};
+
+  if (!form.name) errors.name = 'Bitte gib deinen Namen ein.';
+  if (!form.phone) errors.phone = 'Bitte gib deine Telefonnummer ein.';
+  if (!form.email) {
+    errors.email = 'Bitte gib deine E-Mail-Adresse ein.';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    errors.email = 'Bitte gib eine gültige E-Mail-Adresse ein.';
+  }
+  if (!form.treatment) errors.treatment = 'Bitte wähle eine Behandlung aus.';
+  if (!form.allergies) errors.allergies = 'Bitte trage Allergien ein oder schreibe „keine“.';
+  if (!form.eyeHealth) errors.eyeHealth = 'Bitte trage Beschwerden ein oder schreibe „keine“.';
+  if (!form.contactLenses) errors.contactLenses = 'Bitte wähle eine Kontaktlinsen-Angabe aus.';
+  if (!form.medications) {
+    errors.medications = 'Bitte trage relevante Umstände ein oder schreibe „keine“.';
+  }
+  if (!form.recentTreatments) {
+    errors.recentTreatments = 'Bitte trage frische Behandlungen ein oder schreibe „keine“.';
+  }
+  if (!form.aftercareNoWater) errors.aftercareNoWater = 'Bitte bestätige den 24-Stunden-Hinweis.';
+  if (!form.aftercareNoRubbing) errors.aftercareNoRubbing = 'Bitte bestätige den Reibungs-Hinweis.';
+  if (!form.aftercareContact) errors.aftercareContact = 'Bitte bestätige den Kontakt-Hinweis.';
+  if (!form.riskConsent) errors.riskConsent = 'Bitte bestätige die Aufklärung.';
+  if (!form.liabilityConsent) {
+    errors.liabilityConsent = 'Bitte bestätige die Richtigkeit deiner Angaben.';
+  }
+  if (!form.privacyConsent) errors.privacyConsent = 'Bitte bestätige den Datenschutzhinweis.';
+  if (!form.signature) errors.signature = 'Bitte bestätige mit deinem Vor- und Nachnamen.';
 
   return errors;
 }
@@ -164,6 +239,16 @@ function formatDate(date) {
     timeStyle: 'short',
     timeZone: 'Europe/Berlin',
   }).format(date);
+}
+
+function formatAppointmentDate(value) {
+  if (!value) return 'Noch nicht angegeben';
+
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+
+  if (!match) return value;
+
+  return `${match[3]}.${match[2]}.${match[1]}`;
 }
 
 function renderShell(content) {
@@ -263,6 +348,125 @@ function createCustomerText(form) {
   ].join('\n');
 }
 
+function createLiabilityDetailsHtml(form, receivedAt) {
+  return `
+    <table style="width:100%;border-collapse:collapse;border-top:1px solid #e8ded8;border-bottom:1px solid #e8ded8;margin:18px 0;">
+      ${renderField('Name', escapeHtml(form.name))}
+      ${renderField('Telefon', `<a href="tel:${escapeHtml(form.phone.replace(/\s/g, ''))}" style="color:#292321;">${escapeHtml(form.phone)}</a>`)}
+      ${renderField('E-Mail', `<a href="mailto:${escapeHtml(form.email)}" style="color:#292321;">${escapeHtml(form.email)}</a>`)}
+      ${renderField('Behandlung', escapeHtml(form.treatment))}
+      ${renderField('Termin', escapeHtml(formatAppointmentDate(form.appointmentDate)))}
+      ${renderField('Eingang', escapeHtml(receivedAt))}
+      ${renderField('Digitale Bestätigung', escapeHtml(form.signature))}
+    </table>
+
+    <h2 style="margin:24px 0 10px;font-size:18px;">Gesundheitliche Angaben</h2>
+    <table style="width:100%;border-collapse:collapse;border-top:1px solid #e8ded8;border-bottom:1px solid #e8ded8;">
+      ${renderField('Allergien', formatMultiline(form.allergies))}
+      ${renderField('Augen/Haut', formatMultiline(form.eyeHealth))}
+      ${renderField('Kontaktlinsen', escapeHtml(form.contactLenses))}
+      ${renderField('Medikamente/Umstände', formatMultiline(form.medications))}
+      ${renderField('Frische Behandlungen', formatMultiline(form.recentTreatments))}
+    </table>
+
+    <h2 style="margin:24px 0 10px;font-size:18px;">Bestätigte Hinweise</h2>
+    <ul style="margin:0 0 18px;padding-left:20px;color:#292321;line-height:1.65;">
+      <li>24 Stunden kein Wasser, Dampf, Sauna, Schwimmen, Mascara oder Make-up-Entferner im behandelten Bereich.</li>
+      <li>Kein starkes Reiben, Zupfen oder Bürsten direkt nach der Behandlung.</li>
+      <li>Bei ungewöhnlichen Reaktionen meldet sich die Kundin zeitnah.</li>
+      <li>Aufklärung, richtige Angaben, Haftungshinweis und Datenschutz wurden bestätigt.</li>
+    </ul>
+
+    <h2 style="margin:24px 0 10px;font-size:18px;">Pflegenotiz</h2>
+    <p style="margin:0;color:#292321;line-height:1.7;">${formatMultiline(form.aftercareNotes || 'Keine zusätzliche Notiz.')}</p>
+  `;
+}
+
+function createLiabilityOwnerEmail(form, receivedAt) {
+  const body = `
+    <p style="margin:0 0 18px;color:#716763;line-height:1.65;">Über die Website wurde ein neuer Haftungshinweis mit Datenschutzhinweis gesendet.</p>
+    ${createLiabilityDetailsHtml(form, receivedAt)}
+  `;
+
+  return renderShell({
+    title: 'Neuer Haftungshinweis',
+    body,
+  });
+}
+
+function createLiabilityCustomerEmail(form, receivedAt) {
+  const firstName = form.name.split(' ')[0] || form.name;
+  const body = `
+    <p style="margin:0 0 16px;color:#292321;line-height:1.7;">Hallo ${escapeHtml(firstName)},</p>
+    <p style="margin:0 0 16px;color:#716763;line-height:1.7;">
+      danke, dein Haftungshinweis für LiftLounge ist angekommen. Hier ist deine Zusammenfassung der übermittelten Angaben.
+    </p>
+    ${createLiabilityDetailsHtml(form, receivedAt)}
+    <p style="margin:22px 0 0;color:#716763;line-height:1.7;">
+      Deine Datenschutzeinwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen, zum Beispiel per E-Mail an ${escapeHtml(defaultOwnerEmail)}.
+    </p>
+  `;
+
+  return renderShell({
+    title: 'Dein Haftungshinweis ist angekommen',
+    body,
+  });
+}
+
+function createLiabilityText(form, receivedAt) {
+  return [
+    'LiftLounge Haftungshinweis',
+    '',
+    `Name: ${form.name}`,
+    `Telefon: ${form.phone}`,
+    `E-Mail: ${form.email}`,
+    `Behandlung: ${form.treatment}`,
+    `Termin: ${formatAppointmentDate(form.appointmentDate)}`,
+    `Eingang: ${receivedAt}`,
+    `Digitale Bestätigung: ${form.signature}`,
+    '',
+    'Gesundheitliche Angaben:',
+    `Allergien: ${form.allergies}`,
+    `Augen/Haut: ${form.eyeHealth}`,
+    `Kontaktlinsen: ${form.contactLenses}`,
+    `Medikamente/Umstände: ${form.medications}`,
+    `Frische Behandlungen: ${form.recentTreatments}`,
+    '',
+    'Bestätigte Hinweise:',
+    '- 24 Stunden kein Wasser, Dampf, Sauna, Schwimmen, Mascara oder Make-up-Entferner im behandelten Bereich.',
+    '- Kein starkes Reiben, Zupfen oder Bürsten direkt nach der Behandlung.',
+    '- Bei ungewöhnlichen Reaktionen meldet sich die Kundin zeitnah.',
+    '- Aufklärung, richtige Angaben, Haftungshinweis und Datenschutz wurden bestätigt.',
+    '',
+    'Pflegenotiz:',
+    form.aftercareNotes || 'Keine zusätzliche Notiz.',
+  ].join('\n');
+}
+
+function createEmailContent(form, receivedAt) {
+  if (form.formType === 'liability_notice') {
+    const text = createLiabilityText(form, receivedAt);
+
+    return {
+      ownerSubject: `Neuer LiftLounge Haftungshinweis: ${form.name}`,
+      ownerHtml: createLiabilityOwnerEmail(form, receivedAt),
+      ownerText: text,
+      customerSubject: 'Dein Haftungshinweis bei LiftLounge ist angekommen',
+      customerHtml: createLiabilityCustomerEmail(form, receivedAt),
+      customerText: text,
+    };
+  }
+
+  return {
+    ownerSubject: `Neue LiftLounge Anfrage: ${form.name}`,
+    ownerHtml: createOwnerEmail(form, receivedAt),
+    ownerText: createOwnerText(form, receivedAt),
+    customerSubject: 'Deine Anfrage bei LiftLounge ist angekommen',
+    customerHtml: createCustomerEmail(form),
+    customerText: createCustomerText(form),
+  };
+}
+
 async function sendEmail(resend, payload) {
   const { data, error } = await resend.emails.send(payload);
 
@@ -274,7 +478,7 @@ async function sendEmail(resend, payload) {
 }
 
 async function sendContactEmails(form) {
-  const { apiKey, fromEmail, ownerEmail, ownerCopyEmails, customerConfirmationEnabled } =
+  const { apiKey, fromEmail, ownerEmail, ownerBccEmails, customerConfirmationEnabled } =
     getEmailConfig();
 
   if (!apiKey) {
@@ -283,32 +487,22 @@ async function sendContactEmails(form) {
 
   const resend = new Resend(apiKey);
   const receivedAt = formatDate(new Date());
+  const emailContent = createEmailContent(form, receivedAt);
 
   const ownerEmailPayload = {
     from: fromEmail,
     to: ownerEmail,
     replyTo: form.email,
-    subject: `Neue LiftLounge Anfrage: ${form.name}`,
-    html: createOwnerEmail(form, receivedAt),
-    text: createOwnerText(form, receivedAt),
+    subject: emailContent.ownerSubject,
+    html: emailContent.ownerHtml,
+    text: emailContent.ownerText,
   };
 
+  if (ownerBccEmails.length > 0) {
+    ownerEmailPayload.bcc = ownerBccEmails;
+  }
+
   await sendEmail(resend, ownerEmailPayload);
-
-  const ownerCopyResults = await Promise.allSettled(
-    ownerCopyEmails.map((copyEmail) =>
-      sendEmail(resend, {
-        ...ownerEmailPayload,
-        to: copyEmail,
-      }),
-    ),
-  );
-
-  ownerCopyResults.forEach((result, index) => {
-    if (result.status === 'rejected') {
-      console.error('Owner copy email error:', ownerCopyEmails[index], result.reason);
-    }
-  });
 
   if (!customerConfirmationEnabled) {
     return { customerEmailSent: false };
@@ -319,9 +513,9 @@ async function sendContactEmails(form) {
       from: fromEmail,
       to: form.email,
       replyTo: ownerEmail,
-      subject: 'Deine Anfrage bei LiftLounge ist angekommen',
-      html: createCustomerEmail(form),
-      text: createCustomerText(form),
+      subject: emailContent.customerSubject,
+      html: emailContent.customerHtml,
+      text: emailContent.customerText,
     });
 
     return { customerEmailSent: true };
@@ -342,8 +536,13 @@ export async function createContactResponse(request) {
     }
 
     const body = await readJsonBody(request);
-    const form = normalizeSubmission(body);
-    const errors = validateSubmission(form);
+    const isLiabilityNotice = body.formType === 'liability_notice';
+    const form = isLiabilityNotice
+      ? normalizeLiabilitySubmission(body)
+      : normalizeSubmission(body);
+    const errors = isLiabilityNotice
+      ? validateLiabilitySubmission(form)
+      : validateSubmission(form);
 
     if (Object.keys(errors).length > 0) {
       throw new RequestError(400, messages.invalidRequest, errors);
@@ -355,9 +554,14 @@ export async function createContactResponse(request) {
       status: 200,
       body: {
         ok: true,
-        message: emailResult.customerEmailSent
-          ? 'Danke, deine Anfrage wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.'
-          : 'Danke, deine Anfrage wurde gesendet. Lea meldet sich zeitnah persönlich bei dir.',
+        message:
+          form.formType === 'liability_notice'
+            ? emailResult.customerEmailSent
+              ? 'Danke, dein Haftungshinweis wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.'
+              : 'Danke, dein Haftungshinweis wurde gesendet.'
+            : emailResult.customerEmailSent
+              ? 'Danke, deine Anfrage wurde gesendet. Du erhältst gleich eine Bestätigung per E-Mail.'
+              : 'Danke, deine Anfrage wurde gesendet. Lea meldet sich zeitnah persönlich bei dir.',
       },
     };
   } catch (error) {

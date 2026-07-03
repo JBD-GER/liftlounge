@@ -27,9 +27,8 @@ export const site = {
 };
 
 export const navigation = [
-  { label: 'Leistungen', href: '#leistungen' },
+  { label: 'Preise & Optionen', href: '#preise' },
   { label: 'Ablauf', href: '#ablauf' },
-  { label: 'Preise', href: '#preise' },
   { label: 'Ratgeber', href: '/ratgeber' },
   { label: 'Schulungen', href: '#schulungen' },
   { label: 'Kontakt', href: '#kontakt' },
@@ -81,8 +80,8 @@ export const services = [
     eyebrow: 'Augenbrauen',
     price: '65 €',
     duration: 'ca. 45-60 Min.',
-    image: '/images/model-3.jpg',
-    alt: 'Natürlich gepflegte Augenpartie für Brow Lifting',
+    image: '/images/kundin.jpeg',
+    alt: 'Echtes Brow und Lash Lifting Ergebnis einer LiftLounge Kundin',
     description:
       'Für definierte, voller wirkende Augenbrauen mit sauberem Finish inklusive Färben.',
     features: ['inkl. Färben', 'Form wird abgestimmt', 'natürlicher Look'],
@@ -92,7 +91,7 @@ export const services = [
     eyebrow: 'Augenbrauen',
     price: '15 €',
     duration: 'ca. 15-20 Min.',
-    image: '/images/model-3.jpg',
+    image: '/images/kundin.jpeg',
     alt: 'Gepflegte Augenbrauen nach einer präzisen Augenbrauenkorrektur',
     description:
       'Für eine saubere Augenbrauenform mit warmem Wachs, fein abgestimmt auf deine natürliche Form.',
@@ -201,8 +200,8 @@ export const gallery = [
     alt: 'Natürliches Lash Lifting Ergebnis mit gepflegtem Augenaufschlag',
   },
   {
-    src: '/images/model-3.jpg',
-    alt: 'Beauty-Behandlung mit Fokus auf gepflegte Wimpern in heller Studioatmosphäre',
+    src: '/images/kundin.jpeg',
+    alt: 'Echtes LiftLounge Kundinnen-Ergebnis mit gelifteten Wimpern und gepflegten Augenbrauen',
   },
 ];
 

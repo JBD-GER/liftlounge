@@ -48,6 +48,8 @@ export default function Footer() {
           <a href="/impressum">Impressum</a>
           <a href="/datenschutz">Datenschutz</a>
           <a href="/agb">AGB</a>
+          <a href="/aufklaerung">Aufklärung</a>
+          <a href="/haftungshinweis">Haftungshinweis</a>
           <a href="/ratgeber">Ratgeber</a>
           <a href="/#kontakt">Kontakt</a>
         </nav>

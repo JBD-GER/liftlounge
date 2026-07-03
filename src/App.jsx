@@ -15,6 +15,8 @@ import GuidePost from './components/GuidePost.jsx';
 import GuideTeaser from './components/GuideTeaser.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
+import EducationPage from './components/EducationPage.jsx';
+import LiabilityNotice from './components/LiabilityNotice.jsx';
 import LegalPage from './components/LegalPage.jsx';
 import Location from './components/Location.jsx';
 import MobileCTA from './components/MobileCTA.jsx';
@@ -124,6 +126,13 @@ export default function App() {
   const pathname = usePathname();
   const analyticsEnabled = useAnalyticsConsent();
   const normalizedPath = pathname.replace(/\/$/, '') || '/';
+  const decodedPath = (() => {
+    try {
+      return decodeURI(normalizedPath);
+    } catch {
+      return normalizedPath;
+    }
+  })();
   const isLegalPage = legalPaths.includes(normalizedPath);
   const guideMatch = normalizedPath.match(/^\/ratgeber\/(.+)$/);
   const guidePost = guideMatch ? getGuidePost(guideMatch[1]) : null;
@@ -137,6 +146,10 @@ export default function App() {
     page = <ThankYou />;
   } else if (isLegalPage) {
     page = <LegalPage path={normalizedPath} />;
+  } else if (normalizedPath === '/aufklaerung' || decodedPath === '/aufklärung') {
+    page = <EducationPage />;
+  } else if (normalizedPath === '/haftungshinweis') {
+    page = <LiabilityNotice />;
   } else if (normalizedPath === '/ratgeber') {
     page = <GuideIndex />;
   } else if (guidePost) {

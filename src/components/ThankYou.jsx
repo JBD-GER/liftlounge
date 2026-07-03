@@ -33,17 +33,24 @@ function handleWhatsAppClick() {
 }
 
 export default function ThankYou() {
+  const isLiabilityNotice =
+    new URLSearchParams(window.location.search).get('type') === 'haftungshinweis';
+
   return (
     <>
       <GoogleAdsLeadConversion />
       <SEO
-        title="Danke für deine Anfrage | LiftLounge"
-        description="Deine Anfrage wurde erfolgreich an LiftLounge übermittelt."
+        title={isLiabilityNotice ? 'Haftungshinweis gesendet | LiftLounge' : 'Danke für deine Anfrage | LiftLounge'}
+        description={
+          isLiabilityNotice
+            ? 'Dein Haftungshinweis wurde erfolgreich an LiftLounge übermittelt.'
+            : 'Deine Anfrage wurde erfolgreich an LiftLounge übermittelt.'
+        }
         path="/danke"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Danke für deine Anfrage',
+          name: isLiabilityNotice ? 'Haftungshinweis gesendet' : 'Danke für deine Anfrage',
         }}
       />
       <main className="thank-you-main">
@@ -52,12 +59,18 @@ export default function ThankYou() {
             <div className="thank-you-icon" aria-hidden="true">
               <CheckCircle2 size={34} />
             </div>
-            <p className="eyebrow">Anfrage gesendet</p>
-            <h1>Danke, deine Anfrage wurde erfolgreich übermittelt.</h1>
+            <p className="eyebrow">
+              {isLiabilityNotice ? 'Haftungshinweis gesendet' : 'Anfrage gesendet'}
+            </p>
+            <h1>
+              {isLiabilityNotice
+                ? 'Danke, dein Haftungshinweis wurde erfolgreich übermittelt.'
+                : 'Danke, deine Anfrage wurde erfolgreich übermittelt.'}
+            </h1>
             <p>
-              Lea meldet sich zeitnah persönlich bei dir. Falls du noch etwas
-              ergänzen möchtest, kannst du LiftLounge auch direkt per WhatsApp
-              schreiben.
+              {isLiabilityNotice
+                ? 'Du erhältst eine Bestätigung per E-Mail, sofern die E-Mail-Adresse korrekt angegeben wurde. Falls du noch etwas ergänzen möchtest, kannst du LiftLounge direkt per WhatsApp schreiben.'
+                : 'Lea meldet sich zeitnah persönlich bei dir. Falls du noch etwas ergänzen möchtest, kannst du LiftLounge auch direkt per WhatsApp schreiben.'}
             </p>
             <div className="thank-you-actions">
               <a className="button button-primary" href="/">
