@@ -72,7 +72,7 @@ export default function GuidePost({ post }) {
 
             <aside className="article-cta">
               <p className="eyebrow">LiftLounge</p>
-              <h2>Lash Lifting Hannover anfragen</h2>
+              <h2>Lash & Brow Lifting Hannover anfragen</h2>
               <p>
                 Der Standort ist in Barsinghausen, gut erreichbar aus Hannover
                 und der Region Hannover. Für Termine erreichst du LiftLounge
@@ -90,7 +90,7 @@ export default function GuidePost({ post }) {
             </aside>
 
             <section>
-              <h2>Weitere Beiträge zum Lash Lifting</h2>
+              <h2>Weitere Beiträge zum Lash & Brow Lifting</h2>
               <div className="related-posts">
                 {guidePosts
                   .filter((item) => item.slug !== post.slug)
