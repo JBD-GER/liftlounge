@@ -196,8 +196,8 @@ export const gallery = [
     alt: 'Kosmetikerin führt eine Lash Lifting Behandlung in einem hellen Studio aus',
   },
   {
-    src: '/images/model-2.jpg',
-    alt: 'Natürliches Lash Lifting Ergebnis mit gepflegtem Augenaufschlag',
+    src: '/images/nachher1.jpeg',
+    alt: 'Echtes Nachher-Ergebnis nach Lash und Brow Lifting bei LiftLounge',
   },
   {
     src: '/images/kundin-hochkant.jpeg',

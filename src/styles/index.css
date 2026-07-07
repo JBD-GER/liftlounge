@@ -1242,6 +1242,7 @@ p {
   object-position: center;
 }
 
+.before-after-result-image,
 .before-after-before-image {
   transform: rotate(90deg) scale(1.36);
 }
