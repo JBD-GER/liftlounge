@@ -1,13 +1,15 @@
+import BeforeAfterSlider from './BeforeAfterSlider.jsx';
 import { gallery } from '../data/siteData.js';
 
 export default function Gallery() {
   return (
-    <section className="section gallery-section">
+    <section className="section gallery-section" id="beispiele">
       <div className="container">
         <div className="section-heading">
-          <p className="eyebrow">Einblicke</p>
-          <h2>Einblicke in die LiftLounge</h2>
+          <p className="eyebrow">Beispiele</p>
+          <h2>Vorher/Nachher und Einblicke</h2>
         </div>
+        <BeforeAfterSlider />
         <div className="gallery-grid">
           {gallery.map((image) => (
             <figure className="image-card" key={image.src}>

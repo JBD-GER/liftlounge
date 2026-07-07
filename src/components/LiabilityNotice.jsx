@@ -26,12 +26,6 @@ const steps = [
     icon: HeartPulse,
   },
   {
-    label: 'Pflege',
-    title: 'Pflegehinweise bestätigen',
-    description: 'Besonders die ersten 24 Stunden entscheiden über das Ergebnis.',
-    icon: ShieldCheck,
-  },
-  {
     label: 'Bestätigung',
     title: 'Datenschutz und digitale Bestätigung',
     description: 'Zum Schluss bestätigst du deine Angaben verbindlich.',
@@ -55,9 +49,6 @@ const initialForm = {
   allergies: '',
   eyeHealth: '',
   recentTreatments: '',
-  aftercareNoWater: false,
-  aftercareNoRubbing: false,
-  aftercareContact: false,
   riskConsent: false,
   liabilityConsent: false,
   privacyConsent: false,
@@ -67,7 +58,6 @@ const initialForm = {
 const stepFieldKeys = [
   ['name', 'phone', 'email', 'treatment'],
   ['allergies', 'eyeHealth', 'recentTreatments'],
-  ['aftercareNoWater', 'aftercareNoRubbing', 'aftercareContact'],
   ['riskConsent', 'liabilityConsent', 'privacyConsent', 'signature'],
 ];
 
@@ -103,18 +93,6 @@ function validateStep(index, form) {
   }
 
   if (index === 2) {
-    if (!form.aftercareNoWater) {
-      errors.aftercareNoWater = 'Bitte bestätige den 24-Stunden-Hinweis.';
-    }
-    if (!form.aftercareNoRubbing) {
-      errors.aftercareNoRubbing = 'Bitte bestätige den Reibungs-Hinweis.';
-    }
-    if (!form.aftercareContact) {
-      errors.aftercareContact = 'Bitte bestätige den Kontakt-Hinweis.';
-    }
-  }
-
-  if (index === 3) {
     if (!form.riskConsent) {
       errors.riskConsent = 'Bitte bestätige die Aufklärung.';
     }
@@ -263,7 +241,7 @@ export default function LiabilityNotice() {
           '@type': 'WebPage',
           name: 'Haftungshinweis',
           description:
-            'Digitaler Haftungshinweis mit Gesundheitsangaben, Pflegebestätigung und Datenschutzhinweis.',
+            'Digitaler Haftungshinweis mit Gesundheitsangaben, Datenschutzhinweis und digitaler Bestätigung.',
         }}
       />
       <main className="liability-main">
@@ -484,58 +462,6 @@ export default function LiabilityNotice() {
               )}
 
               {activeStep === 2 && (
-                <div className="liability-fields">
-                  <div className="consent-stack">
-                    <label className="checkbox-card">
-                      <input
-                        name="aftercareNoWater"
-                        type="checkbox"
-                        checked={form.aftercareNoWater}
-                        onChange={updateField}
-                        aria-invalid={Boolean(errors.aftercareNoWater)}
-                      />
-                      <span>
-                        Ich vermeide in den ersten 24 Stunden Wasser,
-                        Wasserdampf, Sauna, Schwimmen, Mascara und Make-up-Entferner
-                        im behandelten Bereich.
-                      </span>
-                    </label>
-                    {errors.aftercareNoWater && <small>{errors.aftercareNoWater}</small>}
-
-                    <label className="checkbox-card">
-                      <input
-                        name="aftercareNoRubbing"
-                        type="checkbox"
-                        checked={form.aftercareNoRubbing}
-                        onChange={updateField}
-                        aria-invalid={Boolean(errors.aftercareNoRubbing)}
-                      />
-                      <span>
-                        Ich reibe, zupfe oder bürste Wimpern und Brauen direkt
-                        nach der Behandlung nicht stark.
-                      </span>
-                    </label>
-                    {errors.aftercareNoRubbing && <small>{errors.aftercareNoRubbing}</small>}
-
-                    <label className="checkbox-card">
-                      <input
-                        name="aftercareContact"
-                        type="checkbox"
-                        checked={form.aftercareContact}
-                        onChange={updateField}
-                        aria-invalid={Boolean(errors.aftercareContact)}
-                      />
-                      <span>
-                        Ich melde mich bei ungewöhnlichem Brennen, Schwellung,
-                        starker Rötung oder anhaltenden Beschwerden zeitnah.
-                      </span>
-                    </label>
-                    {errors.aftercareContact && <small>{errors.aftercareContact}</small>}
-                  </div>
-                </div>
-              )}
-
-              {activeStep === 3 && (
                 <div className="liability-fields">
                   <div className="consent-stack">
                     <label className="checkbox-card">

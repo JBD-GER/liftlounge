@@ -69,8 +69,8 @@ export default function ThankYou() {
             </h1>
             <p>
               {isLiabilityNotice
-                ? 'Du erhältst eine Bestätigung per E-Mail, sofern die E-Mail-Adresse korrekt angegeben wurde. Falls du noch etwas ergänzen möchtest, kannst du LiftLounge direkt per WhatsApp schreiben.'
-                : 'Lea meldet sich zeitnah persönlich bei dir. Falls du noch etwas ergänzen möchtest, kannst du LiftLounge auch direkt per WhatsApp schreiben.'}
+                ? 'Du erhältst eine Bestätigung per E-Mail, sofern die E-Mail-Adresse korrekt angegeben wurde. Falls du noch etwas ergänzen möchtest, kannst du Lea direkt per WhatsApp schreiben.'
+                : 'Lea meldet sich zeitnah persönlich bei dir. Falls du noch etwas ergänzen möchtest, kannst du Lea auch direkt per WhatsApp schreiben.'}
             </p>
             <div className="thank-you-actions">
               <a className="button button-primary" href="/">

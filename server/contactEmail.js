@@ -109,9 +109,6 @@ function normalizeLiabilitySubmission(body) {
     allergies: normalizeField(body.allergies, fieldLimits.allergies),
     eyeHealth: normalizeField(body.eyeHealth, fieldLimits.eyeHealth),
     recentTreatments: normalizeField(body.recentTreatments, fieldLimits.recentTreatments),
-    aftercareNoWater: normalizeBoolean(body.aftercareNoWater),
-    aftercareNoRubbing: normalizeBoolean(body.aftercareNoRubbing),
-    aftercareContact: normalizeBoolean(body.aftercareContact),
     riskConsent: normalizeBoolean(body.riskConsent),
     liabilityConsent: normalizeBoolean(body.liabilityConsent),
     privacyConsent: normalizeBoolean(body.privacyConsent),
@@ -151,9 +148,6 @@ function validateLiabilitySubmission(form) {
   if (!form.recentTreatments) {
     errors.recentTreatments = 'Bitte trage frische Behandlungen ein oder schreibe „keine“.';
   }
-  if (!form.aftercareNoWater) errors.aftercareNoWater = 'Bitte bestätige den 24-Stunden-Hinweis.';
-  if (!form.aftercareNoRubbing) errors.aftercareNoRubbing = 'Bitte bestätige den Reibungs-Hinweis.';
-  if (!form.aftercareContact) errors.aftercareContact = 'Bitte bestätige den Kontakt-Hinweis.';
   if (!form.riskConsent) errors.riskConsent = 'Bitte bestätige die Aufklärung.';
   if (!form.liabilityConsent) {
     errors.liabilityConsent = 'Bitte bestätige die Richtigkeit deiner Angaben.';
@@ -344,12 +338,11 @@ function createLiabilityDetailsHtml(form, receivedAt) {
       ${renderField('Frische Behandlungen', formatMultiline(form.recentTreatments))}
     </table>
 
-    <h2 style="margin:24px 0 10px;font-size:18px;">Bestätigte Hinweise</h2>
+    <h2 style="margin:24px 0 10px;font-size:18px;">Bestätigungen</h2>
     <ul style="margin:0 0 18px;padding-left:20px;color:#292321;line-height:1.65;">
-      <li>24 Stunden kein Wasser, Dampf, Sauna, Schwimmen, Mascara oder Make-up-Entferner im behandelten Bereich.</li>
-      <li>Kein starkes Reiben, Zupfen oder Bürsten direkt nach der Behandlung.</li>
-      <li>Bei ungewöhnlichen Reaktionen meldet sich die Kundin zeitnah.</li>
-      <li>Aufklärung, richtige Angaben, Haftungshinweis und Datenschutz wurden bestätigt.</li>
+      <li>Allgemeine Aufklärung und mögliche individuelle Reaktionen wurden bestätigt.</li>
+      <li>Die Richtigkeit und Vollständigkeit der Angaben wurde bestätigt.</li>
+      <li>Datenschutzhinweis und digitale Bestätigung wurden abgegeben.</li>
     </ul>
   `;
 }
@@ -401,11 +394,10 @@ function createLiabilityText(form, receivedAt) {
     `Augen/Haut: ${form.eyeHealth}`,
     `Frische Behandlungen: ${form.recentTreatments}`,
     '',
-    'Bestätigte Hinweise:',
-    '- 24 Stunden kein Wasser, Dampf, Sauna, Schwimmen, Mascara oder Make-up-Entferner im behandelten Bereich.',
-    '- Kein starkes Reiben, Zupfen oder Bürsten direkt nach der Behandlung.',
-    '- Bei ungewöhnlichen Reaktionen meldet sich die Kundin zeitnah.',
-    '- Aufklärung, richtige Angaben, Haftungshinweis und Datenschutz wurden bestätigt.',
+    'Bestätigungen:',
+    '- Allgemeine Aufklärung und mögliche individuelle Reaktionen wurden bestätigt.',
+    '- Die Richtigkeit und Vollständigkeit der Angaben wurde bestätigt.',
+    '- Datenschutzhinweis und digitale Bestätigung wurden abgegeben.',
   ].join('\n');
 }
 

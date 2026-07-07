@@ -65,9 +65,10 @@ export default function EducationPage() {
               <p className="eyebrow">Aufklärung & Pflege</p>
               <h1>Damit dein Lifting sauber starten und schön halten kann.</h1>
               <p>
-                Hier findest du die wichtigsten Hinweise zu Lash Lifting, Brow
-                Lifting, Vorbereitung und Pflege danach. Kurz, verständlich und
-                ohne unnötigen Fachjargon.
+                Hier findest du alle wichtigen Informationen rund um dein Lash-
+                oder Browlifting: wie du dich vorbereitest, was du nach der
+                Behandlung beachten solltest und wie du das Ergebnis optimal
+                pflegst. Kurz, verständlich und ohne unnötigen Fachjargon.
               </p>
               <div className="education-actions">
                 <a className="button button-primary" href="/haftungshinweis">
