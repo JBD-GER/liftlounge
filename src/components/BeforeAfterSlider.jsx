@@ -26,16 +26,17 @@ export default function BeforeAfterSlider() {
       >
         <img
           className="before-after-image"
-          src="/images/nachher1.jpeg"
-          alt="Nachher-Aufnahme nach dem Lash und Brow Lifting"
-          width="3840"
-          height="5120"
+          src="/images/model-2.jpg"
+          alt="Allgemeines LiftLounge Ergebnis mit gepflegten Wimpern und Augenbrauen"
+          width="1800"
+          height="1350"
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
         <div className="before-after-image-overlay">
           <img
+            className="before-after-before-image"
             src="/images/vorher1.jpeg"
             alt="Vorher-Aufnahme vor dem Lash und Brow Lifting"
             width="3024"

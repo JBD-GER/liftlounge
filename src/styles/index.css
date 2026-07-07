@@ -1240,6 +1240,9 @@ p {
 .before-after-image-overlay img {
   object-fit: cover;
   object-position: center;
+}
+
+.before-after-before-image {
   transform: rotate(90deg) scale(1.36);
 }
 
