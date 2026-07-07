@@ -1,12 +1,51 @@
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import { MoveHorizontal } from 'lucide-react';
 
 export default function BeforeAfterSlider() {
   const [position, setPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
   const sliderId = useId();
+  const sliderRef = useRef(null);
 
   function updatePosition(event) {
     setPosition(Number(event.target.value));
+  }
+
+  function updatePositionFromClientX(clientX) {
+    const slider = sliderRef.current;
+
+    if (!slider) return;
+
+    const rect = slider.getBoundingClientRect();
+    const nextPosition = ((clientX - rect.left) / rect.width) * 100;
+    setPosition(Math.min(100, Math.max(0, nextPosition)));
+  }
+
+  function handlePointerDown(event) {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    updatePositionFromClientX(event.clientX);
+  }
+
+  function handlePointerMove(event) {
+    if (!isDragging) return;
+    updatePositionFromClientX(event.clientX);
+  }
+
+  function stopDragging(event) {
+    setIsDragging(false);
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
+  }
+
+  function handleTouch(event) {
+    const touch = event.touches[0];
+
+    if (!touch) return;
+
+    event.preventDefault();
+    updatePositionFromClientX(touch.clientX);
   }
 
   return (
@@ -21,7 +60,14 @@ export default function BeforeAfterSlider() {
       </div>
 
       <figure
+        ref={sliderRef}
         className="before-after-slider"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={stopDragging}
+        onPointerCancel={stopDragging}
+        onTouchStart={handleTouch}
+        onTouchMove={handleTouch}
         style={{ '--slider-position': `${position}%` }}
       >
         <img
