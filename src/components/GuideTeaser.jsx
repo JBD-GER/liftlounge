@@ -11,8 +11,8 @@ export default function GuideTeaser() {
           <p className="eyebrow">Ratgeber</p>
           <h2>Lash & Brow Lifting Wissen</h2>
           <p>
-            Ausgewählte Beiträge rund um Lash Lifting, Brow Lifting, Pflege,
-            Haltbarkeit und natürliche Ergebnisse.
+            Ausgewählte Beiträge rund um Lash Lifting, Brow Lifting, Schulungen,
+            Selbstständigkeit, Pflege und natürliche Ergebnisse.
           </p>
         </div>
         <div className="guide-teaser-grid">

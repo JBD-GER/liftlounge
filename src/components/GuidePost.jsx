@@ -25,6 +25,17 @@ function articleSchema(post) {
 }
 
 export default function GuidePost({ post }) {
+  const cta = post.cta ?? {
+    eyebrow: 'LiftLounge',
+    title: 'Lash & Brow Lifting Hannover anfragen',
+    text:
+      'Der Standort ist in Barsinghausen, gut erreichbar aus Hannover und der Region Hannover. Für Termine erreichst du LiftLounge direkt telefonisch oder über das Formular.',
+    primaryHref: '/#kontakt',
+    primaryLabel: 'Termin anfragen',
+    secondaryHref: site.phoneHref,
+    secondaryLabel: 'Jetzt anrufen',
+  };
+
   return (
     <>
       <SEO
@@ -71,21 +82,19 @@ export default function GuidePost({ post }) {
             ))}
 
             <aside className="article-cta">
-              <p className="eyebrow">LiftLounge</p>
-              <h2>Lash & Brow Lifting Hannover anfragen</h2>
-              <p>
-                Der Standort ist in Barsinghausen, gut erreichbar aus Hannover
-                und der Region Hannover. Für Termine erreichst du LiftLounge
-                direkt telefonisch oder über das Formular.
-              </p>
+              <p className="eyebrow">{cta.eyebrow}</p>
+              <h2>{cta.title}</h2>
+              <p>{cta.text}</p>
               <div className="hero-actions">
-                <a className="button button-primary" href="/#kontakt">
-                  Termin anfragen
+                <a className="button button-primary" href={cta.primaryHref}>
+                  {cta.primaryLabel}
                   <ArrowRight aria-hidden="true" size={18} />
                 </a>
-                <a className="button button-secondary" href={site.phoneHref}>
-                  Jetzt anrufen
-                </a>
+                {cta.secondaryHref && cta.secondaryLabel && (
+                  <a className="button button-secondary" href={cta.secondaryHref}>
+                    {cta.secondaryLabel}
+                  </a>
+                )}
               </div>
             </aside>
 

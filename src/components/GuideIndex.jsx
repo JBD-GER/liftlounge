@@ -7,7 +7,7 @@ const guideSchema = {
   '@type': 'Blog',
   name: 'LiftLounge Ratgeber',
   description:
-    'SEO-Ratgeber rund um Lash Lifting, Brow Lifting, Pflege, Haltbarkeit und natürliche Ergebnisse.',
+    'SEO-Ratgeber rund um Lash Lifting, Brow Lifting, Schulungen, Selbstständigkeit, Pflege und natürliche Ergebnisse.',
 };
 
 export default function GuideIndex() {
@@ -15,7 +15,7 @@ export default function GuideIndex() {
     <>
       <SEO
         title="Ratgeber | Lash Lifting & Brow Lifting Wissen"
-        description="LiftLounge Ratgeber mit SEO-Beiträgen zu Lash Lifting, Brow Lifting, Haltbarkeit, Pflege und natürlichen Ergebnissen."
+        description="LiftLounge Ratgeber mit SEO-Beiträgen zu Lash Lifting, Brow Lifting, Schulungen, Selbstständigkeit, Pflege und natürlichen Ergebnissen."
         path="/ratgeber"
         image="/images/ratgeber-lash-lifting-hannover.jpg"
         schema={guideSchema}
@@ -30,8 +30,8 @@ export default function GuideIndex() {
               <p className="eyebrow">Ratgeber</p>
               <h1>Lash & Brow Lifting Ratgeber</h1>
               <p>
-                Wissenswertes rund um Lash Lifting, Brow Lifting, Pflege,
-                Haltbarkeit und natürliche Ergebnisse.
+                Wissenswertes rund um Lash Lifting, Brow Lifting, Schulungen,
+                Selbstständigkeit, Pflege und natürliche Ergebnisse.
               </p>
             </div>
             <img

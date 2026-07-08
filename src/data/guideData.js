@@ -1,5 +1,227 @@
 export const guidePosts = [
   {
+    slug: 'selbststaendig-mit-lash-brow-lifting',
+    title: 'Selbstständig mit Lash & Brow Lifting: So planst du deinen Start',
+    eyebrow: 'Business Start',
+    description:
+      'Selbstständig mit Lash Lifting und Brow Lifting: Welche Schritte wichtig sind, warum eine gute Schulung zählt und wie du deinen Start realistisch planst.',
+    date: '2026-07-08',
+    readingTime: '9 Min.',
+    image: '/images/ratgeber-selbststaendig-lash-brow-lifting-ki.jpg',
+    imageAlt: 'Beauty-Profi plant die Selbstständigkeit mit Lash und Brow Lifting in einem hellen Studio',
+    intro:
+      'Sich mit Lash Lifting und Brow Lifting selbstständig zu machen, klingt zuerst nach einem kleinen Beauty-Angebot. In Wirklichkeit brauchst du aber eine klare Leistung, sauberes Arbeiten, realistische Zahlen und genug Übung, damit aus einer Idee ein tragfähiges Angebot wird.',
+    cta: {
+      eyebrow: 'LiftLounge Schulungen',
+      title: 'Lash & Brow Lifting professionell lernen',
+      text:
+        'Wenn du Lash Lifting oder Brow Lifting sauber lernen möchtest, bietet LiftLounge praxisnahe 1:1 Schulungen an. Du kannst einzelne Schulungen oder eine Kombi-Schulung anfragen.',
+      primaryHref: '/#schulungen',
+      primaryLabel: 'Schulungen ansehen',
+      secondaryHref: '/#kontakt',
+      secondaryLabel: 'Schulung anfragen',
+    },
+    sections: [
+      {
+        heading: 'Was bedeutet Selbstständigkeit in diesem Bereich?',
+        paragraphs: [
+          'Als selbstständige Anbieterin bist du nicht nur für schöne Ergebnisse zuständig. Du planst Termine, kalkulierst Preise, kaufst Material, hältst Hygienestandards ein, kommunizierst mit Kundinnen und kümmerst dich um Buchhaltung, Steuern und Versicherungen.',
+          'Gerade im Beauty-Bereich wird oft unterschätzt, wie viel Struktur hinter einem ruhigen Termin steckt. Wer langfristig arbeiten möchte, sollte nicht nur die Behandlung lernen, sondern auch den Alltag eines kleinen Dienstleistungsbusiness verstehen.',
+        ],
+      },
+      {
+        heading: 'Starte mit einem klaren Angebot',
+        paragraphs: [
+          'Ein guter Start beginnt nicht mit möglichst vielen Leistungen, sondern mit einem klaren Kernangebot. Lash Lifting, Brow Lifting und eine Kombi-Behandlung lassen sich gut verständlich erklären und bauen logisch aufeinander auf.',
+          'Überlege dir, welche Kundinnen du ansprechen möchtest: natürliche Ergebnisse, gepflegte Augenpartie, weniger Aufwand am Morgen oder ein unkomplizierter Termin ohne Extensions. Je klarer dein Angebot ist, desto leichter wird Marketing, Beratung und Preisgestaltung.',
+        ],
+      },
+      {
+        heading: 'Warum die Schulung so wichtig ist',
+        paragraphs: [
+          'Eine Schulung ist mehr als ein Zertifikat für die Wand. Sie sollte dir erklären, wie Produkte wirken, wie du Wimpern und Brauen richtig einschätzt, welche Fehler häufig passieren und wann eine Behandlung besser nicht durchgeführt wird.',
+          'Besonders wertvoll ist praktische Übung mit Feedback. Du solltest nicht nur sehen, wie eine Behandlung funktioniert, sondern selbst arbeiten, Fragen stellen und typische Situationen durchgehen können.',
+        ],
+      },
+      {
+        heading: 'Formale Schritte nicht vergessen',
+        paragraphs: [
+          'Wenn du gewerblich arbeitest, kommen formale Themen dazu: Gewerbeanmeldung, steuerliche Erfassung, Buchhaltung, Rechnungen, Datenschutz, Versicherungen und je nach Situation weitere lokale Vorgaben. Diese Punkte wirken trocken, schützen dich aber im Alltag.',
+          'Lass dich bei steuerlichen und rechtlichen Fragen individuell beraten. Gerade Themen wie Kleinunternehmerregelung, Umsatzsteuer, Betriebsausgaben oder Versicherungen hängen von deiner persönlichen Situation ab und sollten nicht nur nach Bauchgefühl entschieden werden.',
+        ],
+      },
+      {
+        heading: 'Übung vor dem ersten echten Kundenstamm',
+        paragraphs: [
+          'Nach der Schulung brauchst du Routine. Übungsmodelle helfen dir, unterschiedliche Wimpern- und Brauenstrukturen kennenzulernen, dein Timing zu verbessern und sicherer in Beratung und Ablauf zu werden.',
+          'Dokumentiere deine Ergebnisse, aber arbeite ehrlich: Vorher-Nachher-Bilder sollten realistisch sein und nur mit Einwilligung genutzt werden. Vertrauen entsteht schneller, wenn deine Darstellung sauber und nachvollziehbar bleibt.',
+        ],
+      },
+      {
+        heading: 'Preise realistisch kalkulieren',
+        paragraphs: [
+          'Dein Preis sollte nicht nur Material und Behandlungszeit abdecken. Dazu gehören auch Vorbereitung, Nachbereitung, Raumkosten, Marketing, Buchhaltung, Versicherungen, Ausfallzeiten, Weiterbildung und Rücklagen.',
+          'Zu günstige Startpreise können später schwer zu korrigieren sein. Besser ist eine nachvollziehbare Kalkulation, die zu deinem Können, deiner Region, deinem Aufwand und deinem gewünschten Qualitätsniveau passt.',
+        ],
+      },
+      {
+        heading: 'Der wichtigste Gedanke zum Start',
+        paragraphs: [
+          'Du musst nicht sofort ein perfektes Studio haben. Wichtig ist, dass du professionell arbeitest, deine Zahlen kennst, ehrlich kommunizierst und deine Qualität Schritt für Schritt aufbaust.',
+          'Selbstständigkeit im Lash- und Brow-Bereich kann klein beginnen. Mit guter Schulung, sauberer Planung und echter Praxis wird daraus ein Angebot, das Kundinnen verstehen und wieder buchen können.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lash-brow-lifting-investitionen-startkapital',
+    title: 'Lash & Brow Business starten: Welche Investitionen brauchst du?',
+    eyebrow: 'Startkapital',
+    description:
+      'Welche Investitionen beim Start mit Lash Lifting und Brow Lifting wichtig sind: Schulung, Material, Raum, Marketing, Versicherungen und Rücklagen realistisch einplanen.',
+    date: '2026-07-08',
+    readingTime: '8 Min.',
+    image: '/images/ratgeber-lash-brow-investitionen-ki.jpg',
+    imageAlt: 'Startermaterial, Laptop und Rechner für die Planung eines Lash und Brow Lifting Business',
+    intro:
+      'Wer mit Lash Lifting und Brow Lifting starten möchte, denkt oft zuerst an Produkte und eine Liege. Für eine stabile Selbstständigkeit brauchst du aber mehr: Wissen, Material, Raum, Marketing, Absicherung und genug Puffer für die ersten Monate.',
+    cta: {
+      eyebrow: 'LiftLounge Schulungen',
+      title: 'Investiere zuerst in saubere Grundlagen',
+      text:
+        'Eine gute Schulung hilft dir, Material, Ablauf und Ergebnis besser einzuschätzen. LiftLounge bietet 1:1 Schulungen für Lash Lifting, Brow Lifting und die Kombi an.',
+      primaryHref: '/#schulungen',
+      primaryLabel: 'Schulungen ansehen',
+      secondaryHref: '/#kontakt',
+      secondaryLabel: 'Schulung anfragen',
+    },
+    sections: [
+      {
+        heading: 'Die wichtigste Investition: Können',
+        paragraphs: [
+          'Material kann man nachkaufen, Erfahrung nicht. Eine gute Schulung und ausreichend Übungszeit sind deshalb die Basis deiner Selbstständigkeit. Je sicherer du arbeitest, desto besser kannst du Kundinnen beraten und Ergebnisse einschätzen.',
+          'Achte bei Schulungen darauf, dass nicht nur der Ablauf gezeigt wird. Wichtig sind Produktkunde, Hygiene, Kontraindikationen, Fehlerquellen, Modellarbeit und Nachbetreuung bei Fragen.',
+        ],
+      },
+      {
+        heading: 'Material und Starterkit',
+        paragraphs: [
+          'Für Lash Lifting und Brow Lifting brauchst du unter anderem Lotionen, Kleber oder Fixierprodukte, Silikonpads, Bürstchen, Applikatoren, Farbe, Reinigungsprodukte, Einwegmaterial und Pflegeprodukte. Die konkrete Ausstattung hängt von deiner Arbeitsweise und den genutzten Produktlinien ab.',
+          'Plane nicht nur das erste Set ein, sondern auch laufenden Verbrauch. Ein Termin verbraucht kleine Dinge, die in der Kalkulation schnell untergehen: Handschuhe, Bürstchen, Wattestäbchen, Desinfektion, Tücher und Verpackung für Pflegehinweise.',
+        ],
+      },
+      {
+        heading: 'Raum, Liege und Arbeitsplatz',
+        paragraphs: [
+          'Du brauchst einen Arbeitsplatz, an dem Kundinnen ruhig liegen können und du ergonomisch arbeitest. Eine bequeme Liege, gute Beleuchtung, Ablageflächen, Spiegel, Aufbewahrung und Reinigungsmöglichkeiten sind wichtiger als teure Dekoration.',
+          'Ob du zuhause, mobil, in einem Studio oder in einem gemieteten Raum arbeitest, beeinflusst Kosten und Organisation. Prüfe vorher, welche Vorgaben für deinen Standort gelten und ob deine Lösung langfristig praktikabel ist.',
+        ],
+      },
+      {
+        heading: 'Marketing und Sichtbarkeit',
+        paragraphs: [
+          'Auch ein kleines Beauty-Business braucht Sichtbarkeit. Dazu gehören gute Fotos, ein klarer Auftritt, lokale Auffindbarkeit, eine einfache Kontaktmöglichkeit und verständliche Informationen zu Preisen, Ablauf und Pflege.',
+          'Plane dafür Zeit und Budget ein. Marketing ist nicht nur Werbung, sondern auch Vertrauen: saubere Bilder, klare Texte, echte Ergebnisse und schnelle, freundliche Kommunikation.',
+        ],
+      },
+      {
+        heading: 'Versicherungen, Steuern und Verwaltung',
+        paragraphs: [
+          'Zur Selbstständigkeit gehören auch laufende Kosten für Versicherungen, Buchhaltung, Software, Zahlungsanbieter, Steuerberatung oder Fortbildung. Diese Ausgaben sind weniger sichtbar als Produkte, aber für deinen Alltag wichtig.',
+          'Gerade Krankenversicherung, Betriebshaftpflicht, steuerliche Einordnung und Rechnungsstellung solltest du früh klären. Hole dir dafür individuelle Beratung, weil die richtige Lösung von deiner Situation abhängt.',
+        ],
+      },
+      {
+        heading: 'Rücklagen statt Null-Euro-Plan',
+        paragraphs: [
+          'Ein häufiger Fehler ist ein Start ohne Puffer. In den ersten Monaten kann es dauern, bis regelmäßig Buchungen kommen. Gleichzeitig laufen Material, Raum, Marketing und Verwaltung weiter.',
+          'Plane Rücklagen für langsame Wochen, Nachkäufe, Stornierungen, Krankheit und Weiterbildung ein. Ein realistischer Puffer nimmt Druck aus dem Start und hilft dir, bessere Entscheidungen zu treffen.',
+        ],
+      },
+      {
+        heading: 'So denkst du über Startkapital',
+        paragraphs: [
+          'Startkapital ist nicht nur Geld, das du ausgibst. Es ist die Grundlage dafür, professionell arbeiten, lernen, sichtbar werden und Kundinnen verlässlich betreuen zu können.',
+          'Schreibe deine Investitionen in Kategorien auf: Schulung, Material, Arbeitsplatz, Marketing, Verwaltung, Versicherung und Rücklagen. So siehst du schnell, ob dein Plan tragfähig ist oder ob du kleiner starten solltest.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lash-brow-lifting-schulung-selbststaendigkeit',
+    title: 'Lash & Brow Schulung: Worauf du vor der Selbstständigkeit achten solltest',
+    eyebrow: 'Schulungsmöglichkeiten',
+    description:
+      'Eine gute Lash und Brow Lifting Schulung finden: Worauf du achten solltest, welche Inhalte wichtig sind und warum Praxis vor der Selbstständigkeit entscheidend ist.',
+    date: '2026-07-08',
+    readingTime: '8 Min.',
+    image: '/images/ratgeber-lash-brow-schulung-ki.jpg',
+    imageAlt: 'Lash und Brow Lifting Schulung mit Trainerin, Teilnehmerin und Übungskopf',
+    intro:
+      'Wenn du dich mit Lash Lifting oder Brow Lifting selbstständig machen möchtest, ist die Schulung ein entscheidender Schritt. Sie sollte dir nicht nur zeigen, wie ein Ergebnis entsteht, sondern dich auf echte Kundinnen, unterschiedliche Ausgangslagen und deinen späteren Arbeitsalltag vorbereiten.',
+    cta: {
+      eyebrow: 'LiftLounge Schulungen',
+      title: '1:1 Lash & Brow Lifting Schulung anfragen',
+      text:
+        'Bei LiftLounge kannst du Lash Lifting, Brow Lifting oder beide Behandlungen in einer Kombi-Schulung lernen. Der Fokus liegt auf Praxis, natürlichem Ergebnis und sicherem Ablauf.',
+      primaryHref: '/#schulungen',
+      primaryLabel: 'Schulungen ansehen',
+      secondaryHref: '/#kontakt',
+      secondaryLabel: 'Kontakt aufnehmen',
+    },
+    sections: [
+      {
+        heading: 'Warum eine Schulung mehr als Theorie sein sollte',
+        paragraphs: [
+          'Lash Lifting und Brow Lifting wirken von außen oft einfach: auftragen, einwirken lassen, fertig. In der Praxis entscheidet aber viel mehr über das Ergebnis: Haarstruktur, Timing, Pad-Auswahl, Produktmenge, Reinigung und Nachpflege.',
+          'Eine gute Schulung erklärt diese Zusammenhänge. Du solltest verstehen, warum du einen Schritt machst, nicht nur welche Reihenfolge du abarbeitest.',
+        ],
+      },
+      {
+        heading: 'Praxis am Modell ist entscheidend',
+        paragraphs: [
+          'Theorie gibt Sicherheit, aber Routine entsteht durch Übung. Eine Schulung sollte dir die Möglichkeit geben, selbst zu arbeiten, Korrekturen zu bekommen und typische Fehler direkt zu erkennen.',
+          'Besonders hilfreich ist es, wenn du verschiedene Ausgangslagen besprichst: kurze Wimpern, helle Wimpern, sehr volle Brauen, feine Brauen oder empfindliche Haut. Genau diese Unterschiede begegnen dir später im Alltag.',
+        ],
+      },
+      {
+        heading: 'Diese Inhalte sollten vorkommen',
+        paragraphs: [
+          'Wichtige Inhalte sind Beratung, Hygiene, Produktsicherheit, Kontraindikationen, Materialkunde, Vorbereitung, Behandlungsschritte, Fehlervermeidung, Pflegehinweise und realistische Ergebniserwartung.',
+          'Auch Fotografie und Kundinnenkommunikation sind wertvoll. Wer Ergebnisse sauber dokumentieren und ehrlich erklären kann, baut schneller Vertrauen auf.',
+        ],
+      },
+      {
+        heading: 'Achte auf Betreuung nach der Schulung',
+        paragraphs: [
+          'Nach einem Schulungstag tauchen oft erst später Fragen auf. Gute Nachbetreuung hilft dir, wenn du bei Übungsmodellen unsicher bist oder ein Ergebnis nicht so aussieht, wie du es erwartet hast.',
+          'Frage deshalb vorab, ob du nach der Schulung Rückfragen stellen kannst, ob es Materialempfehlungen gibt und wie du weiter üben solltest.',
+        ],
+      },
+      {
+        heading: 'Einzel- oder Kombi-Schulung?',
+        paragraphs: [
+          'Eine einzelne Lash Lifting Schulung ist sinnvoll, wenn du dich zuerst auf Wimpern konzentrieren möchtest. Eine Brow Lifting Schulung passt, wenn du besonders mit Augenbrauen arbeiten willst.',
+          'Eine Kombi-Schulung kann sinnvoll sein, wenn du direkt ein rundes Augen-Angebot aufbauen möchtest. Wichtig ist dann, dass genug Zeit für beide Themen bleibt und du nicht nur einen schnellen Überblick bekommst.',
+        ],
+      },
+      {
+        heading: 'Schulung als Investition in deine Qualität',
+        paragraphs: [
+          'Eine Schulung sollte nicht danach bewertet werden, ob sie möglichst billig ist. Entscheidend ist, ob du danach sauberer, sicherer und verantwortungsvoller arbeiten kannst.',
+          'Wenn du mit echten Kundinnen arbeiten möchtest, brauchst du ein Fundament, das über ein schönes Zertifikat hinausgeht. Qualität spart später Stress, Reklamationen und Unsicherheit.',
+        ],
+      },
+      {
+        heading: 'Der nächste sinnvolle Schritt',
+        paragraphs: [
+          'Wenn du Lash Lifting oder Brow Lifting beruflich anbieten möchtest, beginne mit einer ehrlichen Bestandsaufnahme: Was kannst du schon, was fehlt dir noch und wie viel Zeit kannst du zum Üben einplanen?',
+          'Danach kannst du gezielt eine Schulung wählen, die zu deinem Ziel passt. Bei LiftLounge gibt es dafür 1:1 Schulungsmöglichkeiten für Lash Lifting, Brow Lifting und die Kombination aus beiden.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'lash-lift-erklaert',
     title: 'Lash Lift erklärt: Was passiert beim Wimpernlifting?',
     eyebrow: 'Lash Lift erklärt',
