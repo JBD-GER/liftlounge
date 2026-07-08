@@ -11,18 +11,25 @@ export default function Gallery() {
         </div>
         <BeforeAfterSlider />
         <div className="gallery-grid">
-          {gallery.map((image) => (
-            <figure className="image-card" key={image.src}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                width="1400"
-                height="933"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          ))}
+          {gallery.map((image) => {
+            const isMobileFeature = image.src === '/images/kundin-hochkant.jpeg';
+
+            return (
+              <figure
+                className={`image-card${isMobileFeature ? ' image-card-mobile-feature' : ''}`}
+                key={image.src}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width="1400"
+                  height="933"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>
