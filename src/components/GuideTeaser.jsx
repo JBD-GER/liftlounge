@@ -9,10 +9,10 @@ export default function GuideTeaser() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Ratgeber</p>
-          <h2>Lash & Brow Lifting Wissen für Hannover</h2>
+          <h2>Lash & Brow Lifting Wissen</h2>
           <p>
             Ausgewählte Beiträge rund um Lash Lifting, Brow Lifting, Pflege,
-            Haltbarkeit und natürliche Ergebnisse in der Region Hannover.
+            Haltbarkeit und natürliche Ergebnisse.
           </p>
         </div>
         <div className="guide-teaser-grid">

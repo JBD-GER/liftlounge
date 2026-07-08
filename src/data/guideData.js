@@ -1,5 +1,176 @@
 export const guidePosts = [
   {
+    slug: 'lash-lift-erklaert',
+    title: 'Lash Lift erklärt: Was passiert beim Wimpernlifting?',
+    eyebrow: 'Lash Lift erklärt',
+    description:
+      'Lash Lift einfach erklärt: Was beim Wimpernlifting passiert, wie der Schwung entsteht, für wen es geeignet ist und worauf du danach achten solltest.',
+    date: '2026-07-08',
+    readingTime: '7 Min.',
+    image: '/images/ratgeber-lash-lift-erklaert-ki.jpg',
+    imageAlt: 'Natürliches Lash Lift Symbolbild mit gelifteten Wimpern in ruhiger Studioatmosphäre',
+    intro:
+      'Ein Lash Lift, auch Wimpernlifting genannt, betont die eigenen Naturwimpern ohne Extensions. Der Effekt entsteht nicht durch angeklebte Härchen, sondern dadurch, dass die vorhandenen Wimpern vom Ansatz aus in eine neue Form gebracht werden.',
+    sections: [
+      {
+        heading: 'Was ist ein Lash Lift?',
+        paragraphs: [
+          'Beim Lash Lift werden die eigenen Wimpern so geformt, dass sie sichtbarer, geschwungener und offener wirken. Die Wimpern bleiben deine natürlichen Haare, sie werden also nicht verlängert oder künstlich verdichtet.',
+          'Der Unterschied zur Wimpernzange liegt darin, dass der Schwung nicht nur für ein paar Stunden hält. Durch die Behandlung wird die Form für mehrere Wochen stabilisiert und wächst nach und nach mit dem natürlichen Wimpernwechsel heraus.',
+        ],
+      },
+      {
+        heading: 'Wie entsteht der Schwung?',
+        paragraphs: [
+          'Die Wimpern werden auf ein passendes Silikonpad gelegt und vom Ansatz aus ausgerichtet. Danach sorgen spezielle Lotionen dafür, dass sich die Haarstruktur vorübergehend öffnen, neu formen und wieder festigen kann.',
+          'Die Pad-Größe und die natürliche Wimpernlänge bestimmen, wie weich oder deutlich der Schwung wirkt. Deshalb sieht ein gutes Lash Lift nicht bei jeder Person gleich aus, sondern wird an die Ausgangslage angepasst.',
+        ],
+      },
+      {
+        heading: 'Was bringt das Färben?',
+        paragraphs: [
+          'Viele Wimpern sind an den Spitzen heller als am Ansatz. Durch das Färben werden diese feinen Spitzen sichtbarer, wodurch das Ergebnis oft klarer und länger wirkt.',
+          'Färben ersetzt nicht automatisch Mascara, kann den Blick aber auch ungeschminkt definierter erscheinen lassen. Besonders bei hellen Naturwimpern macht dieser Schritt oft einen deutlichen Unterschied.',
+        ],
+      },
+      {
+        heading: 'Für wen eignet sich ein Lash Lift?',
+        paragraphs: [
+          'Ein Lash Lift eignet sich, wenn du deine eigenen Wimpern betonen möchtest, ohne Extensions zu tragen. Gerade bei geraden, hellen oder nach unten fallenden Wimpern kann der Effekt sehr schön sichtbar werden.',
+          'Bei sehr kurzen, stark geschädigten oder frisch gereizten Wimpern sollte vorher genau geschaut werden, ob die Behandlung sinnvoll ist. Gesundheit und Haarzustand sind wichtiger als ein möglichst starker Effekt.',
+        ],
+      },
+      {
+        heading: 'Wie lange hält ein Lash Lift?',
+        paragraphs: [
+          'Die Haltbarkeit hängt vom natürlichen Wimpernwachstum, der Haarstruktur und der Pflege ab. Häufig bleibt ein Lash Lift mehrere Wochen sichtbar und wird dann langsam weicher.',
+          'Weil Wimpern nicht alle gleichzeitig wachsen, verschwindet das Ergebnis nicht plötzlich. Neue Wimpern kommen in ihrer natürlichen Form nach, während geliftete Wimpern nach und nach ausfallen.',
+        ],
+      },
+      {
+        heading: 'Was ist nach dem Lash Lift wichtig?',
+        paragraphs: [
+          'In den ersten 24 Stunden solltest du Feuchtigkeit, Wasserdampf, starkes Reiben, Mascara und ölhaltige Produkte im Augenbereich vermeiden. Diese Zeit hilft, damit sich die neue Form stabilisieren kann.',
+          'Danach ist eine sanfte Routine sinnvoll: mild reinigen, wenig reiben und die Wimpern nicht unnötig mechanisch belasten. So bleibt das Ergebnis gepflegt und natürlich.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'brow-lift-erklaert',
+    title: 'Brow Lift erklärt: Wie funktioniert Brow Lifting?',
+    eyebrow: 'Brow Lift erklärt',
+    description:
+      'Brow Lift verständlich erklärt: Was mit den Brauenhaaren passiert, wie der geliftete Look entsteht und für wen Brow Lifting geeignet ist.',
+    date: '2026-07-08',
+    readingTime: '7 Min.',
+    image: '/images/ratgeber-brow-lift-erklaert-ki.jpg',
+    imageAlt: 'Natürliches Brow Lift Symbolbild mit gepflegt gelifteten Augenbrauen',
+    intro:
+      'Ein Brow Lift ordnet die eigenen Augenbrauenhaare neu. Ziel ist nicht zwingend ein extremer laminierter Look, sondern eine Form, die voller, definierter und gepflegter wirken kann.',
+    sections: [
+      {
+        heading: 'Was ist ein Brow Lift?',
+        paragraphs: [
+          'Beim Brow Lift werden die vorhandenen Brauenhaare in eine gewünschte Richtung gebracht. Dadurch können Lücken weicher wirken, die Braue kann voller erscheinen und die natürliche Form bekommt mehr Struktur.',
+          'Es werden keine künstlichen Härchen eingesetzt. Das Ergebnis entsteht aus deinen eigenen Brauenhaaren, ihrer Dichte, Länge, Wuchsrichtung und der passenden Formgebung.',
+        ],
+      },
+      {
+        heading: 'Wie funktioniert Brow Lifting?',
+        paragraphs: [
+          'Zuerst werden die Brauen gereinigt und in die gewünschte Richtung gebürstet. Anschließend helfen spezielle Lotionen dabei, die Haarstruktur zu formen und die neue Lage zu stabilisieren.',
+          'Die Form wird dabei nicht einfach standardmäßig nach oben gekämmt. Ein natürlicher Brow Lift berücksichtigt Gesicht, Brauenbogen, Haarlänge und den gewünschten Alltagseffekt.',
+        ],
+      },
+      {
+        heading: 'Warum wirken Brauen danach voller?',
+        paragraphs: [
+          'Viele Brauenhaare liegen kreuz und quer, wachsen nach unten oder überdecken sich gegenseitig. Wenn sie geordnet werden, wird die vorhandene Haarmenge besser sichtbar.',
+          'Auch feine Härchen können durch Form und optionales Färben stärker auffallen. Dadurch wirkt die Braue oft dichter, ohne dass sie künstlich aufgefüllt werden muss.',
+        ],
+      },
+      {
+        heading: 'Brow Lift, Färben und Formkorrektur',
+        paragraphs: [
+          'Ein Brow Lift kann mit Färben kombiniert werden, wenn helle Härchen sichtbarer werden sollen. Das kann besonders bei ungleichmäßigen oder sehr hellen Brauen helfen.',
+          'Eine sanfte Formkorrektur entfernt störende Härchen außerhalb der gewünschten Form. Wichtig ist, dass die Braue danach nicht zu hart oder aufgemalt wirkt.',
+        ],
+      },
+      {
+        heading: 'Für wen eignet sich Brow Lifting?',
+        paragraphs: [
+          'Brow Lifting eignet sich bei unruhig liegenden, nach unten wachsenden, sehr geraden oder lückig wirkenden Brauen. Auch volle Brauen können dadurch ordentlicher und definierter erscheinen.',
+          'Wenn die Haut gereizt ist oder gerade intensive Peelings, Retinol, Säuren, Permanent Make-up oder ähnliche Behandlungen im Brauenbereich gemacht wurden, sollte vorher vorsichtig abgeklärt werden, ob der richtige Zeitpunkt ist.',
+        ],
+      },
+      {
+        heading: 'Wie pflegt man Brow Lifting danach?',
+        paragraphs: [
+          'In den ersten 24 Stunden solltest du Wasser, Wasserdampf, Sauna, Schwimmen, starkes Reiben und ölhaltige Produkte im Brauenbereich vermeiden. Danach können die Brauen sanft gereinigt werden.',
+          'Mit einem sauberen Bürstchen lassen sich die Haare bei Bedarf wieder in Form legen. Wenig Reibung und milde Pflege helfen, dass der Look länger ordentlich bleibt.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lash-lift-oder-brow-lift-unterschied',
+    title: 'Lash Lift oder Brow Lift: Was ist der Unterschied?',
+    eyebrow: 'Lash & Brow Wissen',
+    description:
+      'Lash Lift und Brow Lift im Vergleich: Welche Behandlung welchen Effekt hat, wann sich welches Lifting lohnt und warum beide zusammen den Blick verändern.',
+    date: '2026-07-08',
+    readingTime: '8 Min.',
+    image: '/images/ratgeber-lash-brow-lift-unterschiede-ki.jpg',
+    imageAlt: 'Natürliches Symbolbild mit gelifteten Wimpern und gepflegten Augenbrauen',
+    intro:
+      'Lash Lift und Brow Lift klingen ähnlich, wirken aber an unterschiedlichen Stellen. Das Lash Lift betont die eigenen Wimpern, während das Brow Lift die Augenbrauen ordnet und sichtbarer macht.',
+    sections: [
+      {
+        heading: 'Der wichtigste Unterschied',
+        paragraphs: [
+          'Beim Lash Lift werden die Naturwimpern vom Ansatz aus angehoben. Dadurch wirkt der Blick offener, die Wimpern sichtbarer und der Schwung länger anhaltend als mit einer Wimpernzange.',
+          'Beim Brow Lift werden die Brauenhaare in eine neue Richtung gebracht. Dadurch können Augenbrauen voller, definierter und geordneter wirken, ohne dass künstliche Härchen eingesetzt werden.',
+        ],
+      },
+      {
+        heading: 'Was verändert ein Lash Lift?',
+        paragraphs: [
+          'Ein Lash Lift verändert vor allem die Sichtbarkeit der Wimpern. Gerade, helle oder nach unten fallende Wimpern bekommen mehr Schwung und können dadurch länger wirken.',
+          'Die Behandlung eignet sich, wenn du einen frischen Blick möchtest, aber keine Extensions tragen willst. Der Effekt bleibt natürlich, weil mit den eigenen Wimpern gearbeitet wird.',
+        ],
+      },
+      {
+        heading: 'Was verändert ein Brow Lift?',
+        paragraphs: [
+          'Ein Brow Lift verändert vor allem die Richtung und Ordnung der Brauenhaare. Dadurch bekommt das Gesicht mehr Rahmen und die Augenpartie kann insgesamt klarer wirken.',
+          'Das Ergebnis hängt stark von der vorhandenen Brauendichte ab. Feine Brauen wirken oft gepflegter und sichtbarer, volle Brauen bekommen mehr Struktur.',
+        ],
+      },
+      {
+        heading: 'Wann passt welche Behandlung?',
+        paragraphs: [
+          'Ein Lash Lift passt besonders gut, wenn deine Wimpern wenig Schwung haben oder du morgens weniger mit Wimpernzange und Mascara arbeiten möchtest.',
+          'Ein Brow Lift passt, wenn deine Augenbrauen unruhig liegen, nach unten wachsen oder du mehr Form und Definition möchtest. Beide Behandlungen können einzeln sinnvoll sein.',
+        ],
+      },
+      {
+        heading: 'Warum die Kombination oft harmonisch wirkt',
+        paragraphs: [
+          'Wimpern öffnen den Blick, Brauen geben dem Gesicht Rahmen. Wenn beides gepflegt und natürlich abgestimmt ist, wirkt die Augenpartie oft frischer, ohne stark geschminkt auszusehen.',
+          'Die Kombination ist besonders interessant, wenn sowohl Wimpern als auch Brauen Unterstützung brauchen. Wichtig ist, dass die Ergebnisse zusammenpassen und nicht gegeneinander arbeiten.',
+        ],
+      },
+      {
+        heading: 'Pflege: Was beide gemeinsam haben',
+        paragraphs: [
+          'Nach beiden Liftings ist die erste Schonzeit wichtig. In den ersten 24 Stunden solltest du Feuchtigkeit, Wasserdampf, starkes Reiben und ölhaltige Produkte im behandelten Bereich vermeiden.',
+          'Danach bleibt die Pflege unkompliziert: sanft reinigen, wenig mechanisch belasten und die Brauen bei Bedarf vorsichtig bürsten. So bleibt der Look ruhig und gepflegt.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'brow-lifting-hannover-natuerliche-augenbrauen',
     title: 'Brow Lifting Hannover: Natürliche Augenbrauen mit gepflegter Form',
     eyebrow: 'Brow Lifting Guide',

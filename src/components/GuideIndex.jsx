@@ -7,15 +7,15 @@ const guideSchema = {
   '@type': 'Blog',
   name: 'LiftLounge Ratgeber',
   description:
-    'SEO-Ratgeber rund um Lash Lifting, Brow Lifting und Pflege für Hannover und die Region.',
+    'SEO-Ratgeber rund um Lash Lifting, Brow Lifting, Pflege, Haltbarkeit und natürliche Ergebnisse.',
 };
 
 export default function GuideIndex() {
   return (
     <>
       <SEO
-        title="Ratgeber | Lash Lifting & Brow Lifting Hannover"
-        description="LiftLounge Ratgeber mit SEO-Beiträgen zu Lash Lifting, Brow Lifting, Haltbarkeit und Pflege in Hannover."
+        title="Ratgeber | Lash Lifting & Brow Lifting Wissen"
+        description="LiftLounge Ratgeber mit SEO-Beiträgen zu Lash Lifting, Brow Lifting, Haltbarkeit, Pflege und natürlichen Ergebnissen."
         path="/ratgeber"
         image="/images/ratgeber-lash-lifting-hannover.jpg"
         schema={guideSchema}
@@ -30,9 +30,8 @@ export default function GuideIndex() {
               <p className="eyebrow">Ratgeber</p>
               <h1>Lash & Brow Lifting Ratgeber</h1>
               <p>
-                Wissenswertes rund um Lash Lifting Hannover, Brow Lifting,
-                Pflege, Haltbarkeit und natürliche Ergebnisse in Barsinghausen
-                und der Region Hannover.
+                Wissenswertes rund um Lash Lifting, Brow Lifting, Pflege,
+                Haltbarkeit und natürliche Ergebnisse.
               </p>
             </div>
             <img
