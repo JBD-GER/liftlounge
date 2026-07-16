@@ -1242,6 +1242,7 @@ p {
 .before-after-image-overlay img {
   object-fit: cover;
   object-position: center;
+  -webkit-user-drag: none;
 }
 
 .before-after-result-image,

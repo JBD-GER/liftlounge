@@ -3,9 +3,9 @@ import { MoveHorizontal } from 'lucide-react';
 
 export default function BeforeAfterSlider() {
   const [position, setPosition] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
   const sliderId = useId();
   const sliderRef = useRef(null);
+  const isDraggingRef = useRef(false);
 
   function updatePosition(event) {
     setPosition(Number(event.target.value));
@@ -24,19 +24,23 @@ export default function BeforeAfterSlider() {
   function handlePointerDown(event) {
     if (event.pointerType === 'mouse' && event.button !== 0) return;
 
-    setIsDragging(true);
+    event.preventDefault();
+    isDraggingRef.current = true;
     event.currentTarget.setPointerCapture?.(event.pointerId);
     updatePositionFromClientX(event.clientX);
   }
 
   function handlePointerMove(event) {
-    if (!isDragging) return;
+    if (!isDraggingRef.current) return;
     updatePositionFromClientX(event.clientX);
   }
 
   function stopDragging(event) {
-    setIsDragging(false);
-    event.currentTarget.releasePointerCapture?.(event.pointerId);
+    isDraggingRef.current = false;
+
+    if (event.currentTarget.hasPointerCapture?.(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
   }
 
   function handleTouch(event) {
@@ -76,6 +80,7 @@ export default function BeforeAfterSlider() {
           alt="Nachher-Aufnahme nach dem Lash und Brow Lifting"
           width="3840"
           height="5120"
+          draggable="false"
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -87,6 +92,7 @@ export default function BeforeAfterSlider() {
             alt="Vorher-Aufnahme vor dem Lash und Brow Lifting"
             width="3024"
             height="4032"
+            draggable="false"
             loading="eager"
             fetchPriority="high"
             decoding="async"
