@@ -2099,8 +2099,7 @@ label small {
 
 .education-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.62fr);
-  gap: clamp(32px, 6vw, 84px);
+  grid-template-columns: 1fr;
   align-items: center;
 }
 
@@ -2111,7 +2110,8 @@ label small {
 }
 
 .education-hero-copy {
-  max-width: 760px;
+  width: 100%;
+  max-width: none;
   min-width: 0;
 }
 

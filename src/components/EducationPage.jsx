@@ -68,7 +68,7 @@ export default function EducationPage() {
                 Hier findest du alle wichtigen Informationen rund um dein Lash-
                 oder Browlifting: wie du dich vorbereitest, was du nach der
                 Behandlung beachten solltest und wie du das Ergebnis optimal
-                pflegst. Kurz, verständlich und ohne unnötigen Fachjargon.
+                pflegst.
               </p>
               <div className="education-actions">
                 <a className="button button-primary" href="/haftungshinweis">
@@ -80,15 +80,6 @@ export default function EducationPage() {
                 </a>
               </div>
             </div>
-            <figure className="education-hero-image">
-              <img
-                src="/images/kundin-hochkant.jpeg"
-                alt="Echtes LiftLounge Ergebnis nach Lash und Brow Lifting"
-                width="1600"
-                height="2000"
-                decoding="async"
-              />
-            </figure>
           </div>
         </section>
 
